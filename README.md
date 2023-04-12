@@ -6,5 +6,10 @@ O REPy é um Sistema de Registro Eletrônico de Pontos, baseado nos sistemas REP
 
 * Front-end: ReactJs;
     [ReactJs](https://legacy.reactjs.org/) é uma biblioteca de código aberto para construir interfaces de usuário (UI) em aplicações web. O React permite a criação de componentes reutilizáveis que podem ser renderizados de forma eficiente, além de fornecer um modelo de programação declarativo para o desenvolvimento de interfaces de usuário.
+
+    [Link para tutorial](https://www.youtube.com/playlist?list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO)
+
 * Back-end: Django Rest;
     [Django REST](https://www.django-rest-framework.org/) é um Framework utilizado para a construção de [APIs](https://aws.amazon.com/pt/what-is/api/) e para manipulação do banco de dados;
+
+    [Link para tutorial](https://www.youtube.com/playlist?list=PLsTx8TSx2fHY01FnuxBdwiBiOdZdPGik7)
