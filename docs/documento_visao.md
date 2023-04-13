@@ -50,7 +50,7 @@ RF10 -  Gerar Relatório | Um relatório completo com detalhes de cada ponto mar
 
 Abaixo apresentamos o modelo conceitual usando o **YUML**.
 
-Falta adicionar!!!
+![Modelo UML](images/diagrama_Classe.png)
 
 #### Descrição das Entidades
 
@@ -75,4 +75,5 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 
 ### Referências
 Características e definição
+<br/>
 [Link](https://www.pontotel.com.br/sistema-de-ponto/)
