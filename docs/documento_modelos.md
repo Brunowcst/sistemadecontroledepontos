@@ -51,51 +51,8 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
     ---
 
     erDiagram
-        Organizacao ||--o{ Gestor_RH }
-        Oragnizacao{
-            string nome
-            string cnpj
-            string cpf_proprietario
-            string pais
-            string estado
-            string cidade
-            string email
-            string senha
-        }
-
-        Gestor_RH ||--o{ Departamento }
-        Gestor_RH ||--o{ Usuario }
-        Gestor_RH {
-            string nome
-            string cpf
-            date dataNasc
-            string departamento
-            string email
-            string senha
-        }
-
-        Departamento {
-            string nome
-        }
-
-        Usuario ||--o{ Ponto }
-        Usuario ||--o{ BancoHoras }
-        Usuario {
-            string nome
-            string cpf
-            date dataNasc
-            string departamento
-            string email
-            string senha
-        }
-
-        Ponto {
-            date data
-            boolean presente
-        }
-
-        BancoHoras {
-            int horas
-            boolean credito
-        }
+        Organizacao ||--o{ Gestor_RH : places
+        Gestor_RH ||--o{ Usuario : contains
+        Usuario ||--o{ Ponto : contains
+        Usuario ||--o{ BancoHoras : contains
 ```
