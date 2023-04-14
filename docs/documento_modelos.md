@@ -49,13 +49,9 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 ```mermaid
 erDiagram
     Organizacao ||--|{ Gestor_RH : gerecia
-    Gestor_RH ||--|| Organizacao : ""
     Gestor_RH ||--|{ Departamento : gerencia
-    Departamento ||--|{ Gestor_RH : ""
     Departamento ||--|{ Funcionario : contem
-    Funcionario ||--|| Departamento : ""
     Funcionario ||--|{ Ponto: marca
-    Ponto ||--|| Funcionario : ""
     Funcionario||--|| Banco_Hora : tem
 ```
 
