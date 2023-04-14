@@ -45,7 +45,7 @@ Para a modelagem pode se usar a ferramenta Astah UML ou o BrModelo. Além dessas
 
 Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) seguindo o tutorial [deste site](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
 
-```mermaid
+
     ---
         title: Modelo ER
     ---
@@ -64,4 +64,4 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
         ORDER ||--|{ LINE-ITEM : contains
         CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 
-```
+
