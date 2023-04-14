@@ -50,7 +50,8 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 erDiagram
     Organizacao ||--|{ Gestor_RH : gerecia
     Gestor_RH ||--|{ Departamento : gerencia
-    Departamento ||--|{ Funcionario : contem
+    Gestor_RH||--|{ Funcionario : gerencia
+    Departamento ||--|{ Funcionario : trabalha
     Funcionario ||--|{ Ponto: marca
     Funcionario||--|| Banco_Hora : tem
 ```
