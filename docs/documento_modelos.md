@@ -55,4 +55,13 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
         Gestor_RH ||--o{ Usuario : contains
         Usuario ||--o{ Ponto : contains
         Usuario ||--o{ BancoHoras : contains
+
+    ---
+    title: Order example
+    ---
+    erDiagram
+        CUSTOMER ||--o{ ORDER : places
+        ORDER ||--|{ LINE-ITEM : contains
+        CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+
 ```
