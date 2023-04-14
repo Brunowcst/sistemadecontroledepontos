@@ -48,14 +48,15 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 
 ```mermaid
 erDiagram
-    Departamento ||--o{ Laboratorio : labs
-    Departamento ||--|{ Docente : docentes
-    Docente ||--o| Laboratorio : coordenador
-    Docente ||--o| Laboratorio : vice-coordenador
-    Laboratorio ||--o{ Membro_Docente : membros
-    Docente ||--|{ Membro_Docente : ""
-    Laboratorio ||--o{ Membro_Discente : membros
-    Membro_Discente }|--|| Discente: ""
+    Organizacao ||--|{ Gestor_RH : gerecia
+    Gestor_RH ||--|| Organizacao : ""
+    Gestor_RH ||--|{ Departamento : gerencia
+    Departamento ||--|{ Gestor_RH : ""
+    Departamento ||--|{ Funcionario : contem
+    Funcionario ||--|| Departamento : ""
+    Funcionario ||--|{ Ponto: marca
+    Ponto ||--|| Funcionario : ""
+    Funcionario||--|| Banco_Hora : tem
 ```
 
 
