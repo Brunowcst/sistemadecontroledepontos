@@ -7,12 +7,12 @@ Para a modelagem pode se usar a ferramenta Astah UML ou o BrModelo. Além dessas
 ## Modelos Conceitual
 
 ### Diagrama de Classes usando o Mermaid
-
-classDiagram
+```mermaid
+    classDiagram
         Usuario <|-- Funcionario
         Usuario <|-- GestorRH
         Usuario <|-- Organizacao
-      
+    
         
         Usuario : +String nome
         Usuario : +String email
@@ -39,61 +39,63 @@ classDiagram
             -int sizeInFeet
             -canEat()
         }
+```
 
 ### Diagrama de Dados (Entidade-Relacionamento)
 
 Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) seguindo o tutorial [deste site](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
 
----
-    title: Modelo ER
----
+```mermaid
+    ---
+        title: Modelo ER
+    ---
 
-erDiagram
-    Organizacao ||--o{ Gestor_RH }
-    Oragnizacao{
-        string nome
-        string cnpj
-        string cpf_proprietario
-        string pais
-        string estado
-        string cidade
-        string email
-        string senha
-    }
+    erDiagram
+        Organizacao ||--o{ Gestor_RH }
+        Oragnizacao{
+            string nome
+            string cnpj
+            string cpf_proprietario
+            string pais
+            string estado
+            string cidade
+            string email
+            string senha
+        }
 
-    Gestor_RH ||--o{ Departamento }
-    Gestor_RH ||--o{ Usuario }
-    Gestor_RH {
-        string nome
-        string cpf
-        date dataNasc
-        string departamento
-        string email
-        string senha
-    }
+        Gestor_RH ||--o{ Departamento }
+        Gestor_RH ||--o{ Usuario }
+        Gestor_RH {
+            string nome
+            string cpf
+            date dataNasc
+            string departamento
+            string email
+            string senha
+        }
 
-    Departamento {
-        string nome
-    }
+        Departamento {
+            string nome
+        }
 
-    Usuario ||--o{ Ponto }
-    Usuario ||--o{ BancoHoras }
-    Usuario {
-        string nome
-        string cpf
-        date dataNasc
-        string departamento
-        string email
-        string senha
-    }
+        Usuario ||--o{ Ponto }
+        Usuario ||--o{ BancoHoras }
+        Usuario {
+            string nome
+            string cpf
+            date dataNasc
+            string departamento
+            string email
+            string senha
+        }
 
-    Ponto {
-        date data
-        boolean presente
-    }
+        Ponto {
+            date data
+            boolean presente
+        }
 
-    BancoHoras {
-        int horas
-        boolean credito
-    }
-
+        BancoHoras {
+            int horas
+            boolean credito
+        }
+```
