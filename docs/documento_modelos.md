@@ -46,22 +46,16 @@ Para a modelagem pode se usar a ferramenta Astah UML ou o BrModelo. Além dessas
 Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) seguindo o tutorial [deste site](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
 
 
-    ---
-        title: Modelo ER
-    ---
-
-    erDiagram
-        Organizacao ||--o{ Gestor_RH : places
-        Gestor_RH ||--o{ Usuario : contains
-        Usuario ||--o{ Ponto : contains
-        Usuario ||--o{ BancoHoras : contains
-
-    ---
-    title: Order example
-    ---
-    erDiagram
-        CUSTOMER ||--o{ ORDER : places
-        ORDER ||--|{ LINE-ITEM : contains
-        CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```mermaid
+erDiagram
+    Departamento ||--o{ Laboratorio : labs
+    Departamento ||--|{ Docente : docentes
+    Docente ||--o| Laboratorio : coordenador
+    Docente ||--o| Laboratorio : vice-coordenador
+    Laboratorio ||--o{ Membro_Docente : membros
+    Docente ||--|{ Membro_Docente : ""
+    Laboratorio ||--o{ Membro_Discente : membros
+    Membro_Discente }|--|| Discente: ""
+```
 
 
