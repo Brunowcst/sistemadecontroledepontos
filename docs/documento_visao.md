@@ -38,10 +38,10 @@ Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
 RF01 - Realizar Login | Usuários poderão realizar login na plataforma utilizando usuário e senha já cadastrados previamente. | Todos os usuários cadastrados. |
 RF02 - Recuperar Acesso | Na tela de login haverá uma opção de recuperar dados, o usuário informa seu e-mail e recebe uma notificação com um link para inserir suas novas credenciais. | Todos os usuários cadastrados. |
-RF03 - Cadastrar Usuários | Informar dados, fazer confirmação do e-mail e depois criar novo registro de usuário no banco de dados. | Administrador |
-RF04 - Visualizar Usuários | Requisição ao banco de dados retornando todos os usuários ativos e listando-os. | Administrador |
-RF05 - Inativar Usuários | Inativar usuário e descrever o motivo para tal. | Administrador |
-RF06 - Alterar Dados | Por exemplo, mudança de e-mail, o novo e-mail é enviado ao sistema e a mudança é feita no banco de dados. | Funcionário |
+RF03 - Cadastrar Usuários do tipo Gestor. |  Informar dados cadastrais e criar novo registro de usuário no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: TRUE, código do departamento, turno, e-mail e senha. | Organização |
+RF04 - Visualizar Usuários do tipo gestor | Requisição ao banco de dados retornando todos os usuários ativos do tipo Gestor e listando-os. | Organização |
+RF05 - Inativar usuários do tipo Gestor | Inativar registro do usuário gestor, impossibilitando seu login no sistema. | Organização |
+RF06 - Alterar Dados do usuário do tipo Gestor |Poderá ser editado os dados: nome, condição de administração, departamento, e-mail e senha. | Organização |
 RF07 - Marcar ponto | Usuários poderão contabilizar a jornada de trabalho. | Funcionário |
 RF08 - Justificar marcação de ponto | Usuários poderão solicitar, durante a marcação do ponto, a justificativa de: Ausência total, Ausência parcial, Ausência por motivos naturais, informando uma breve descrição. O administrador poderá aprovar essa solicitação, a fim de melhor controle. | Funcionário |
 RF09 -  Acompanhar Histórico | O usuário logado no sistema poderá solicitar o histórico dos seus pontos que serão listados e podem ser filtrados por data. | Funcionário |
