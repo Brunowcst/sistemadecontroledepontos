@@ -7,39 +7,7 @@ Para a modelagem pode se usar a ferramenta Astah UML ou o BrModelo. Além dessas
 ## Modelos Conceitual
 
 ### Diagrama de Classes usando o Mermaid
-```mermaid
-    classDiagram
-        Usuario <|-- Funcionario
-        Usuario <|-- GestorRH
-        Usuario <|-- Organizacao
-    
-        
-        Usuario : +String nome
-        Usuario : +String email
 
-
-        Usuario : +getNome()
-        Usuario : +setNome()
-        Usuario : +getEmail()
-        Usuario : setEmail()
-
-        class Organizacao{
-            +String CNPJ
-            +ArrayList GestorRH
-            +swim()
-            +quack()
-        }
-
-        class GestorRH{
-            +bool is_wild
-            +run()
-        }
-
-        class Funcionario{
-            -int sizeInFeet
-            -canEat()
-        }
-```
 
 ### Diagrama de Dados (Entidade-Relacionamento)
 
