@@ -65,7 +65,15 @@ RF23 - Solicitar Benefício de Hora. | O Funcionário poderá solicitar, de acor
 
 Abaixo apresentamos o modelo conceitual usando o **YUML**.
 
-![Modelo UML](images/diagrama_Classe.png)
+```mermaid 
+erDiagram
+    Organizacao ||--|{ Gestor_RH : gerecia
+    Gestor_RH ||--|{ Departamento : gerencia
+    Gestor_RH||--|{ Funcionario : gerencia
+    Departamento ||--|{ Funcionario : trabalha
+    Funcionario ||--|{ Ponto: marca
+    Funcionario||--|| Banco_Hora : tem
+```
 
 #### Descrição das Entidades
 
