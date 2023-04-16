@@ -44,8 +44,9 @@ erDiagram
 ### Dicionário de Dados
 
 #### Organização
-Tabela | Organização
-Descrição | Armazena as informações referentes à organização.
+|Tabela     | Organização                                               |
+|-----------|-----------------------------------------------------------|                        
+|Descrição  | Armazena as informações referentes à organização.         |
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
 |-----------|---------------|---------------|---------|---------------|
@@ -58,6 +59,7 @@ Descrição | Armazena as informações referentes à organização.
 #### Funcionario
 
 |Tabela     | Funcionario                                               |
+|-----------|-----------------------------------------------------------|
 |Descrição  | Armazena informações de usuários da categoria Funcionario/Gestor.|
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
@@ -75,6 +77,7 @@ Descrição | Armazena as informações referentes à organização.
 #### Departamento
 
 |Tabela     |  Departamento                                            |
+|-----------|----------------------------------------------------------|
 |Descrição  | Armazena informações de departamentos.                   |
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
@@ -87,6 +90,7 @@ Descrição | Armazena as informações referentes à organização.
 #### Login
 
 |Tabela     |  Login                                                  |
+|-----------|---------------------------------------------------------|
 |Descrição  | Armazena informações de Autenticação dos usuários.      |
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
@@ -98,6 +102,7 @@ Descrição | Armazena as informações referentes à organização.
 #### Ponto
 
 |Tabela     |  Ponto                                                  |
+|-----------|---------------------------------------------------------|
 |Descrição  | Armazena informações relacionadas aos pontos marcados pelso usuários.|
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
