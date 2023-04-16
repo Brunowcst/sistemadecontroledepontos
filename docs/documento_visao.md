@@ -41,11 +41,26 @@ RF02 - Recuperar Acesso | Na tela de login haverá uma opção de recuperar dado
 RF03 - Cadastrar Usuários do tipo Gestor. |  Informar dados cadastrais e criar novo registro de usuário no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: TRUE, código do departamento, turno, e-mail e senha. | Organização |
 RF04 - Visualizar Usuários do tipo gestor | Requisição ao banco de dados retornando todos os usuários ativos do tipo Gestor e listando-os. | Organização |
 RF05 - Inativar usuários do tipo Gestor | Inativar registro do usuário gestor, impossibilitando seu login no sistema. | Organização |
-RF06 - Alterar Dados do usuário do tipo Gestor |Poderá ser editado os dados: nome, condição de administração, departamento, e-mail e senha. | Organização |
-RF07 - Marcar ponto | Usuários poderão contabilizar a jornada de trabalho. | Funcionário |
-RF08 - Justificar marcação de ponto | Usuários poderão solicitar, durante a marcação do ponto, a justificativa de: Ausência total, Ausência parcial, Ausência por motivos naturais, informando uma breve descrição. O administrador poderá aprovar essa solicitação, a fim de melhor controle. | Funcionário |
-RF09 -  Acompanhar Histórico | O usuário logado no sistema poderá solicitar o histórico dos seus pontos que serão listados e podem ser filtrados por data. | Funcionário |
-RF10 -  Gerar Relatório | Um relatório completo com detalhes de cada ponto marcado ao longo do período definido. | Administrador |
+RF06 - Alterar Dados do usuário do tipo Gestor | Poderá ser editado os dados: nome, condição de administração, departamento, e-mail e senha. | Organização |
+RF07 - Cadastrar usuário do tipo Funcionário | Informar dados cadastrais e criar novo registro no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: FALSE, código do departamento, turno, e-mail e senha. | Gestor |
+RF08 - Visualizar usuários do tipo Funcionário | Requisição ao banco de dados retornando todos os usuários ativos do tipo Funcionário e listando-os. | Gestor |
+RF09 -  Inativar usuários do tipo Funcionário | Inativar registro do usuário Funcionário, impossibilitando seu login no sistema. | Gestor |
+RF10 -  Alterar dados do usuário do tipo Funcionário | Poderá ser editado os dados: nome, condição de administração, código do departamento, e-mail e senha. | Gestor. |
+RF11 - Cadastrar Departamento. | No ato do cadastro, será necessário informar: nome do departamento, código do departamento e data de criação. | Gestor. |
+RF12 - Visualizar departamento. | Será listado, em ordem alfabética, todos os departamentos cadastrados em sua organização, bem como todos os membros vinculados a ele. | Gestor. |
+RF13 - Inativar Departamento. |
+Será inativado o departamento no registro do banco de dados. Quando da inativação, todos os usuários que referenciam esse campo ficarão com o campo código do departamento: null. | Gestor. |
+RF14 - Alterar dados  do Departamento. | Será possível alterar: nome e código. Quando da alteração, todos os usuários que referenciam este departamento terão seu campo departamento atualizado com o novo valor. | Gestor. |
+RF15 - Gerenciar Benefício de hora. | O Gestor poderá aceitar ou não a solicitação de benefício de hora requisitada por um Funcionário. | Gestor. |
+RF16 - Gerar relatório. | O Gestor poderá gerar um relatório completo com detalhes de cada ponto marcado ao longo do período definido. | Gestor. |
+RF17 - Corrigir a marcação de ponto. | O Gestor poderá fazer a correção no ponto do Funcionário. | Gestor. |
+RF18 - Marcar ponto. | Usuários poderão contabilizar a jornada de trabalho. Será criado um registro no banco de dados desse ponto, com a hora calculada da seguinte forma: hora_trabalhada = ( (Saída_turno1 - Entrada_turno1) + ( Saída_turno2 - Entrada_turno2) ). | Funcionário e Gestor. |
+RF19 - Emitir comprovante. | Durante a marcação de ponto, será gerado um comprovante digital da marcação do ponto contendo: Data, hora, código de marcação. | Funcionário. |
+RF20 - Justificar a marcação de ponto. | Usuários poderão solicitar, a justificativa de: Ausência total, Ausência parcial, Ausência por motivos naturais, informando uma breve descrição e um anexo comprobatório. O Gestor poderá aprovar essa solicitação, a fim de melhor controle. | Funcionário. |
+RF21 - Acompanhar Histórico. | O usuário poderá solicitar o histórico dos seus pontos marcados, podendo filtrá-los por data. Além disso, o comprovante de marcação será exibido para download. | Funcionário. |
+RF22 - Visualizar Departamentos. | O Funcionário poderá visualizar todos os departamentos de sua organização, bem como todos os membros vinculados a ele. | Funcionário. |
+RF23 - Solicitar Benefício de Hora. | O Funcionário poderá solicitar, de acordo com o status do banco de horas (crédito ou débito) um benefício a ser negociado com o Gestor, dependendo do regimento interno de cada organização. | Funcionário. |
+
 
 ### Modelo Conceitual
 
