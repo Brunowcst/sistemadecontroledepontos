@@ -12,6 +12,10 @@ Para criar esse diagrama, utilizamos a ferramenta [LucidChart](https://www.lucid
 
 ![Figura 1: Diagrama de Classe REPy](images/REPy_Class_Diagram_UML.png)
 
+#### Tabela de Descrição
+
+Essa tabela visa descrever de forma breve e objetiva cada entidade do sistema.
+
 |Entidade       | Descrição                                            |
 |---------------|------------------------------------------------------|
 |Organização | Entidade que representa a organização/empresa. Apresenta dados relacionados à empresa bem como relacionado ao dono. Pode gerenciar outros funcionarios e departamentos.|
@@ -51,7 +55,53 @@ Descrição | Armazena as informações referentes à organização.
 |proprietario| Nome do proprietario| VARCHAR| 100 | Not Null   |
 | data_criacao| Data de criacao| DATE       | --- | ---        |
 
-#### Gestor
+#### Funcionario
 
-Tabela | Gestor
-Descrição| Armazena informações de usuários gestores
+|Tabela     | Funcionario                                               |
+|Descrição  | Armazena informações de usuários da categoria Funcionario/Gestor.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| nome      |Nome do usuario| VARCHAR       | 50      | Not Null      |
+| cpf       | cpf do usuario| VARCHAR       | 11      | PK            |
+| sexo      | Sexo do usuario | VARCHAR     | 1       | ---           |
+| data_Nasc | Data de nascimento| DATE      | ---     | Not Null      |
+| codigo    | Gerado pelo SGBD| SERIA       | ---     | UNIQUE NOT Null|
+| isAdmin   | Condição Adm. | Boolean       | ---     | ---           |
+|codigo_depto| Identific. Depto| int        | ---     | FK            |
+| turno      | Turno de Trabalho| VARCHAR   | ---     | Not Null      |
+| salario    | Salario do usuario| float    | ---     | Not Null      |
+
+#### Departamento
+
+|Tabela     |  Departamento                                            |
+|Descrição  | Armazena informações de departamentos.                   |
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| nome      |Nome do Departamento| VARCHAR  | 50      | Not Null      |
+| codigo    | Gerado pelo SGBD |SERIAL    | ---     | PK            |
+| data_criacao| Data criação | DATE     |---     | Not Null           |
+
+
+#### Login
+
+|Tabela     |  Login                                                  |
+|Descrição  | Armazena informações de Autenticação dos usuários.      |
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| email     |email do usuario| VARCHAR  | 50    | Not Null     |
+| senha    | senha do usuario |VARCHAR  | 20    | Not Null     |
+
+
+#### Ponto
+
+|Tabela     |  Ponto                                                  |
+|Descrição  | Armazena informações relacionadas aos pontos marcados pelso usuários.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| data_Marcacao | data registrada| DATE     | ---     | Not Null      |
+| status    |  status de marcacao|Boolean   |---      | Not Null      |
+| codigo    | Gerado pelo SGBD | SERIAL     | ---     | PK            |
