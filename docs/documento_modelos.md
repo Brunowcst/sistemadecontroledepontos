@@ -29,7 +29,6 @@ Essa tabela visa descrever de forma breve e objetiva cada entidade do sistema.
 
 Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) seguindo o tutorial [deste site](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
 
-
 ```mermaid
 erDiagram
     Organizacao ||--|{ Gestor_RH : gerecia
@@ -37,23 +36,22 @@ erDiagram
     Gestor_RH ||--|{ Funcionario : gerencia
     Departamento ||--|{ Funcionario : trabalha
     Funcionario ||--|{ Ponto: marca
-    Funcionario ||--|| Login
-    Organizacao ||--|| Login
-    Organizacao{
-        String nome
+
+    Organizacao {
+        string nome
         String cnpj
-        String cpf_dono
-        String proprietario
-        Data data_criacao
+        string cpf_dono
+        string proprietario
+        data data_criacao
     }
     Funcionario {
-        String nome
-        String cpf
+        string nome
+        string cpf
         String sexo
-        Date data_nasc
+        date data_nasc
         int codigo
         bool isAdmin
-        String turno
+        string turno
         float salario
         int codigo_depto
         int codigo_ponto 
@@ -61,18 +59,13 @@ erDiagram
     }
     Departamento {
         int codigo
-        String nome
-        Date data_criacao
+        string nome
+        date data_criacao
     }
     Ponto {
         int codigo
         bool status
-        Date data_marcacao
-    }
-    Login {
-        int codigo
-        String email
-        String senha
+        date data_marcacao
     }
 ```
 
