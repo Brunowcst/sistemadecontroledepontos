@@ -51,7 +51,8 @@ erDiagram
         String turno
         float salario
         int codigo_depto
-        int codigo_ponto       
+        int codigo_ponto 
+        int codigo_login      
     }
 
     Departamento {
@@ -67,6 +68,7 @@ erDiagram
     }
 
     Login {
+        int codigo
         String email
         String senha
     }
