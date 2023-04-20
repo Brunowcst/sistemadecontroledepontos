@@ -76,7 +76,8 @@ erDiagram
     Gestor_RH||--|{ Funcionario : gerencia
     Departamento ||--|{ Funcionario : trabalha
     Funcionario ||--|{ Ponto: marca
-    Funcionario||--|| Banco_Hora : tem
+    Funcionario ||--||Login
+    Organizacao||--||Login
 ```
 
 ### Dicionário de Dados
