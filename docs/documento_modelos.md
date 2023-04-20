@@ -29,15 +29,44 @@ Essa tabela visa descrever de forma breve e objetiva cada entidade do sistema.
 
 Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) seguindo o tutorial [deste site](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
 
-
 ```mermaid
 erDiagram
     Organizacao ||--|{ Gestor_RH : gerecia
     Gestor_RH ||--|{ Departamento : gerencia
-    Gestor_RH||--|{ Funcionario : gerencia
+    Gestor_RH ||--|{ Funcionario : gerencia
     Departamento ||--|{ Funcionario : trabalha
     Funcionario ||--|{ Ponto: marca
-    Funcionario||--|| Banco_Hora : tem
+
+    Organizacao {
+        string nome
+        String cnpj
+        string cpf_dono
+        string proprietario
+        data data_criacao
+    }
+    Funcionario {
+        string nome
+        string cpf
+        String sexo
+        date data_nasc
+        int codigo
+        bool isAdmin
+        string turno
+        float salario
+        int codigo_depto
+        int codigo_ponto 
+        int codigo_login      
+    }
+    Departamento {
+        int codigo
+        string nome
+        date data_criacao
+    }
+    Ponto {
+        int codigo
+        bool status
+        date data_marcacao
+    }
 ```
 
 ### Dicionário de Dados
@@ -70,6 +99,8 @@ erDiagram
 | codigo    | Gerado pelo SGBD| SERIA       | ---     | UNIQUE NOT Null|
 | isAdmin   | Condição Adm. | Boolean       | ---     | ---           |
 |codigo_depto| Identific. Depto| int        | ---     | FK            |
+| codigo_ponto| Ident. ponto    |    int    | ---     | FK            |
+| codigo_login| Ident. login    |    int    | ---     | FK            |
 | turno      | Turno de Trabalho| VARCHAR   | ---     | Not Null      |
 | salario    | Salario do usuario| float    | ---     | Not Null      |
 
@@ -94,8 +125,9 @@ erDiagram
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
 |-----------|---------------|---------------|---------|---------------|
-| email     |email do usuario| VARCHAR  | 50    | Not Null     |
-| senha    | senha do usuario |VARCHAR  | 20    | Not Null     |
+| email     |email do usuario PK| VARCHAR  | 50    | Not Null     |
+| senha     | senha do usuario |VARCHAR  | 20    | Not Null     |
+| codigo    |Codigo PK gerado pelo SGBD|   SERIAL  | -- | Not Null UNIQUE|
 
 
 #### Ponto
