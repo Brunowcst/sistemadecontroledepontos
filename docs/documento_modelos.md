@@ -32,6 +32,45 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 
 ```mermaid
 erDiagram
+
+    Organizacao{
+        String nome
+        String cnpj
+        String cpf_dono
+        String proprietario
+        Data data_criacao
+    }
+
+    Funcionario {
+        String nome
+        String cpf
+        String sexo
+        Date data_nasc
+        int codigo
+        bool isAdmin
+        String turno
+        float salario
+        int codigo_depto
+        int codigo_ponto       
+    }
+
+    Departamento {
+        int codigo
+        String nome
+        Date data_criacao
+    }
+
+    Ponto {
+        int codigo
+        bool status
+        Date data_marcacao
+    }
+
+    Login {
+        String email
+        String senha
+    }
+
     Organizacao ||--|{ Gestor_RH : gerecia
     Gestor_RH ||--|{ Departamento : gerencia
     Gestor_RH||--|{ Funcionario : gerencia
