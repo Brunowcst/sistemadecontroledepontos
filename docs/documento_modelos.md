@@ -32,7 +32,6 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 
 ```mermaid
 erDiagram
-
     Organizacao{
         String nome
         String cnpj
@@ -40,7 +39,6 @@ erDiagram
         String proprietario
         Data data_criacao
     }
-
     Funcionario {
         String nome
         String cpf
@@ -54,25 +52,21 @@ erDiagram
         int codigo_ponto 
         int codigo_login      
     }
-
     Departamento {
         int codigo
         String nome
         Date data_criacao
     }
-
     Ponto {
         int codigo
         bool status
         Date data_marcacao
     }
-
     Login {
         int codigo
         String email
         String senha
     }
-
     Organizacao ||--|{ Gestor_RH : gerecia
     Gestor_RH ||--|{ Departamento : gerencia
     Gestor_RH ||--|{ Funcionario : gerencia
@@ -80,7 +74,6 @@ erDiagram
     Funcionario ||--|{ Ponto: marca
     Funcionario ||--|| Login
     Organizacao ||--|| Login
-
 ```
 
 ### Dicionário de Dados
