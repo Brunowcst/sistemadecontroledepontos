@@ -32,6 +32,13 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 
 ```mermaid
 erDiagram
+    Organizacao ||--|{ Gestor_RH : gerecia
+    Gestor_RH ||--|{ Departamento : gerencia
+    Gestor_RH ||--|{ Funcionario : gerencia
+    Departamento ||--|{ Funcionario : trabalha
+    Funcionario ||--|{ Ponto: marca
+    Funcionario ||--|| Login
+    Organizacao ||--|| Login
     Organizacao{
         String nome
         String cnpj
@@ -67,13 +74,6 @@ erDiagram
         String email
         String senha
     }
-    Organizacao ||--|{ Gestor_RH : gerecia
-    Gestor_RH ||--|{ Departamento : gerencia
-    Gestor_RH ||--|{ Funcionario : gerencia
-    Departamento ||--|{ Funcionario : trabalha
-    Funcionario ||--|{ Ponto: marca
-    Funcionario ||--|| Login
-    Organizacao ||--|| Login
 ```
 
 ### Dicionário de Dados
@@ -106,6 +106,8 @@ erDiagram
 | codigo    | Gerado pelo SGBD| SERIA       | ---     | UNIQUE NOT Null|
 | isAdmin   | Condição Adm. | Boolean       | ---     | ---           |
 |codigo_depto| Identific. Depto| int        | ---     | FK            |
+| codigo_ponto| Ident. ponto    |    int    | ---     | FK            |
+| codigo_login| Ident. login    |    int    | ---     | FK            |
 | turno      | Turno de Trabalho| VARCHAR   | ---     | Not Null      |
 | salario    | Salario do usuario| float    | ---     | Not Null      |
 
@@ -130,8 +132,9 @@ erDiagram
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
 |-----------|---------------|---------------|---------|---------------|
-| email     |email do usuario| VARCHAR  | 50    | Not Null     |
-| senha    | senha do usuario |VARCHAR  | 20    | Not Null     |
+| email     |email do usuario PK| VARCHAR  | 50    | Not Null     |
+| senha     | senha do usuario |VARCHAR  | 20    | Not Null     |
+| codigo    |Codigo PK gerado pelo SGBD|   SERIAL  | -- | Not Null UNIQUE|
 
 
 #### Ponto
