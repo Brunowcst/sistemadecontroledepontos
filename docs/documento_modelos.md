@@ -73,11 +73,12 @@ erDiagram
 
     Organizacao ||--|{ Gestor_RH : gerecia
     Gestor_RH ||--|{ Departamento : gerencia
-    Gestor_RH||--|{ Funcionario : gerencia
+    Gestor_RH ||--|{ Funcionario : gerencia
     Departamento ||--|{ Funcionario : trabalha
     Funcionario ||--|{ Ponto: marca
-    Funcionario ||--||Login
-    Organizacao||--||Login
+    Funcionario ||--|| Login
+    Organizacao ||--|| Login
+
 ```
 
 ### Dicionário de Dados
