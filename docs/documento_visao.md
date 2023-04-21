@@ -27,52 +27,82 @@ O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfi
 
 Perfil                                 | Descrição   |
 ---------                              | ----------- |
-Organização | Esse tipo de usuário terá acesso à funções gerenciais no sistema, podendo cadastrar e gerenciar outros usuários na categoria Gestor do seu negócio.
-Gestor | Esse tipo de usuário terá acesso às funções gerenciais no sistema, podendo cadastrar e gerenciar outros usuários na categoria Funcionário, gerenciar departamentos, gerar relatórios e gerenciar banco de horas.
+Gestor | Esse tipo de usuário terá acesso à funções gerenciais no sistema, podendo cadastrar e gerenciar outros usuários na categoria Gerente do seu negócio.
+Gerente | Esse tipo de usuário terá acesso às funções gerenciais no sistema, podendo cadastrar e gerenciar outros usuários na categoria Funcionário, gerenciar departamentos, gerar relatórios e gerenciar banco de horas.
 Funcionários | Esse tipo de usuário terá apenas acesso ao sistema para a realização de tarefas básicas como: Alterar dados pessoais e de acesso, marcar ponto e acompanhar histórico de pontos. Será utilizado por trabalhadores/funcionários de uma determinada organização. Este usuário só poderá utilizar o sistema caso algum superior (usuário Adm) o tenha cadastrado previamente.
 
 
 ## Lista de Requisitos Funcionais
 
-Requisito                                 | Descrição   | Ator |
----------                                 | ----------- | ---------- |
+Requisito  | Descrição   | Ator |
+ --------- | ----------- | ---- |
 RF01 - Realizar Login | Usuários poderão realizar login na plataforma utilizando usuário e senha já cadastrados previamente. | Todos os usuários cadastrados |
 RF02 - Recuperar Acesso | Na tela de login haverá uma opção de recuperar dados, o usuário informa seu e-mail e recebe uma notificação com um link para inserir suas novas credenciais. | Todos os usuários cadastrados |
-RF03 - Cadastrar Usuários do tipo Gestor. |  Informar dados cadastrais e criar novo registro de usuário no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: TRUE, código do departamento, turno, e-mail e senha. | Organização |
-RF04 - Visualizar Usuários do tipo gestor | Requisição ao banco de dados retornando todos os usuários ativos do tipo Gestor e listando-os. | Organização |
-RF05 - Inativar usuários do tipo Gestor | Inativar registro do usuário gestor, impossibilitando seu login no sistema. | Organização |
-RF06 - Alterar Dados do usuário do tipo Gestor | Poderá ser editado os dados: nome, condição de administração, departamento, e-mail e senha. | Organização |
-RF07 - Cadastrar usuário do tipo Funcionário | Informar dados cadastrais e criar novo registro no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: FALSE, código do departamento, turno, e-mail e senha. | Gestor |
+RF03 - Cadastrar Usuários do tipo Gerente |  Informar dados cadastrais e criar novo registro de usuário no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: TRUE, código do departamento, turno, e-mail e senha. | Gestor |
+RF04 - Visualizar Usuários do tipo Gerente | Requisição ao banco de dados retornando todos os usuários ativos do tipo Gerente e listando-os. | Todos os usuários |
+RF05 - Inativar usuários do tipo Gerente | Inativar registro do usuário Gerente, impossibilitando seu login no sistema. | Gestor |
+RF06 - Alterar Dados do usuário do tipo Gerente | Poderá ser editado os dados: nome, condição de administração, departamento, e-mail e senha. | Gestor |
+RF07 - Cadastrar usuário do tipo Funcionário | Informar dados cadastrais e criar novo registro no banco de dados. Na criação, será informado: nome, cpf, data de nascimento, sexo, condição de administração: FALSE, código do departamento, turno, e-mail e senha. | Gerente |
 RF08 - Visualizar usuários do tipo Funcionário | Requisição ao banco de dados retornando todos os usuários ativos do tipo Funcionário e listando-os. | Gestor |
-RF09 -  Inativar usuários do tipo Funcionário | Inativar registro do usuário Funcionário, impossibilitando seu login no sistema. | Gestor |
-RF10 -  Alterar dados do usuário do tipo Funcionário | Poderá ser editado os dados: nome, condição de administração, código do departamento, e-mail e senha. | Gestor |
-RF11 - Cadastrar Departamento. | No ato do cadastro, será necessário informar: nome do departamento, código do departamento e data de criação. | Gestor |
-RF12 - Visualizar departamento. | Será listado, em ordem alfabética, todos os departamentos cadastrados em sua organização, bem como todos os membros vinculados a ele. | Gestor |
-RF13 - Inativar Departamento. | Será inativado o departamento no registro do banco de dados. Quando da inativação, todos os usuários que referenciam esse campo ficarão com o campo código do departamento: null. | Gestor |
-RF14 - Alterar dados  do Departamento. | Será possível alterar: nome e código. Quando da alteração, todos os usuários que referenciam este departamento terão seu campo departamento atualizado com o novo valor. | Gestor |
-RF15 - Gerenciar Benefício de hora. | O Gestor poderá aceitar ou não a solicitação de benefício de hora requisitada por um Funcionário. | Gestor |
-RF16 - Gerar relatório. | O Gestor poderá gerar um relatório completo com detalhes de cada ponto marcado ao longo do período definido. | Gestor |
-RF17 - Corrigir a marcação de ponto. | O Gestor poderá fazer a correção no ponto do Funcionário. | Gestor |
-RF18 - Marcar ponto. | Usuários poderão contabilizar a jornada de trabalho. Será criado um registro no banco de dados desse ponto, com a hora calculada da seguinte forma: hora_trabalhada = ( (Saída_turno1 - Entrada_turno1) + ( Saída_turno2 - Entrada_turno2) ). | Funcionário e Gestor |
-RF19 - Emitir comprovante. | Durante a marcação de ponto, será gerado um comprovante digital da marcação do ponto contendo: Data, hora, código de marcação. | Funcionário |
-RF20 - Justificar a marcação de ponto. | Usuários poderão solicitar, a justificativa de: Ausência total, Ausência parcial, Ausência por motivos naturais, informando uma breve descrição e um anexo comprobatório. O Gestor poderá aprovar essa solicitação, a fim de melhor controle. | Funcionário |
-RF21 - Acompanhar Histórico. | O usuário poderá solicitar o histórico dos seus pontos marcados, podendo filtrá-los por data. Além disso, o comprovante de marcação será exibido para download. | Funcionário |
-RF22 - Visualizar Departamentos. | O Funcionário poderá visualizar todos os departamentos de sua organização, bem como todos os membros vinculados a ele. | Funcionário |
-RF23 - Solicitar Benefício de Hora. | O Funcionário poderá solicitar, de acordo com o status do banco de horas (crédito ou débito) um benefício a ser negociado com o Gestor, dependendo do regimento interno de cada organização. | Funcionário |
+RF09 -  Inativar usuários do tipo Funcionário | Inativar registro do usuário Funcionário, impossibilitando seu login no sistema. | Gerente |
+RF10 -  Alterar dados do usuário do tipo Funcionário | Poderá ser editado os dados: nome, condição de administração, código do departamento, e-mail e senha. | Gerente |
+RF11 - Cadastrar Departamento | No ato do cadastro, será necessário informar: nome do departamento, código do departamento e data de criação. | Gerente e Gestor |
+RF12 - Listar departamento | Será listado, em ordem alfabética, todos os departamentos cadastrados em sua organização, bem como todos os membros vinculados a ele. | Gerente |
+RF13 - Inativar Departamento | Será inativado o departamento no registro do banco de dados. Quando da inativação, todos os usuários que referenciam esse campo ficarão com o campo código do departamento: null. | Gerente e Gestor |
+RF14 - Alterar dados  do Departamento | Será possível alterar: nome e código. Quando da alteração, todos os usuários que referenciam este departamento terão seu campo departamento atualizado com o novo valor. | Gestor |
+RF15 - Gerenciar Benefício de hora. | O Gerente poderá aceitar ou não a solicitação de benefício de hora requisitada por um Funcionário. | Gerente |
+RF16 - Gerar relatório | O Gerente poderá gerar um relatório completo com detalhes de cada ponto marcado ao longo do período definido. | Gerente |
+RF17 - Corrigir a marcação de ponto | O Gerente poderá fazer a correção no ponto do Funcionário. | Gerente |
+RF18 - Marcar ponto | Usuários poderão contabilizar a jornada de trabalho. Será criado um registro no banco de dados desse ponto, com a hora calculada da seguinte forma: hora_trabalhada = ( (Saída_turno1 - Entrada_turno1) + ( Saída_turno2 - Entrada_turno2) ). | Funcionário e Gerente |
+RF19 - Emitir comprovante | Durante a marcação de ponto, será gerado um comprovante digital da marcação do ponto contendo: Data, hora, código de marcação. | Funcionário e Gerente |
+RF20 - Justificar ausência | Usuários poderão solicitar, a justificativa de: Ausência total, Ausência parcial, Ausência por motivos naturais, informando uma breve descrição e um anexo comprobatório. O Gerente poderá aprovar essa solicitação, a fim de melhor controle. | Funcionário |
+RF21 - Acompanhar Histórico | O usuário poderá solicitar o histórico dos seus pontos marcados, podendo filtrá-los por data. Além disso, o comprovante de marcação será exibido para download. | Funcionário |
+RF22 - Visualizar Departamentos | O Usuário poderá visualizar todos os funcionários de seu departamento. | Funcionário |
+RF23 - Solicitar Benefício de Hora | O Funcionário poderá solicitar, de acordo com o status do banco de horas (crédito ou débito) um benefício a ser negociado com o gerente, dependendo do regimento interno de cada organização. | Funcionário |
 
 
 ### Modelo Conceitual
 
-Abaixo apresentamos o modelo conceitual usando o **YUML**.
+Abaixo apresentamos o modelo conceitual usando o **Mermaid**.
 
-```mermaid 
+```mermaid
 erDiagram
-    Organizacao ||--|{ Gestor_RH : gerecia
-    Gestor_RH ||--|{ Departamento : gerencia
-    Gestor_RH||--|{ Funcionario : gerencia
+    Gestor ||--|{ Gerente_RH : gerecia
+    Gerente_RH ||--|{ Departamento : gerencia
+    Gerente_RH ||--|{ Funcionario : gerencia
     Departamento ||--|{ Funcionario : trabalha
     Funcionario ||--|{ Ponto: marca
-    Funcionario||--|| Banco_Hora : tem
+
+    Gestor {
+        string nome
+        String cnpj
+        string cpf_dono
+        string proprietario
+        data data_criacao
+    }
+    Funcionario {
+        string nome
+        string cpf
+        String sexo
+        date data_nasc
+        int codigo
+        bool isAdmin
+        string turno
+        float salario
+        int codigo_depto
+        int codigo_ponto 
+        int codigo_login      
+    }
+    Departamento {
+        int codigo
+        string nome
+        date data_criacao
+    }
+    Ponto {
+        int codigo
+        bool status
+        date data_marcacao
+    }
 ```
 
 #### Descrição das Entidades
