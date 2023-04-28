@@ -34,7 +34,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Estimativa**            | 10 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 8 PF                                | 
-| **Analista**              | Taciano                             | 
+| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
 | **Desenvolvedor**         | Zé                                  | 
 | **Revisor**               | Maria                               | 
 | **Testador**              | Xuxa                                | 
