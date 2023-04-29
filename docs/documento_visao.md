@@ -60,7 +60,7 @@ RF19 - Solicitar Benefício de Hora | O Funcionário poderá solicitar, de acord
 ### Modelo Conceitual
 
 Abaixo apresentamos o modelo conceitual 
-![Modelo conceitual ](docs/imagens/modeloConceitual.png)
+![Modelo conceitual ](docs/images/modeloConceitual.png)
 
 #### Descrição das Entidades
 
