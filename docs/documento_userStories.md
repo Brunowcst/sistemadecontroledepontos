@@ -121,18 +121,21 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US03 - Manter Departamento
 
-|             |                                                                                       |
-|-------------|---------------------------------------------------------------------------------------|
-|**Descrição**| O sistema possibilatá o cadastro de departamento e a vinculação de funcionários a ele.|
-|-------------------------|---------------------------------------------------------------------------|
-|**Requisitos envolvidos**|                                                      |
-|------------------------ |------------------------------------------------------|
-| RF01                    | Realizar Login                                       |
-| RF07                    | Cadastrar Departamento                               |
-| RF08                    | Listar Departamento                                  |
-| RF09                    | Inativar Departamento                                |
-| RF10                    | Alterar dados do Departamento                        |
-|-------------------------|------------------------------------------------------|
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema possibilatá o cadastro de departamento e a vinculação de funcionários a ele. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF01          | Realizar Login                                       |
+| RF07          | Cadastrar Departamento                               |
+| RF08          | Listar Departamento                                  |
+| RF09          | Inativar Departamento                                |
+| RF10          | Alterar dados do Departamento                        |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
 | **Prioridade**          | Essencial                             | 
 | **Estimativa**          | 12 h                                  | 
 | **Tempo Gasto (real):** | --                                    | 
@@ -141,7 +144,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**       | Bruno Costa                           | 
 | **Revisor**             | Marcelo Victor                        | 
 | **Testador**            | Renan Dantas                          | 
-|-------------------------|---------------------------------------|
+
+
 | Testes de Aceitação (TA) |                                        |
 |--------------------------|----------------------------------------|
 | **Código**               | **Descrição**                          |
@@ -152,6 +156,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA04.05**              | Durante o ato de edição, os dados não serão alterados se: o atributo nome(Departamento.nome) já existir em outro departamento; código do gerente responsável (Departamento.fk_cod_depto) for nulo 'NULL'. |
 | **TA04.06**              | O gestor poderá desativar um departamento, na sessão de editar departamento. Ao clicar no ícone de desativação, será exibido um modal de confirmação, solicitando a credencial de acesso (senha) do gestor. Em caso da senha ser passada com sucesso, o departamento será excluído e todos os usuários com o atributo (Funcionario.fk_cod_depto) terão esse atributo alterado para 'NULL'. Após a exclusão, será exibido a seguinte mensagem: "Departamento inativado com sucesso".|
 | **TA04.07**              | Durante a inativação de um departamento, a ação falhará se: a credencial(senha) informada pelo gestor for incorreta e a seguinte mensagem será exibida: "A senha informada está incorreta".|
+
+
 
 ### User Story US04 - Marcar ponto
 
