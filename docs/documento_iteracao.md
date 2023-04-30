@@ -24,3 +24,27 @@ A Iteração 1 começou dia 01/04/2023 e vai até 01/05/2023. As atividades dess
 * Criação do **Documento de Modelos** com o Modelo Conceitual, Diagrama de Dados (Entidade-Relacionamento) e o Dicionário de Dados, no formato Markdown, colocar no diretório "docs" do repositório;
 * colocar links para a documentação no README.md do repositório;
 * Colocar Estrutura inicial do Projeto no repositório;
+Nesta iteração temos atividades diferentes para dois perfis **Gerentes** e **Analistas**:
+
+#### Gerentes
+
+* Criar Milestones para a Iteração 1;
+* Definir e descrever as tarefas (issues) da Iteração 1 (milestone) e alocar as issues para cada membro da equipe;
+* Definir que parte do *Documento de Visão* cada membro da equipe vai preparar;
+* Definir que parte do *Documento de Modelos* cada membro da equipe vai preparar;
+* Definir os **User Stories** do *Documento Lista de User Stories* cada membro da equipe vai detalhar, pelo menos um detalhamento por membro (incluindo o gerente);
+  * Um User Store pode ser formado de um ou mais requisitos funcionais;
+  * Definir qual será o User Story (Caso de Uso) *base* para implementação, chame de US01;
+  * [Modelo de Lista de User Stories!](https://docs.google.com/document/d/1Ns2J9KTpLgNOpCZjXJXw_RSCSijTJhUx4zgFhYecEJg/edit#);
+* Criar o repositório de software no GitHub;
+* Fechar tarefas quando elas forem concluída;
+
+#### Analistas
+
+* Trabalhar nas tarefas e realizar pequenos commits marcando com a hashtag da issue;
+* Enviar commits da parte do Documento de Visão que preparou;
+* Enviar commits da parte do Documento de Modelos que preparou;
+* Enviar commits do User Story que detalhou;
+  * Deve detalhar pelo menos um;
+  * Detalhar ou Especificar um US e criar a descrição (estória do usuário) e os testes de aceitação);
+* Avisar ao gerente quando concluir uma tarefa;
