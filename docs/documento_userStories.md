@@ -33,7 +33,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tamanho Funcional**     | 8 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
 | **Desenvolvedor**         | David (responsável por implementar e realizar testes de unidade e testes de integração).                                  | 
-| **Revisor**               | Maria                               | 
+| **Revisor**               | -                               | 
 | **Testador**              | Bruno Costa (responsável por realizar testes de aceitação e fazer relatórios). | 
 
 
@@ -66,9 +66,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 8 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | -                                  | 
+| **Revisor**               | -                               | 
+| **Testador**              | -                                | 
 
 
 | Testes de Aceitação (TA) |  |
@@ -101,9 +101,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 8 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | -                                 | 
+| **Revisor**               | -                               | 
+| **Testador**              | -                               | 
 
 
 | Testes de Aceitação (TA) |  |
