@@ -26,7 +26,7 @@ A Iteração 1 começou dia 01/04/2023 e vai até 01/05/2023. As atividades dess
 * Colocar Estrutura inicial do Projeto no repositório;
 Nesta iteração temos atividades diferentes para dois perfis **Gerentes** e **Analistas**:
 
-#### Gerentes
+#### Gerente
 
 * Criar Milestones para a Iteração 1;
 * Definir e descrever as tarefas (issues) da Iteração 1 (milestone) e alocar as issues para cada membro da equipe;
