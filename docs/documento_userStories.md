@@ -118,6 +118,41 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA02.07** | O superior informa, na tela de inativar usuário, o cpf do usuário que ele deseja inativar e suas próprias credencias para confirmar a operação. Se existir esse cpf e as credenciais do supervisor tiverem incorretas a operação será mal sucedida e será exibida a seguinte mensagem: Corrija suas credenciais para confirmar a operação.|
 | **TA02.08** | O usuário solicita, na tela de Alterar dados, quais dados ele quer que sejam modificados -nome, e-mail, sexo- e será enviada uma notificação com esta solicitação para seu supervisor.|
 
+
+### User Story US03 - Manter Departamento
+
+|             |                                                                                       |
+|-------------|---------------------------------------------------------------------------------------|
+|**Descrição**| O sistema possibilatá o cadastro de departamento e a vinculação de funcionários a ele.|
+|-------------------------|---------------------------------------------------------------------------|
+|**Requisitos envolvidos**|                                                      |
+|------------------------ |------------------------------------------------------|
+| RF01                    | Realizar Login                                       |
+| RF07                    | Cadastrar Departamento                               |
+| RF08                    | Listar Departamento                                  |
+| RF09                    | Inativar Departamento                                |
+| RF10                    | Alterar dados do Departamento                        |
+|-------------------------|------------------------------------------------------|
+| **Prioridade**          | Essencial                             | 
+| **Estimativa**          | 12 h                                  | 
+| **Tempo Gasto (real):** | --                                    | 
+| **Tamanho Funcional**   | x PF                                  | 
+| **Analista**            | David Emanoel                         | 
+| **Desenvolvedor**       | Bruno Costa                           | 
+| **Revisor**             | Marcelo Victor                        | 
+| **Testador**            | Renan Dantas                          | 
+|-------------------------|---------------------------------------|
+| Testes de Aceitação (TA) |                                        |
+|--------------------------|----------------------------------------|
+| **Código**               | **Descrição**                          |
+| **TA04.01**              | O gestor irá cadastrar um departamento informando os seguintes dados: nome(Departamento.nome), data de criação(Departamento.data_criacao) e poderá vincular esse departamento a um gerente, informando apenas o código do gerente (Departamento.fk_cod_gerente). Caso todos os dados estejam corretos e não exista outro com o mesmo nome, o cadastro será realizado e será exibida a seguinte mensagem: "Departamento cadastrado com sucesso!".|
+| **TA04.02**              | Durante o ato do cadastro, o departamento não será cadastrado se: nome(Departamento.nome) já existir um departamento com esse nome. |
+| **TA04.03**              | O gestor poderá solicitar a listagem de todos os departamentos. Nessa listagem, poderá ser exibido todos os usuários vinculados ao departamento clicando no ícone de expandir (ver mais).|
+| **TA04.04**              | O gestor poderá clicar no ícone 'editar', durante a listagem de departamentos. Após aberta a sessão de edição, os seguintes dados poderão ser editados: nome(Departamento.nome), data de criação(Departamento.data_criacao), código do gerente responsável (Departamento.fk_cod_gerente). Além disso, o departamento poderá ser desativado.|
+| **TA04.05**              | Durante o ato de edição, os dados não serão alterados se: o atributo nome(Departamento.nome) já existir em outro departamento; código do gerente responsável (Departamento.fk_cod_depto) for nulo 'NULL'. |
+| **TA04.06**              | O gestor poderá desativar um departamento, na sessão de editar departamento. Ao clicar no ícone de desativação, será exibido um modal de confirmação, solicitando a credencial de acesso (senha) do gestor. Em caso da senha ser passada com sucesso, o departamento será excluído e todos os usuários com o atributo (Funcionario.fk_cod_depto) terão esse atributo alterado para 'NULL'. Após a exclusão, será exibido a seguinte mensagem: "Departamento inativado com sucesso".|
+| **TA04.07**              | Durante a inativação de um departamento, a ação falhará se: a credencial(senha) informada pelo gestor for incorreta e a seguinte mensagem será exibida: "A senha informada está incorreta".|
+
 ### User Story US04 - Marcar ponto
 
 |               |                                                                |
@@ -129,9 +164,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF01          | Realizar Login |
 | RF15          | Marcar ponto |
 | RF16          | Emitir comprovante |
-
-
-|                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 12 h                                 | 
@@ -141,15 +173,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**         | -                                  | 
 | **Revisor**               | -                               | 
 | **Testador**              | -                                | 
-
-
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA01.01** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho e no fim da mesma. Será exibida a seguinte mensagem após cada marcação: ponto registrado.|
-| **TA01.02** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho. Se ele marcou antes do horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com antecedência. |
-| **TA01.03** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho se ele marcou após o horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com atraso. |
-| **TA01.04** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho se ele marcou após o horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado após o horário de saída. |
-| **TA01.05** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho. Se ele marcou antes do horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado antes do horário de saída. |
+| **TA04.01** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho e no fim da mesma. Será exibida a seguinte mensagem após cada marcação: ponto registrado.|
+| **TA04.02** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho. Se ele marcou antes do horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com antecedência. |
+| **TA04.03** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho se ele marcou após o horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com atraso. |
+| **TA04.04** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho se ele marcou após o horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado após o horário de saída. |
+| **TA04.05** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho. Se ele marcou antes do horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado antes do horário de saída. |
 
 
