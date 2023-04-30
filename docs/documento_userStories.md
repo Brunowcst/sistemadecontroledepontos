@@ -43,10 +43,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA01.01** | O usuário informa, na tela de Login, todos os dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele é redirecionado para a Home da page. |
-| **TA01.02** | O usuário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Usuário/senha) inválidas.
+| **TA00.01** | O usuário informa, na tela de Login, todos os dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele é redirecionado para a Home da page. |
+| **TA00.02** | O usuário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Usuário/senha) inválidas.
 |
-| **TA01.03** | O usuário informa, na tela de Login, todos dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados que não foi encontrado nenhum usuário.  Mensagem: Usuário não encontrado. |
+| **TA00.03** | O usuário informa, na tela de Login, todos dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados que não foi encontrado nenhum usuário.  Mensagem: Usuário não encontrado. |
 
 
 ### User Story US01 - Recuperar acesso
@@ -59,13 +59,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Realizar Login |
 | RF02          | Recuperar acesso |
-| RF0X?          | X? |
+| RF06          | Alterar dados |
 
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 10 h                                 | 
+| **Estimativa**            | 48 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 8 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
@@ -77,6 +77,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA01.01** | O usuário informa, na tela de Login, todos os dados para acessar o sistema, ao clicar em 'Entrar' ele é informado de dados errados. Deve aparecer uma mensagem de recuperar acesso. Mensagem: Deseja recuperar o acesso?. |
-| **TA01.02** | O usuário informa, na tela de recuperar acesso, informa o email de recuperação para redefinir sua senha. A operação é bem sucedida e exibe uma mensagem.  Mensagem: Dados alterados com sucesso.
+| **TA01.01** | O usuário informa, na tela de Login, todos os dados para acessar o sistema, ao clicar em 'Entrar' ele é informado de dados errados. Deve aparecer uma mensagem de recuperar acesso, se ele clicar na mensagem deve ser redirecionado para uma tela de recuperar dados. Mensagem: Deseja recuperar o acesso?. |
+| **TA01.02** | O usuário informa, na tela de recuperar acesso, o email de recuperação para redefinir sua senha. A operação é bem sucedida e será exibida a seguinte mensagem: Dados alterados com sucesso.
+|
+| **TA01.03** | O usuário informa, na tela de redefinir dados, a nova senha para ser redefinida. A operação é bem sucedida se as senhas inseridas nos campos 'Nova senha' e 'Confirmar senha' sejam iguais, será exibida a seguinte mensagem: Dados alterados com sucesso.
 |
