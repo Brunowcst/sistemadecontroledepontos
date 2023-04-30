@@ -24,9 +24,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Realizar Login |
-| RF02          | Recuperar acesso |
-| RF0X?          | X? |
-
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -82,3 +79,43 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |
 | **TA01.03** | O usuário informa, na tela de redefinir dados, a nova senha para ser redefinida. A operação é bem sucedida se as senhas inseridas nos campos 'Nova senha' e 'Confirmar senha' sejam iguais, será exibida a seguinte mensagem: Dados alterados com sucesso.
 |
+
+### User Story US02 - Manter usuário
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve realizar CRUD - Cadastro, atualização, visualização e exclusão de usuários. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF03          | Cadastrar Usuários  |
+| RF04          | Visualizar Usuários |
+| RF05          | Inativar usuários   | 
+| RF06          | Alterar Dados do usuário |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 24 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 8 PF                                | 
+| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
+| **Desenvolvedor**         | Zé                                  | 
+| **Revisor**               | Maria                               | 
+| **Testador**              | Xuxa                                | 
+
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+| **TA02.01** | O usuário informa, na tela de Cadastro, os seguintes dados: nome, cpf, data de nascimento, sexo, cargo, código do departamento, turno, e-mail e senha. Se todos os dados forem informados corretamente, será exibida a seguinte mensagem: Usuário cadastrado com sucesso.|
+| **TA02.02** | O usuário informa, na tela de Cadastro, os seguintes dados: nome, cpf, data de nascimento, sexo, cargo, código do departamento, turno, e-mail e senha. Se algum dado for informado incorretamente, será exibida a seguinte mensagem: Dados informados incorretos.|
+| **TA02.03** | O usuário solicita, na tela de Visualizar usuários, a exibição de usuários ativos. Se houver algum usuário cadastrado eles serão exibidos.|
+| **TA02.04** | O usuário solicita, na tela de Visualizar usuários, a exibição de usuários ativos. Se não houver nenhum usuário será exibida a seguinte mensagem: Nenhum usuário cadastrado.|
+| **TA02.05** | O superior informa, na tela de inativar usuário, o cpf do usuário que ele deseja inativar e suas próprias credencias para confirmar a operação. Se existir esse cpf e as credenciais do supervisor tiverem corretas a operação será bem sucedida e será exibida a seguinte mensagem: Usuário inativado.|
+| **TA02.06** | O superior informa, na tela de inativar usuário, o cpf do usuário que ele deseja inativar e suas próprias credencias para confirmar a operação. Se não existir esse cpf cadastrado será exibida a seguinte mensagem: Não foi possivel encontrar este usuário.|
+| **TA02.07** | O superior informa, na tela de inativar usuário, o cpf do usuário que ele deseja inativar e suas próprias credencias para confirmar a operação. Se existir esse cpf e as credenciais do supervisor tiverem incorretas a operação será mal sucedida e será exibida a seguinte mensagem: Corrija suas credenciais para confirmar a operação.|
+| **TA02.08** | O usuário solicita, na tela de Alterar dados, quais dados ele quer que sejam modificados -nome, e-mail, sexo- e será enviada uma notificação com esta solicitação para seu supervisor.|
+
+
