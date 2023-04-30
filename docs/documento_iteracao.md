@@ -48,3 +48,10 @@ Nesta iteração temos atividades diferentes para dois perfis **Gerentes** e **A
   * Deve detalhar pelo menos um;
   * Detalhar ou Especificar um US e criar a descrição (estória do usuário) e os testes de aceitação);
 * Avisar ao gerente quando concluir uma tarefa;
+
+
+# Plano de Release
+
+| Release | Início     | Fim        | Gerente | Detalhes |
+| ------- | ---------- | ---------- | ------- | -------- |
+| R01     | 01/04/2023 | 01/05/2023 | Renan  | (ATUALIZAR) |
