@@ -16,7 +16,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 29/04/2023 | 0.0.3   | Detalhamento do User Story US01    | Bruno Costa |
 | 29/04/2023 | 0.0.4   | Detalhamento do User Story US02    | Bruno Costa |
 | 30/04/2023 | 0.0.5   | Detalhamento do User Story US04    | Bruno Costa |
-
+| 30/04/2023 | 0.0.6   | Detalhamento do User Story: US03   | David Emanoel |
+| 30/04/2023 | 0.0.7   | Detalhamento do User Story: US05   | David Emanoel |
+| 30/04/2023 | 0.0.8   | Detalhamento do User Story: US06   | David Emanoel |
 
 ### User Story US00 - Realizar Login
 
@@ -145,6 +147,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Testador**            | Renan Dantas                          | 
 
 
+
 | Testes de Aceitação (TA) |                                        |
 |--------------------------|----------------------------------------|
 | **Código**               | **Descrição**                          |
@@ -169,6 +172,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF01          | Realizar Login |
 | RF15          | Marcar ponto |
 | RF16          | Emitir comprovante |
+
+
+|                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 12 h                                 | 
