@@ -190,7 +190,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US05 - Gerenciar Ponto.
 
-|               |                                                                |
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema possibilatá o cadastro de departamento e a vinculação de funcionários a ele. |
 
