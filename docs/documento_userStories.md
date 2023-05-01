@@ -223,3 +223,34 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA05.04**              | O usuário (gerente/funcionário) poderá justificar sua ausência editando alguns atributos do ponto não-marcado: (Ponto.descricao) Poderá ser editado como forma de comprovação da ausência. (Adicionar arquivo comprobatório).|
 | **TA05.05**              | O usuário (gerente/funcionário) poderá listar os pontos marcados no sistema. Para isso, o usuário poderá ou não informar um período para busca.|
 | **TA05.06**              | Durante a consulta dos pontos marcados, a consulta retornará erro se a data(Ponto.data) informada: é inválida (por exemplo: 31/02/0000) ou é superior à data de cadastro da conta do usuário. |
+
+
+### User Story US06 - Acompanhar histórico.
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema possibilatá a listagem de todos os pontos de um funcionário. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF15          | Marcar Ponto                                    |
+| RF18          | Listagem de pontos                              |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**          | Essencial                             | 
+| **Estimativa**          | 4h                                    | 
+| **Tempo Gasto (real):** | --                                    | 
+| **Tamanho Funcional**   | x PF                                  | 
+| **Analista**            | David Emanoel                         | 
+| **Desenvolvedor**       | David Emanoel                         | 
+| **Revisor**             | Bruno Costa                           | 
+| **Testador**            | Renan Dantas e Marcelo Victor         | 
+
+
+| Testes de Aceitação (TA) |                                        |
+|--------------------------|----------------------------------------|
+| **Código**               | **Descrição**                          |
+| **TA06.01**              | O gerente poderá listar todos os pontos marcados por um funcionário. Para fazer a listagem, poderá ser informado obrigatoriamente um cpf de um usuário; e opcionalmente um período.|
+| **TA06.02**              | Na listagem para acompanhar o histórico, será retornado erro se: o cpf informado não existe no banco de dados; O período informado é inválido; o período informado é superior à data de cadastro do usuário no sistema. |
