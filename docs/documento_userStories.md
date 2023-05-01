@@ -119,7 +119,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA02.08** | O usuário solicita, na tela de Alterar dados, quais dados ele quer que sejam modificados -nome, e-mail, sexo- e será enviada uma notificação com esta solicitação para seu supervisor.|
 
 
-### User Story US03 - Manter Departamento
+### User Story US03 - Manter Departamento.
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -127,7 +127,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Realizar Login                                       |
 | RF07          | Cadastrar Departamento                               |
 | RF08          | Listar Departamento                                  |
 | RF09          | Inativar Departamento                                |
@@ -159,7 +158,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 
 
-### User Story US04 - Marcar ponto
+### User Story US04 - Marcar ponto.
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -189,3 +188,38 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA04.05** | O usuário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho. Se ele marcou antes do horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado antes do horário de saída. |
 
 
+### User Story US05 - Gerenciar Ponto.
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema possibilatá o cadastro de departamento e a vinculação de funcionários a ele. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF14          | Correção de ponto                                    |
+| RF16          | Emitir comprovante                                   |
+| RF17          | Justificar ausência                                  |
+| RF18          | Listagem de pontos                                   |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**          | Essencial                             | 
+| **Estimativa**          | 72 h                                  | 
+| **Tempo Gasto (real):** | --                                    | 
+| **Tamanho Funcional**   | x PF                                  | 
+| **Analista**            | David Emanoel                         | 
+| **Desenvolvedor**       | Bruno Costa                           | 
+| **Revisor**             | Marcelo Victor                        | 
+| **Testador**            | Renan Dantas                          | 
+
+
+| Testes de Aceitação (TA) |                                        |
+|--------------------------|----------------------------------------|
+| **Código**               | **Descrição**                          |
+| **TA05.01**              | O gerente poderá listar todos os pontos marcados por um funcionário, nessa listagem, terá a opção de **corrigir a marcação** de ponto desse funcionário. A correção será a edição dos campos presentes no ponto: data(Ponto.horario), nesse cenário, poderá ser editado a hora da marcação do ponto; (Ponto.descricao) poderá ser editado a descricao da marcação de ponto. Após a edição, será exibida a seguinte mensagem: "Ponto de <(Funcionario.nome)> editado com sucesso!" |
+| **TA05.02**              | Durante o ato de correção de ponto, não poderá ser informada uma data futura ou uma data inválidada (por exemplo: 30/30/ano_corrente). Podendo ser exibida a seguinte mensagem de erro: "Data informada não é válida".|
+| **TA05.03**              | O usuário (gerente/funcionário) poderá emitir o comprovante de marcação de ponto de um ponto cadastrado.|
+| **TA05.04**              | O usuário (gerente/funcionário) poderá justificar sua ausência editando alguns atributos do ponto não-marcado: (Ponto.descricao) Poderá ser editado como forma de comprovação da ausência. (Adicionar arquivo comprobatório).|
+| **TA05.05**              | O usuário (gerente/funcionário) poderá listar os pontos marcados no sistema. Para isso, o usuário poderá ou não informar um período para busca.|
+| **TA05.06**              | Durante a consulta dos pontos marcados, a consulta retornará erro se a data(Ponto.data) informada: é inválida (por exemplo: 31/02/0000) ou é superior à data de cadastro da conta do usuário. |
