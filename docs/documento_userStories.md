@@ -91,7 +91,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Código**      | **Descrição** |
 
 | **TA00.01** | O Funcionário informa, na tela de Login, todos os dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele é redirecionado para a Home da page. |
-| **TA00.02** | O Funcionário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Funcionário/senha) inválidas.
+| **TA00.02** | O Funcionário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Funcionário/senha) inválidas. |
 | **TA00.03** | O Funcionário informa, na tela de Login, todos dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados que não foi encontrado nenhum Funcionário.  Mensagem: Funcionário não encontrado. |
 
 
@@ -141,9 +141,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 
 
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-
+|                         |                                       |
+| ------------------------|---------------------------------------| 
 | **Prioridade**          | Essencial                             | 
 | **Estimativa**          | 12 h                                  | 
 | **Tempo Gasto (real):** | --                                    | 
@@ -190,14 +189,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | -                               | 
 | **Testador**              | -                                | 
 | Testes de Aceitação (TA) |  |
-| ----------- | --------- |
-| **Código**      | **Descrição** |
-
-| **TA04.01** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho e no fim da mesma. Será exibida a seguinte mensagem após cada marcação: ponto registrado.|
-| **TA04.02** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho. Se ele marcou antes do horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com antecedência. |
-| **TA04.03** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho se ele marcou após o horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com atraso. |
-| **TA04.04** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho se ele marcou após o horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado após o horário de saída. |
-| **TA04.05** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho. Se ele marcou antes do horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado antes do horário de saída. |
+| ----------------|---------------------------|
+| **Código**      | **Descrição**             |
+| **TA04.01**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho e no fim da mesma. Será exibida a seguinte mensagem após cada marcação: ponto registrado.|
+| **TA04.02**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho. Se ele marcou antes do horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com antecedência. |
+| **TA04.03**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho se ele marcou após o horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com atraso. |
+| **TA04.04**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho se ele marcou após o horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado após o horário de saída. |
+| **TA04.05**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho. Se ele marcou antes do horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado antes do horário de saída. |
 
 
 ### User Story US05 - Gerenciar Ponto.
