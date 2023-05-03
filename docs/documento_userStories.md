@@ -15,6 +15,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 28/04/2023 | 0.0.2   | Detalhamento do User Story US00    | Bruno Costa |
 | 29/04/2023 | 0.0.3   | Detalhamento do User Story US01    | Bruno Costa |
 | 29/04/2023 | 0.0.4   | Detalhamento do User Story US02    | Bruno Costa |
+| 30/04/2023 | 0.0.5   | Detalhamento do User Story US04    | Bruno Costa |
 
 
 ### User Story US00 - Manter Funcionário
