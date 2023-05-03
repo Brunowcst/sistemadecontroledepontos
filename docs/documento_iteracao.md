@@ -25,6 +25,8 @@ A Iteração 1 começou dia 01/04/2023 e vai até 01/05/2023. As atividades dess
 * colocar links para a documentação no README.md do repositório;
 * Colocar Estrutura inicial do Projeto no repositório;
 
+
+## Plano de iteração
 Release | Data início | Data Final | Gerente   | Detalhes
 ------- | ----------- | ---------- | --------- | --------
-R01     | 01/04/2023  | 01/05/2023 | Renan Vale | Lista de funcionalidades da Release 01 (It1).
+R01     | 01/04/2023  | 01/05/2023 | Renan Vale | Lista de funcionalidades da Release 01 (It1). 
