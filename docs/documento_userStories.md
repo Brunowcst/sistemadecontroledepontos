@@ -65,6 +65,42 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema deve validar os dados, previamente cadastrados, informados no campo de login para liberar o acesso do Funcionário. Se autorizado após a validação, deve liberar o Funcionário para realizar o acesso no sistema. Ele poderá recuperar o acesso na tela de login caso tenha esquecido algum dado. |
 
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF03          | Cadastrar Funcionários  |
+| RF04          | Visualizar Funcionários |
+| RF05          | Inativar Funcionários   | 
+| RF06          | Alterar Dados do Funcionário |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 24 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 8 PF                                | 
+| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
+| **Desenvolvedor**         | -                                 | 
+| **Revisor**               | -                               | 
+| **Testador**              | -                               | 
+
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+
+| **TA00.01** | O Funcionário informa, na tela de Login, todos os dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele é redirecionado para a Home da page. |
+| **TA00.02** | O Funcionário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Funcionário/senha) inválidas.
+| **TA00.03** | O Funcionário informa, na tela de Login, todos dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados que não foi encontrado nenhum Funcionário.  Mensagem: Funcionário não encontrado. |
+
+
+### User Story US02 - Recuperar acesso
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve possibilitar o Funcionário solicitar o resgate dos seus dados de acesso perdidos. |
+
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Realizar Login |
@@ -84,39 +120,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA00.01** | O Funcionário informa, na tela de Login, todos os dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele é redirecionado para a Home da page. |
-| **TA00.02** | O Funcionário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Funcionário/senha) inválidas.
-| **TA00.03** | O Funcionário informa, na tela de Login, todos dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados que não foi encontrado nenhum Funcionário.  Mensagem: Funcionário não encontrado. |
 
-
-### User Story US02 - Recuperar acesso
-
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve possibilitar o Funcionário solicitar o resgate dos seus dados de acesso perdidos. |
-
-| **Requisitos envolvidos** |                                                    |
-| ------------- | :------------------------------------------------------------- |
-| RF01          | Realizar Login |
-| RF02          | Recuperar acesso |
-| RF06          | Alterar dados |
-
-
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 48 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | -                                  | 
-| **Revisor**               | -                               | 
-| **Testador**              | -                                | 
-
-
-| Testes de Aceitação (TA) |  |
-| ----------- | --------- |
-| **Código**      | **Descrição** |
 | **TA01.01** | O Funcionário informa, na tela de Login, todos os dados para acessar o sistema, ao clicar em 'Entrar' ele é informado de dados errados. Deve aparecer uma mensagem de recuperar acesso, se ele clicar na mensagem deve ser redirecionado para uma tela de recuperar dados. Mensagem: Deseja recuperar o acesso?. |
 | **TA01.02** | O Funcionário informa, na tela de recuperar acesso, o email de recuperação para redefinir sua senha. A operação é bem sucedida e será exibida a seguinte mensagem: Dados alterados com sucesso. |
 | **TA01.03** | O Funcionário informa, na tela de redefinir dados, a nova senha para ser redefinida. A operação é bem sucedida se as senhas inseridas nos campos 'Nova senha' e 'Confirmar senha' sejam iguais, será exibida a seguinte mensagem: Dados alterados com sucesso. |
@@ -136,8 +140,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF10          | Alterar dados do Departamento                        |
 
 
+
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
+
 | **Prioridade**          | Essencial                             | 
 | **Estimativa**          | 12 h                                  | 
 | **Tempo Gasto (real):** | --                                    | 
@@ -146,7 +152,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**       | Bruno Costa                           | 
 | **Revisor**             | Marcelo Victor                        | 
 | **Testador**            | Renan Dantas                          | 
-
 
 
 | Testes de Aceitação (TA) |                                        |
@@ -187,6 +192,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
+
 | **TA04.01** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho e no fim da mesma. Será exibida a seguinte mensagem após cada marcação: ponto registrado.|
 | **TA04.02** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho. Se ele marcou antes do horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com antecedência. |
 | **TA04.03** | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho se ele marcou após o horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com atraso. |
@@ -259,3 +265,4 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Código**               | **Descrição**                          |
 | **TA06.01**              | O gerente poderá listar todos os pontos marcados por um funcionário. Para fazer a listagem, poderá ser informado obrigatoriamente um cpf de um Funcionário; e opcionalmente um período.|
 | **TA06.02**              | Na listagem para acompanhar o histórico, será retornado erro se: o cpf informado não existe no banco de dados; O período informado é inválido; o período informado é superior à data de cadastro do Funcionário no sistema. |
+
