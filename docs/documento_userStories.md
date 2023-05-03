@@ -89,7 +89,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-
 | **TA00.01** | O Funcionário informa, na tela de Login, todos os dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele é redirecionado para a Home da page. |
 | **TA00.02** | O Funcionário informa, na tela de Login, todos ou algum dos dados para acessar o sistema incorretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados incorretos.  Mensagem: Credenciais(Funcionário/senha) inválidas. |
 | **TA00.03** | O Funcionário informa, na tela de Login, todos dados para acessar o sistema corretamente, ao clicar em 'Entrar' ele receberá uma mensagem informando dados que não foi encontrado nenhum Funcionário.  Mensagem: Funcionário não encontrado. |
@@ -120,7 +119,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-
 | **TA01.01** | O Funcionário informa, na tela de Login, todos os dados para acessar o sistema, ao clicar em 'Entrar' ele é informado de dados errados. Deve aparecer uma mensagem de recuperar acesso, se ele clicar na mensagem deve ser redirecionado para uma tela de recuperar dados. Mensagem: Deseja recuperar o acesso?. |
 | **TA01.02** | O Funcionário informa, na tela de recuperar acesso, o email de recuperação para redefinir sua senha. A operação é bem sucedida e será exibida a seguinte mensagem: Dados alterados com sucesso. |
 | **TA01.03** | O Funcionário informa, na tela de redefinir dados, a nova senha para ser redefinida. A operação é bem sucedida se as senhas inseridas nos campos 'Nova senha' e 'Confirmar senha' sejam iguais, será exibida a seguinte mensagem: Dados alterados com sucesso. |
@@ -200,6 +198,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US05 - Gerenciar Ponto.
 
+|               |                                                                |
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema possibilatá o cadastro de departamento e a vinculação de funcionários a ele. |
 
