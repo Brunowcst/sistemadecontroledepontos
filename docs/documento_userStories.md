@@ -38,12 +38,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                | 
-| **Tempo Gasto (real):**   |                                     | 
+| **Tempo Gasto (real):**   | --                                  | 
 | **Tamanho Funcional**     | 45 PF                               | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
+| **Analista**              | Bruno Costa                         | 
 | **Desenvolvedor**         | David Emanoel                       | 
-| **Revisor**               | -                                   | 
-| **Testador**              | -                                   | 
+| **Revisor**               | Renan Dantas                        | 
+| **Testador**              | Marcelo Victor                      | 
 
 
 | Testes de Aceitação (TA) |  |
@@ -78,12 +78,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                | 
-| **Tempo Gasto (real):**   |                                     | 
+| **Tempo Gasto (real):**   | --                                  | 
 | **Tamanho Funcional**     | 20 PF                               | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | -                                 | 
-| **Revisor**               | -                               | 
-| **Testador**              | -                               | 
+| **Analista**              | David Emanoel                       | 
+| **Desenvolvedor**         | Bruno Costa                         | 
+| **Revisor**               | Marcelo Victor                      | 
+| **Testador**              | Renan Dantas                        | 
 
 
 | Testes de Aceitação (TA) |  |
@@ -108,10 +108,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------------------- | -------------------------------------| 
 | **Prioridade**            | Essencial                            | 
 | **Estimativa**            | 10 h                                 | 
-| **Tempo Gasto (real):**   |                                      | 
+| **Tempo Gasto (real):**   | --                                   | 
 | **Tamanho Funcional**     | 15 PF                                | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | David Emanoel                        | 
+| **Analista**              | David Emanoel                        | 
+| **Desenvolvedor**         | Bruno Costa                          | 
 | **Revisor**               | Renan Dantas                         | 
 | **Testador**              | Marcelo Victor                       | 
 
