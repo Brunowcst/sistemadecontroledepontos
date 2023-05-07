@@ -36,7 +36,7 @@ erDiagram
     Funcionario ||--|{ Ponto: marca
     Ponto }|--|| Turno : pertence
     Cargo ||--|{ Cargo-turno: possui
-    Turno ||--|{ Cargo-turno
+    Turno ||--|{ Cargo-turno: possui
 
     Funcionario {
         int cod
@@ -50,7 +50,6 @@ erDiagram
         int cod_depto 
         int cod_cargo     
     }
-
     Departamento {
         int cod
         string sigla
@@ -58,7 +57,6 @@ erDiagram
         date data_criacao
         int cod_gerente
     }
-
     Ponto {
         int codigo
         date data_marcacao
@@ -66,20 +64,17 @@ erDiagram
         int cod_func
         int cod_turno
     }
-
     Cargo {
         int cod
         string nome
         float salario
     }
-
     Turno {
         int cod
         string sigla
         string hora_inicio
         string hora_fim
     }
-
     Cargo_turno {
         int cod_cargo
         int cod_turno
