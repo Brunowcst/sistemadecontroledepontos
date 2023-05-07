@@ -37,13 +37,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 24 h                                 | 
+| **Estimativa**            | 24 h                                | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
+| **Tamanho Funcional**     | 45 PF                               | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | -                                 | 
-| **Revisor**               | -                               | 
-| **Testador**              | -                               | 
+| **Desenvolvedor**         | David Emanoel                       | 
+| **Revisor**               | -                                   | 
+| **Testador**              | -                                   | 
 
 
 | Testes de Aceitação (TA) |  |
@@ -77,9 +77,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 24 h                                 | 
+| **Estimativa**            | 24 h                                | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
+| **Tamanho Funcional**     | 20 PF                               | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
 | **Desenvolvedor**         | -                                 | 
 | **Revisor**               | -                               | 
@@ -104,16 +104,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Realizar Login |
 
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| **Prioridade**            | Essencial                           | 
+|                           |                                      |
+| ------------------------- | -------------------------------------| 
+| **Prioridade**            | Essencial                            | 
 | **Estimativa**            | 10 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
+| **Tempo Gasto (real):**   |                                      | 
+| **Tamanho Funcional**     | 15 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | David (responsável por implementar e realizar testes de unidade e testes de integração).                                  | 
-| **Revisor**               | -                               | 
-| **Testador**              | Bruno Costa (responsável por realizar testes de aceitação e fazer relatórios). | 
+| **Desenvolvedor**         | David Emanoel                        | 
+| **Revisor**               | Renan Dantas                         | 
+| **Testador**              | Marcelo Victor                       | 
 
 
 | Testes de Aceitação (TA) |  |
