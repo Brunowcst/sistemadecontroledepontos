@@ -132,6 +132,8 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 01/12/2022 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
 01/12/2022 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
 01/12/2022 | Probabilidade de queda do sistema | Média | Gerente | Resolvido | Reiniciar o sistema, contatar a equipe para verificar a origem do problema e corrigi-lo. |
+07/05/2023 | Atraso no conograma de entrega | Baixa | Gerente | Vigente | Reorganizar a equipe com o intuito de entregar as funcionalidades no prazo definido. |
+07/05/2023 | Não implementação do benefício de horas | Alta | Desenvolvedores | Vigente | Fazer esforço pra tentar entregar as funcionalidades. |
 
 ### Referências
 Características e definição
