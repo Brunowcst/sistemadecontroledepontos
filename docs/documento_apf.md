@@ -75,21 +75,24 @@ erDiagram
 | ---------------  | ---------------------- | :-----------: |
 | ALI Funcionário  | Usuario e Grupo        | 35 PF         |
 | ALI Departamento | Projeto                | 35 PF         |
-| ALI Cargo        | Laboratorio            | 35 PF         |
-| ALI Turno        | Endereço               | 35 PF         |
-| AIE Cargo_turno  | Endereço               | 15 PF         |
-| **Total**        | **Ci**                 | **155 PF**    |
+| ALI Cargo        | Cargo                  | 35 PF         |
+| ALI Turno        | Turno                  | 35 PF         |
+| ALI Horário      | Horário                | 35 PF         |
+| ALI Acesso       | Acesso                 | 35 PF         |
+| **Total**        | **Ci**                 | **210 PF**    |
 
 ### Contagem Detalhada (Cd)
 
 |     Descrição      |   Tipo   |   RLR   |   DER   |   Complexidade   |   Tamanho em PF   |
 | ------------------ | -------- | ------- | ------- | ---------------- | :---------------: |
-|  ALI Funcionário(+ Departamento)   |   ALI    |    2    |    (10+5)15  |       Baixa      | 7 PF              |
-|  ALI Departamento  |   ALI    |         |         |                  |  PF               |
-|  ALI -             |   -      |         |         |                  |  PF               |
-|  AIE -             |   -      |         |         |                  |  PF               |
+|  ALI Funcionário   |   ALI    |    1    |    9    |       Baixa      | 7 PF              |
+|  ALI Departamento  |   ALI    |    1    |    5    |       Baixa      | 7 PF              |
+|  ALI -             |   -      |    -    |    -    |       -----      |  PF               |
 |  **Descrição**     | **Tipo** | **ALR** | **DER** | **Complexidade** | **Tamanho em PF** |
-|  Inserir Funcionário     |    EE    |    1    |    2    |      Baixa       | 3 PF              |
+|  Inserir Funcionário     |    EE    |    1    |    9    |      Baixa       | 3 PF              |
+|  Editar Funcionário      |    EE    |    1    |    7    |      Baixa       | 3 PF              |
+|  Visualizar Funcionário  |    CE    |    1    |    9    |      Baixa       | 3 PF              |
+|  Excluir Funcionário     |    EE    |    1    |    2    |      Baixa       | 3 PF              |
 
 
 
