@@ -87,12 +87,13 @@ erDiagram
 | ------------------ | -------- | ------- | ------- | ---------------- | :---------------: |
 |  ALI Funcionário   |   ALI    |    1    |    9    |       Baixa      | 7 PF              |
 |  ALI Departamento  |   ALI    |    1    |    5    |       Baixa      | 7 PF              |
-|  ALI -             |   -      |    -    |    -    |       -----      |  PF               |
+|  ALI Acesso        |   ALI    |    1    |    5    |       Baixa      | 7 PF              |
 |  **Descrição**     | **Tipo** | **ALR** | **DER** | **Complexidade** | **Tamanho em PF** |
 |  Inserir Funcionário     |    EE    |    1    |    9    |      Baixa       | 3 PF              |
 |  Editar Funcionário      |    EE    |    1    |    7    |      Baixa       | 3 PF              |
 |  Visualizar Funcionário  |    CE    |    1    |    9    |      Baixa       | 3 PF              |
 |  Excluir Funcionário     |    EE    |    1    |    2    |      Baixa       | 3 PF              |
+|  Login                   |    EE    |    1    |    2    |      Baixa       | 3 PF              |
 
 
 
