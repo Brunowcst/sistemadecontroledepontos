@@ -49,3 +49,16 @@ public
 *.sublime-project
 *.sublime-workspace
 sftp-config.json
+
+# arquivos gerados pelo Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# diretórios gerados pelo Django
+media/
+staticfiles/
+venv/
