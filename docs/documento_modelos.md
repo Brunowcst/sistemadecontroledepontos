@@ -133,7 +133,7 @@ erDiagram
 | usuario   | cpf do usuario| VARCHAR       | 12      | NOT NULL UNIQUE |
 | email     | Sexo do usuario| VARCHAR      | 30      | NOT NULL        |
 | senha     | Data de nascimento| VARCHAR   | ---     | NOT NULL        |
-|token      | Identific. Gerente| VARCHAR   | ---     | NOT NULL        |
+|token      | var de Autenticacao| VARCHAR   | ---     | NOT NULL        |
 |cod_func   | Identific. Funcionario| INT   | ---     | FOREIGN KEY     |
 
 
