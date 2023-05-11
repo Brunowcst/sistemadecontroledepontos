@@ -37,9 +37,9 @@ erDiagram
     Funcionario ||--|{ Funcionario_horario: tem
     Horario ||--|{ Funcionario_horario: tem
     Funcionario ||--|{ Funcionario_turno: tem
-    Turno ||--|{ Funcionario_horario: tem
     Funcionario ||--|| Usuario: possui
     Turno ||--|| Horario: tem
+    Turno ||--|{ Funcionario_turno: tem
     Ponto }|--|| Horario : pertence
     
     Funcionario {
