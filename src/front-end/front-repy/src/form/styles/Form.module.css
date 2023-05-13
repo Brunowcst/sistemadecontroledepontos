@@ -11,3 +11,20 @@
     color: #7b7b7b;
 }
 
+.input_container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 20px;
+    color: #587D4A;
+    position: absolute;
+    top: 56%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

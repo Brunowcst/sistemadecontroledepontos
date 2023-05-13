@@ -1,6 +1,7 @@
 import Input from './Input';
 import SubmitButton from './SubmitButton';
 import styles from './styles/Form.module.css';
+import {AiOutlineEye} from 'react-icons/ai';
 
 function Form({btnText, handleSubmit}) {
 
@@ -20,14 +21,19 @@ function Form({btnText, handleSubmit}) {
                 autoComplete='on'
            /> 
 
-           <Input 
-           type="text"
-           text="Senha"
-           name="password"
-           placeholder="Digite sua senha"
-           //onChange={handleOnChange}
-           //value=
-           />
+           <div className={styles.input_container}>
+               <Input
+               type="password"
+               text="Senha"
+               id="password"
+               name="password"
+               placeholder="Digite sua senha"
+               //onChange={handleOnChange}
+               //value=
+               />
+
+            <AiOutlineEye className={styles.icon}/>
+           </div>
 
            <p className={styles.forget}>Forget password?</p>
 
