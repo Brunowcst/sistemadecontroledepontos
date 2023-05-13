@@ -7,9 +7,9 @@ Para a modelagem pode se usar a ferramenta Astah UML ou o BrModelo. Além dessas
 ## Modelos Conceitual
 
 ### Diagrama de Classes usando o Mermaid
-Para criar esse diagrama, utilizamos a ferramenta [LucidChart](https://www.lucidchart.com/blog/pt) e importamos o projet oem formato de imagem PNG.
+[Descrição]
 
-![Figura 1: Diagrama de Classe REPy](images/REPy_Class_Diagram_UML.png)
+>Em breve.
 
 #### Tabela de Descrição
 
@@ -31,58 +31,78 @@ Para criar esse modelo, usamos a ferramenta [Mermaid](https://mermaid.js.org/) s
 
 ```mermaid
 erDiagram
-    Organizacao ||--|{ Gestor_RH : gerecia
-    Gestor_RH ||--|{ Departamento : gerencia
-    Gestor_RH ||--|{ Funcionario : gerencia
-    Departamento ||--|{ Funcionario : trabalha
+    Funcionario }|--|| Departamento : trabalha
+    Funcionario }|--|| Cargo : possui
     Funcionario ||--|{ Ponto: marca
-
-    Organizacao {
-        string nome
-        String cnpj
-        string cpf_dono
-        string proprietario
-        data data_criacao
-    }
+    Funcionario ||--|{ Funcionario_horario: tem
+    Horario ||--|{ Funcionario_horario: tem
+    Funcionario ||--|{ Funcionario_turno: tem
+    Funcionario ||--|| Usuario: possui
+    Turno ||--|| Horario: tem
+    Turno ||--|{ Funcionario_turno: tem
+    Ponto }|--|| Horario : pertence
+    
     Funcionario {
-        string nome
+        int cod
         string cpf
-        String sexo
+        string nome
+        string sexo
         date data_nasc
-        int codigo
-        bool isAdmin
-        string turno
-        float salario
-        int codigo_depto
-        int codigo_ponto 
-        int codigo_login      
+        int cod_gerente
+        int cod_depto 
+        int cod_cargo     
     }
     Departamento {
-        int codigo
+        int cod
+        string sigla
         string nome
         date data_criacao
+        int cod_gerente
     }
     Ponto {
         int codigo
-        bool status
+        string descricao
         date data_marcacao
+        int cod_func
+        int cod_turno
+    }
+    Cargo {
+        int cod
+        string nome
+        float salario
+        int carga_horaria
+    }
+    Turno {
+        int cod
+        string sigla
+        string hora_inicio
+        string hora_fim
+    }
+    Funcionario_turno {
+        int cod_funcionario
+        int cod_turno
+    }
+    Horario{
+        int cod
+        string dia
+        string hora_entrada
+        string hora_saida
+    }
+    Funcionario_horario {
+        int cod_funcionario
+        int cod_horario
+    }
+    Usuario{
+        int cod
+        string usuario
+        string email
+        string senha
+        string token
+        int cod_func
     }
 ```
 
 ### Dicionário de Dados
-
-#### Organização
-|Tabela     | Organização                                               |
-|-----------|-----------------------------------------------------------|                        
-|Descrição  | Armazena as informações referentes à organização.         |
-
-| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
-|-----------|---------------|---------------|---------|---------------|
-|  nome     | Nome da org.  | VARCHAR       |  50 | Not Null   |
-|  cnpj     | CNPJ da org.  | VARCHAR       |  14 |     PK     |
-|  cpf_dono | CPF do dono   | VARCHAR       |  11 |   Not Null |
-|proprietario| Nome do proprietario| VARCHAR| 100 | Not Null   |
-| data_criacao| Data de criacao| DATE       | --- | ---        |
 
 #### Funcionario
 
@@ -91,18 +111,32 @@ erDiagram
 |Descrição  | Armazena informações de usuários da categoria Funcionario/Gestor.|
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
-|-----------|---------------|---------------|---------|---------------|
-| nome      |Nome do usuario| VARCHAR       | 50      | Not Null      |
-| cpf       | cpf do usuario| VARCHAR       | 11      | PK            |
-| sexo      | Sexo do usuario | VARCHAR     | 1       | ---           |
-| data_Nasc | Data de nascimento| DATE      | ---     | Not Null      |
-| codigo    | Gerado pelo SGBD| SERIA       | ---     | UNIQUE NOT Null|
-| isAdmin   | Condição Adm. | Boolean       | ---     | ---           |
-|codigo_depto| Identific. Depto| int        | ---     | FK            |
-| codigo_ponto| Ident. ponto    |    int    | ---     | FK            |
-| codigo_login| Ident. login    |    int    | ---     | FK            |
-| turno      | Turno de Trabalho| VARCHAR   | ---     | Not Null      |
-| salario    | Salario do usuario| float    | ---     | Not Null      |
+|-----------|---------------|---------------|---------|-----------------|
+| cod       |Gerado pelo SGBD| SERIAL       | --     | PRIMARY KEY     |
+| cpf       | cpf do usuario| VARCHAR       | 11      | NOT NULL UNIQUE |
+| sexo      | Sexo do usuario | VARCHAR     | 1       | ---             |
+| data_Nasc | Data de nascimento| DATE      | ---     | NOT NULL      |
+|cod_gerente| Identific. Gerente| INT       | ---     | FOREIGN KEY   |
+|cod_depto| Identific. Departamento| INT    | ---     | FOREiGN KEY   |
+|cod_cargo| Identific. Cargo    | INT       | ---     | FOREiGN KEY   |
+
+
+### Usuario
+
+|Tabela     | Usuario                                               |
+|-----------|-----------------------------------------------------------|
+|Descrição  | Armazena informações de acesso dos usuários.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|-----------------|
+| cod       |Gerado pelo SGBD| SERIAL       | --      | PRIMARY KEY     |
+| usuario   | cpf do usuario| VARCHAR       | 12      | NOT NULL UNIQUE |
+| email     | Sexo do usuario| VARCHAR      | 30      | NOT NULL        |
+| senha     | Data de nascimento| VARCHAR   | ---     | NOT NULL        |
+|token      | var de Autenticacao| VARCHAR   | ---     | NOT NULL        |
+|cod_func   | Identific. Funcionario| INT   | ---     | FOREIGN KEY     |
+
+
 
 #### Departamento
 
@@ -112,23 +146,11 @@ erDiagram
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
 |-----------|---------------|---------------|---------|---------------|
-| nome      |Nome do Departamento| VARCHAR  | 50      | Not Null      |
-| codigo    | Gerado pelo SGBD |SERIAL    | ---     | PK            |
-| data_criacao| Data criação | DATE     |---     | Not Null           |
-
-
-#### Login
-
-|Tabela     |  Login                                                  |
-|-----------|---------------------------------------------------------|
-|Descrição  | Armazena informações de Autenticação dos usuários.      |
-
-| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
-|-----------|---------------|---------------|---------|---------------|
-| email     |email do usuario PK| VARCHAR  | 50    | Not Null     |
-| senha     | senha do usuario |VARCHAR  | 20    | Not Null     |
-| codigo    |Codigo PK gerado pelo SGBD|   SERIAL  | -- | Not Null UNIQUE|
-
+| cod       |Gerado pelo SGBD| SERIAL       | --     | PRIMARY KEY    |
+| nome      |Nome do Departamento| VARCHAR  | 50      | NOT NULL      |
+| sigla      |Sigla do Departamento| VARCHAR| 10      | NOT NULL      |
+| data_criacao| Data criação | DATE         |   ---     | NOT NULL    |
+| cod_gerente| Identific. Gerente| INT       | ---     | FOREIGN KEY   |
 
 #### Ponto
 
@@ -138,6 +160,72 @@ erDiagram
 
 | nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
 |-----------|---------------|---------------|---------|---------------|
-| data_Marcacao | data registrada| DATE     | ---     | Not Null      |
-| status    |  status de marcacao|Boolean   |---      | Not Null      |
-| codigo    | Gerado pelo SGBD | SERIAL     | ---     | PK            |
+| cod       |Gerado pelo SGBD| SERIAL       | --     | PRIMARY KEY    |
+| descricao    |  Descrição da marcação| String   | 100      | ---    |
+| data_Marcacao | data registrada| DATE     | ---     | NOT NULL      |
+| cod_func| Identific. funcionario| INT       | ---     | FOREIGN KEY |
+| cod_turno| Identific. Turno| INT       | ---     | FOREIGN KEY   |
+
+#### Cargo
+
+|Tabela     |  Cargo                                                  |
+|-----------|---------------------------------------------------------|
+|Descrição  | Armazena informações relacionadas aos cargos existentes na organização.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| cod       |Gerado pelo SGBD| SERIAL       | --     | PRIMARY KEY    |
+| nome      | Título do cargo| String       | 30     | NOT NULL       |
+| salario   | Numérico.     | float         | ---    | NOT NULL       |
+| carga_horaria | carga horaria| int        | ---    | NOT NULL       |
+
+
+
+#### Turno
+
+|Tabela     |  Turno                                                  |
+|-----------|---------------------------------------------------------|
+|Descrição  | Armazena informações relacionadas aos turnos de trabalho da organização.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| cod       |Gerado pelo SGBD| SERIAL       | --      | PRIMARY KEY   |
+| sigla     | Sigla do turno| String        | 1       | NOT NULL      |
+| hora_inicio| Horario do turno| String   | 10       | NOT NULL       |
+| hora_fim  | Horario do turno| String   | 10       | NOT NULL        |
+
+#### Funcionario_turno
+
+|Tabela     |  Funcionario_turno                                      |
+|-----------|---------------------------------------------------------|
+|Descrição  | Armazena informações relacionadas à relação Funcionario-turno.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| cod_func |Identific. funcionario| INT       | --      | PRIMARY KEY FOREIGN KEY|
+| cod_turno |Identific. turno| INT       | --      | PRIMARY KEY FOREIGN KEY|
+
+#### Funcionario_horario
+
+|Tabela     |  Funcionario_horario                                    |
+|-----------|---------------------------------------------------------|
+|Descrição  | Armazena informações relacionadas à relação Funcionario_horario.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| cod_func |Identific. funcionario| INT       | --      | PRIMARY KEY FOREIGN KEY|
+| cod_horario |Identific. horario| INT       | --      | PRIMARY KEY FOREIGN KEY|
+
+#### Horario
+
+|Tabela     |  Horario                                    |
+|-----------|---------------------------------------------------------|
+|Descrição  | Armazena informações relacionadas aos horários dos pontos marcados.|
+
+| nome      | Descrição     | Tipo de dado  | Tamanho | Restrições de domínio |
+|-----------|---------------|---------------|---------|---------------|
+| cod       |Gerado pelo SGBD| SERIAL       | --      | PRIMARY KEY   |
+| dia       | Dia marcado   | String       | ---     | NOT NULL       |
+| hora_entrada| hora de entrada marcada   | String       | ---     | NOT NULL|
+| hora_saida| hora de saida marcada   | String       | ---     | NOT NULL|
+| cod_horario |Identific. horario| INT       | --      | PRIMARY KEY FOREIGN KEY|
