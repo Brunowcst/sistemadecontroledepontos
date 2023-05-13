@@ -39,7 +39,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
+| **Tamanho Funcional**     | 12 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
 | **Desenvolvedor**         | -                                 | 
 | **Revisor**               | -                               | 
@@ -68,18 +68,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF03          | Cadastrar Funcionários  |
-| RF04          | Visualizar Funcionários |
-| RF05          | Inativar Funcionários   | 
-| RF06          | Alterar Dados do Funcionário |
-
+| RF06          | Realizar Login  |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
+| **Tamanho Funcional**     | 3 PF                                | 
 | **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
 | **Desenvolvedor**         | -                                 | 
 | **Revisor**               | -                               | 
