@@ -1,0 +1,13 @@
+.container_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forget {
+    font-size: .8rem;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+    color: #7b7b7b;
+}
+
