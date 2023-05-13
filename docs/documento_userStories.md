@@ -68,10 +68,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF03          | Cadastrar Funcionários  |
-| RF04          | Visualizar Funcionários |
-| RF05          | Inativar Funcionários   | 
-| RF06          | Alterar Dados do Funcionário |
+| RF06          | Realizar Login  |
 
 
 |                           |                                     |
