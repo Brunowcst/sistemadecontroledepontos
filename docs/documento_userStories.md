@@ -37,13 +37,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 24 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
+| **Estimativa**            | 24 h                                | 
+| **Tempo Gasto (real):**   | --                                  | 
 | **Tamanho Funcional**     | 12 PF                                | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | -                                 | 
-| **Revisor**               | -                               | 
-| **Testador**              | -                               | 
+| **Analista**              | Bruno Costa                         | 
+| **Desenvolvedor**         | David Emanoel                       | 
+| **Revisor**               | Renan Dantas                        | 
+| **Testador**              | Marcelo Victor                      | 
+
 
 
 | Testes de Aceitação (TA) |  |
@@ -73,13 +74,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 24 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
+| **Estimativa**            | 24 h                                | 
+| **Tempo Gasto (real):**   | --                                  | 
 | **Tamanho Funcional**     | 3 PF                                | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | -                                 | 
-| **Revisor**               | -                               | 
-| **Testador**              | -                               | 
+| **Analista**              | David Emanoel                       | 
+| **Desenvolvedor**         | Bruno Costa                         | 
+| **Revisor**               | Marcelo Victor                      | 
+| **Testador**              | Renan Dantas                        | 
 
 
 | Testes de Aceitação (TA) |  |
@@ -100,16 +101,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Realizar Login |
 
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| **Prioridade**            | Essencial                           | 
+|                           |                                      |
+| ------------------------- | -------------------------------------| 
+| **Prioridade**            | Essencial                            | 
 | **Estimativa**            | 10 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | David (responsável por implementar e realizar testes de unidade e testes de integração).                                  | 
-| **Revisor**               | -                               | 
-| **Testador**              | Bruno Costa (responsável por realizar testes de aceitação e fazer relatórios). | 
+| **Tempo Gasto (real):**   | --                                   | 
+| **Tamanho Funcional**     | 15 PF                                | 
+| **Analista**              | David Emanoel                        | 
+| **Desenvolvedor**         | Bruno Costa                          | 
+| **Revisor**               | Renan Dantas                         | 
+| **Testador**              | Marcelo Victor                       | 
 
 
 | Testes de Aceitação (TA) |  |
