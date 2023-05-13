@@ -1,5 +1,6 @@
 import Input from './Input';
 import SubmitButton from './SubmitButton';
+import styles from './styles/Form.module.css';
 
 function Form({btnText, handleSubmit}) {
 
@@ -8,7 +9,7 @@ function Form({btnText, handleSubmit}) {
     }
 
     return (
-        <form onSubmit={submit}>
+        <form className={styles.container_form} onSubmit={submit}>
            <Input 
             	type="text"
                 text="Email"
@@ -27,6 +28,8 @@ function Form({btnText, handleSubmit}) {
            //onChange={handleOnChange}
            //value=
            />
+
+           <p className={styles.forget}>Forget password?</p>
 
             <SubmitButton text={btnText}/>
         </form>
