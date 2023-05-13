@@ -46,6 +46,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Testador**              | Marcelo Victor                      | 
 
 
+
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
