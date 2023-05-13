@@ -1,13 +1,17 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+
 .container {
     height: 100vh;
     display: flex;
     background-color: gray;
     position: relative;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container_login {
     position: relative;
-    height: 25rem;
+    height: 30rem;
     width: 25rem;
     background-color: aquamarine;
     border-radius: 20px;
@@ -16,12 +20,51 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: fallingAnimation 2s ease-in-out;
 }
 
 .container_login h1 {
-    padding-top: 1rem;
-    text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.textSign {
+  font-size: .8rem;
+  margin-bottom: 1rem;
+  color: #7b7b7b;
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: #3b5998;
+  cursor: pointer;
+}
+.icon_google {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.icons_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+@keyframes fallingAnimation {
+  0% {
+    margin-top: -1000px;
+  }
+  100% {
+    margin-top: 0;
+  }
 }
 
 /* .create_account {
@@ -40,15 +83,7 @@
     justify-content: center;
 } */
 
-.create_account {
+/* .create_account {
     padding-top: 1rem;
-}
+} */
 
-@keyframes fallingAnimation {
-    0% {
-      margin-top: -1000px;
-    }
-    100% {
-      margin-top: 0;
-    }
-}
