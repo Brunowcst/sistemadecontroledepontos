@@ -1,0 +1,54 @@
+.container {
+    height: 100vh;
+    display: flex;
+    background-color: gray;
+    position: relative;
+}
+
+.container_login {
+    position: relative;
+    height: 25rem;
+    width: 25rem;
+    background-color: aquamarine;
+    border-radius: 20px;
+    background-color: #F8F7F7;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fallingAnimation 2s ease-in-out;
+}
+
+.container_login h1 {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+/* .create_account {
+    position: relative;
+    word-wrap: break-word;
+    text-align: center;
+    border-radius: 40px 0px 0px 40px;
+    color: #F8F7F7;
+    height: 22rem;
+    width: 14rem;
+    top: -7%;
+    left: -14em;
+    background-color: #3E483A;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+} */
+
+.create_account {
+    padding-top: 1rem;
+}
+
+@keyframes fallingAnimation {
+    0% {
+      margin-top: -1000px;
+    }
+    100% {
+      margin-top: 0;
+    }
+}
