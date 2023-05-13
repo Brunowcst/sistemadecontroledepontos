@@ -39,7 +39,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                | 
 | **Tempo Gasto (real):**   | --                                  | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 12 PF                                | 
 | **Analista**              | Bruno Costa                         | 
 | **Desenvolvedor**         | David Emanoel                       | 
 | **Revisor**               | Renan Dantas                        | 
@@ -76,7 +76,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                | 
 | **Tempo Gasto (real):**   | --                                  | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 3 PF                                | 
 | **Analista**              | David Emanoel                       | 
 | **Desenvolvedor**         | Bruno Costa                         | 
 | **Revisor**               | Marcelo Victor                      | 
