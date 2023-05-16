@@ -5,7 +5,7 @@ class Funcionario(models.Model):
     nome = models.CharField(max_length = 100, null = False, default='nome')
     cpf = models.CharField(max_length = 11, unique = True, null = False,  default='cpf')
     sexo = models.CharField(max_length = 1)
-    data_nasc = models.DateField(null = False,  default='0000/00/00')
+    data_nasc = models.DateField(null = False,  default='2000-01-01')
     cod_gerente = models.ForeignKey( 'self', on_delete = models.CASCADE, default = 0)
     cod_depto = models.ForeignKey('Departamento', on_delete = models.CASCADE, default = 0)
     cod_cargo = models.ForeignKey('Cargo', on_delete = models.CASCADE, default = 0)
@@ -26,7 +26,7 @@ class Usuario(models.Model):
 class Departamento(models.Model):
     nome = models.CharField(max_length = 50, null = False, default='Depto_nome')
     sigla = models.CharField(max_length = 10, null = False, default='')
-    data_criacao = models.DateField( null = False,  default='0000/00/00')
+    data_criacao = models.DateField( null = False,  default='2000-01-01')
     cod_gerente = models.ForeignKey( Funcionario, on_delete = models.CASCADE)
 
     def __str__(self):
@@ -42,7 +42,7 @@ class Cargo(models.Model):
 
 class Ponto(models.Model):
     descricao = models.CharField(max_length = 255,  default='')
-    data = models.DateField( null = False,  default='0000/00/00')
+    data = models.DateField( null = False,  default='2000-01-01')
     cod_func = models.ForeignKey( Funcionario, on_delete = models.CASCADE)
     cor_turno = models.ForeignKey('Turno', on_delete = models.CASCADE)
 
