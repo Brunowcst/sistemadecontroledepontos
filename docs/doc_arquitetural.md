@@ -24,7 +24,7 @@ Este documento descreve a arquitetura proposta para o REPy (Registro Eletrônico
 
 | Data       | Versão | Descrição                                                              | Autor                           |
 | :--------- | :----: | :--------------------------------------------------------------------- | :------------------------------ |
-| 07/05/2023 |  1.0   | Criação do documento, descrição e sumário;  | Bruno |
+| 07/05/2023 |  1.0   | Criação do documento, descrição e sumário;  Marcelo |
 
 <div id='visao-geral'/>
 
