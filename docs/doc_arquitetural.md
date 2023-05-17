@@ -38,6 +38,9 @@ A arquitetura do projeto seguirá o padrão Model-View-Controller(MVC). Essa arq
    
 + ## View
    É a camada responsável pela apresentação dos dados para o usuário, nesse projeto o ReactJS tem essa responsabilidade.
+   
++ ## Controller
+   Responsável por receber todas as requisições do usuário e fazer a ligação do model a view, orientando os fluxos de dados na aplicação, por exemplo, qual model será usado, qual view será exibida para o usuário.
 
 <div id='mecanismos-arquiteturais'/>
 
