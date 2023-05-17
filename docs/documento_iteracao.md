@@ -8,6 +8,7 @@ Este é um modelo para o Plano de Iteração e Plano de Release que será usando
 Iteração | Data início | Data Final | Apresentação | Gerente   | Detalhes
 -------- | ----------- | ---------- | ------------ | -------   | -------
 It1      | 01/04/2023  | 01/05/2023 | 02/05/2023   | Renan | Criar Diagrama de classe, Documento de Visão, Modelos e Plano de Iteração e Release. 
+It2      | 01/05/2023  | 11/05/2023 | 16/05/2023   | Bruno |  atualização do documento de Visão, atualização do documento de userStories, criação documento de arquitetura, criação termo de abertura de projeto, criação documento de tamanho funcional, implementação das duas user stories detalhadas. 
 
 
 ## Descrição das Tarefas em cada Iteração
