@@ -16,17 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
-from core.views import FuncionarioViewSet
+from rest_framework import routers, serializers, viewsets
+from core.views import FuncionarioViewSet, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
 router = routers.DefaultRouter()
 router.register(r'funcionario', FuncionarioViewSet)
+router.register(r'departamento', DepartamentoViewSet)
+router.register(r'usuario', UsuarioViewSet)
+router.register(r'cargo', CargoViewSet)
+router.register(r'ponto', PontoViewSet)
+router.register(r'turno', TurnoViewSet)
+router.register(r'horario', HorarioViewSet)
 
-#adc outros routers
-
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
+    path('admin/', admin.site.urls)
 ]
