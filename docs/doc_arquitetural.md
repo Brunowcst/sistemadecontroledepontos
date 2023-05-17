@@ -29,8 +29,15 @@ Este documento descreve a arquitetura proposta para o REPy (Registro Eletrônico
 <div id='visao-geral'/>
 
 ### **Visão Geral**
+A arquitetura do projeto seguirá o padrão Model-View-Controller(MVC). Essa arquitetura funciona da seguinte forma: 
 
 ![Diagrama de Visao Geral](./images/VisaoGeral-diagram.png)
+
++ ## Model
+  É Responsável pelo acesso e manipulação de leitura e escrita dos dados na aplicação, nesse projeto o Nodejs tem a responsabilidade de manipular esses dados.
+   
++ ## View
+   É a camada responsável pela apresentação dos dados para o usuário, nesse projeto o ReactJS tem essa responsabilidade.
 
 <div id='mecanismos-arquiteturais'/>
 
