@@ -35,10 +35,10 @@ A arquitetura do projeto seguirá o padrão Model-View-Controller(MVC). Essa arq
 
 ![Diagrama de Visao Geral](./images/VisaoGeral-diagram.png)
 
-+ ## Model
++ ## Backend
   É Responsável pelo acesso e manipulação de leitura e escrita dos dados na aplicação, nesse projeto o Nodejs tem a responsabilidade de manipular esses dados.
    
-+ ## View
++ ## Client
    É a camada responsável pela apresentação dos dados para o usuário, nesse projeto o ReactJS tem essa responsabilidade.
    
 + ## Controller
