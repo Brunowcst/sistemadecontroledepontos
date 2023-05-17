@@ -30,6 +30,8 @@ Este documento descreve a arquitetura proposta para o REPy (Registro Eletrônico
 
 ### **Visão Geral**
 
+![Diagrama de Visao Geral](./images/VisaoGeral-diagram.png)
+
 <div id='mecanismos-arquiteturais'/>
 
 ### **Mecanismos arquiteturais**
