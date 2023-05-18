@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
-from core.views import FuncionarioViewSet, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet
+from core.views import FuncionarioViewSet, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
 
 router = routers.DefaultRouter()
 router.register(r'funcionario', FuncionarioViewSet)
@@ -32,6 +32,7 @@ router.register(r'horario', HorarioViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('api/', include(router.urls)),
-    path('admin/', admin.site.urls)
+    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
+    path('api/login/', login_view, name='login')
 ]
