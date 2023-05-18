@@ -8,17 +8,31 @@ import { useState } from 'react';
 function Form({btnText, handleSubmit}) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [vibilityIcon, setVisibilityIcon] = useState(<AiOutlineEye />);
-
-
-    const submit = (e) => {
-        e.preventDefault();
-    }
+    const [usuario, setUsuario] = useState('');
+    const [password, setPassword] = useState('');
 
     const togglePasswordVisibility = () => {
         //console.log(passwordVisible);
         setPasswordVisible((prevState) => !prevState);
         setVisibilityIcon(passwordVisible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />);
     };
+
+    function handleUsuario(e) {
+        setUsuario(e.target.value);
+        // console.log('email:' + usuario)
+    }
+
+    function handlePassword(e) {
+        setPassword(e.target.value);
+        // console.log('senha:' + password)
+    }
+
+    const submit = (e) => {
+        e.preventDefault();
+        // console.log("foi")
+        // console.log(usuario)
+        // console.log(password)
+    }
 
     return (
         <form className={styles.container_form} onSubmit={submit}>
@@ -27,8 +41,8 @@ function Form({btnText, handleSubmit}) {
                 text="Email"
                 name="email"
                 placeholder="Digite seu email"
-                //onChange={handleOnChange}
-                //value=
+                handleOnChange={handleUsuario}
+                value={usuario}
                 autoComplete='on'
            /> 
 
@@ -39,8 +53,8 @@ function Form({btnText, handleSubmit}) {
                id="passwordInput"
                name="password"
                placeholder="Digite sua senha"
-               //onChange={handleOnChange}
-               //value=
+               handleOnChange={handlePassword}
+               value={password}
                />
 
             <span className={styles.icon} onClick={togglePasswordVisibility}>{vibilityIcon}</span>
