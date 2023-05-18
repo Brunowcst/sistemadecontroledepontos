@@ -1,0 +1,23 @@
+.container_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_input label {
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.container_input input {
+    width: 20rem;
+    padding: 0.5rem;
+    padding: .7rem;
+    border-radius: .5rem;
+    border: 1px solid rgb(138, 133, 133);
+    margin-bottom: 1rem;
+}
+
+.container_input input::placeholder {
+    color: #7b7b7b;
+    padding-right: 1rem;
+}
