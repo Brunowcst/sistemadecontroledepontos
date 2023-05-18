@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Funcionario(models.Model):
     nome = models.CharField(max_length = 100, null = False, default='nome')
-    cpf = models.CharField(max_length = 11, unique = True, null = False,  default='cpf')
+    cpf = models.CharField(max_length = 11, unique = True, null = False,  default='00000000000')
     sexo = models.CharField(max_length = 1)
     data_nasc = models.DateField(null = False,  default= 'YYYY-DD-MM')
     cod_gerente = models.ForeignKey(to='self', on_delete = models.PROTECT, null = True, blank= True)
