@@ -89,6 +89,7 @@ USER = config('USER')
 PASSWORD = config('PASSWORD')
 HOST = config('HOST')
 PORT = config('PORT')
+DEBUG = config('DEBUG', cast=bool, default=False)
 
 DATABASES = {
     'default': {
