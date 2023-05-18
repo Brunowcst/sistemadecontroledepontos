@@ -2,7 +2,6 @@ import styles from './Login.module.css';
 import Form from '../form/Form';
 import {BsFacebook} from 'react-icons/bs';
 import {FcGoogle} from 'react-icons/fc';
-import { useState } from 'react';
 
 
 function Login() {
