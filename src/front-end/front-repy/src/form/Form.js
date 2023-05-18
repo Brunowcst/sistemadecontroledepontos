@@ -29,9 +29,29 @@ function Form({btnText, handleSubmit}) {
 
     const submit = (e) => {
         e.preventDefault();
+        const data = {
+            username: usuario,
+            password: password,
+        };
+        console.log(data)
         // console.log("foi")
         // console.log(usuario)
         // console.log(password)
+
+        fetch("http://localhost:5000/api/login/", {
+            method: 'POST',
+            headers: {
+                'Content-type' : 'application/json',
+            },
+            body:  JSON.stringify(data),
+        }).then((response) => response.json())
+            .then((data) => {
+                if(data.sucess) {
+                    window.alert("usuário validado")
+                } else {
+                    window.alert("usuário não encontrado")
+                }
+            }).catch(err => console.log(err));
     }
 
     return (
