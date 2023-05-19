@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from .models import Usuario
-from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 import json
 
@@ -42,14 +40,22 @@ class HorarioViewSet(viewsets.ModelViewSet):
 def login_view(request): 
     if request.method == 'POST':
         data = json.loads(request.body)
-        username = data['username']
-        password = data['password']
+        username = data.get('username')
+        password = data.get('password')
 
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            return JsonResponse({'sucess': True})
-        else:
-            return JsonResponse({'sucess': False})
-            
+        try:
+            if Usuario.objects.filter(usuario=username, senha=password).exists():
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False}) 
+        except Usuario.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'Usuário não encontrado'})
     return JsonResponse({'success': False})
+
+
+# acesso = Usuario.objects.filter(usuario=username).values('usuario').first()
+# senhaAcesso = Usuario.objects.filter(senha=password).values('senha').first()
+# print('Acesso.usuario:', acesso)
+# print('Acesso.Senha:', senhaAcesso)
+# print('Username:', username)
+# print('Password:', password)
