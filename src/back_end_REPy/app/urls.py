@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 from core.views import FuncionarioViewSet, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
+from django.views.decorators.csrf import csrf_exempt
 
 router = routers.DefaultRouter()
 router.register(r'funcionario', FuncionarioViewSet)
@@ -34,5 +35,5 @@ router.register(r'horario', HorarioViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('api/login/', login_view, name='login')
+    path('api/login/', csrf_exempt(login_view), name='login')
 ]
