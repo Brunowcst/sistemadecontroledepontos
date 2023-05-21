@@ -1,6 +1,7 @@
 .container_input {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .container_input label {
@@ -20,4 +21,8 @@
 .container_input input::placeholder {
     color: #7b7b7b;
     padding-right: 1rem;
+}
+
+.inputCadastro input {
+    width: 100%;
 }
