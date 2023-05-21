@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.grid {
+    display: flex;
+    flex-direction: row; 
+    gap: 3rem;
+}
+
+.section {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.section h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.formCadastro {
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    border: 1px solid rgb(122, 121, 121);
+    height: 80vh;
+    width: 90%;
+}
+
+.userImage {
+    min-height: 15rem;
+    min-width: 15rem;
+    border-radius: 50%;
+    background-color: rgb(122, 121, 121);
+}
+
+.dadosPessoais {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.inputsDadosPessoais {
+    width: 100%;
+}
+
+.buttom {
+    display: flex;
+    justify-content: flex-end;
+}
