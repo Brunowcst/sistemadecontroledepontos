@@ -1,8 +1,8 @@
 import styles from './styles/Input.module.css';
 
-function Input({type, text, placeholder, name, value, handleOnChange}) {
+function Input({type, text, placeholder, name, value, handleOnChange, customClass}) {
     return (
-        <div className={styles.container_input}>
+        <div className={`${styles.container_input} ${styles[customClass]}`}>
             <label htmlFor={name}>{text}</label>
             <input
                 type={type}
