@@ -1,0 +1,10 @@
+.grid {
+    display: flex;
+    flex-direction: row; 
+    gap: 3rem;
+    width: 100%;
+}
+
+.pageArea {
+    width: 100%;
+}
