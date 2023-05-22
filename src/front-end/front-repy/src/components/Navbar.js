@@ -2,6 +2,7 @@ import styles from './Navbar.module.css';
 import iconHome from '../material/icons/Home.svg';
 import iconCadastro from '../material/icons/Cadastro.svg';
 import iconHistorico from '../material/icons/Historico.svg';
+import iconLogout from '../material/icons/Logout.svg';
 import {useState} from 'react';
 
 
@@ -30,6 +31,10 @@ function Navbar() {
                     <div className={`${styles.navItem} ${isSelected('cadastro') ? styles.selected : ''}`} onClick={() => setSelectedItem('cadastro')}>
                         <img className={styles.icon} src={iconCadastro} alt="Logo Home"/>
                         <p>Cadastrar usuário</p>
+                    </div>
+                    <div className={styles.logout}>
+                        <img className={styles.icon} src={iconLogout} alt="Logo Home"/>
+                        <p>Logout</p>
                     </div>
                 </div>
             </nav>

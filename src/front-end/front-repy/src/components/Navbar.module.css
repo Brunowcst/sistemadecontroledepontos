@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 .navBar {
+    position: relative;
     background-color: #587D4A;
     height: 80vh;
     width: 37vh;
@@ -55,4 +56,15 @@
 
 .selected {
     border-bottom: 3px solid #ECEBEB;
+}
+
+.logout {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .8rem;
+    padding-bottom: .6rem;
+    bottom: 2rem;
 }
