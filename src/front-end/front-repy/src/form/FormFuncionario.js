@@ -99,6 +99,7 @@ function FormFuncionario({btnText}) {
                 value={acessData.email}/>
 
                 <Input customClass="inputCadastro"
+                type="password"
                 name="password"
                 placeholder="Digite a senha do funcionário:"
                 handleOnChange={handleAcessChange}
