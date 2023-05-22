@@ -1,5 +1,4 @@
 import styles from './Cadastro.module.css';
-import NavBar from '../components/Navbar'
 import FormFuncionario from '../form/FormFuncionario';
 
 function Cadastro() {
