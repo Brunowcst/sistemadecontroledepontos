@@ -1,0 +1,8 @@
+sonar.projectKey=Repy
+sonar.projectName=Repy - Registro eletronico em python
+sonar.projectVersion=0.1.0
+# Path is relative to the sonar-project.properties file. Replace "" by "/" on Windows.
+
+sonar.sources=.
+sonar.sources.inclusions=/.py
+sonar.exclusions=/tests/, docs/, sigarte/, /static/, /templates/, /migrations/, /pycache/, **/admin.py, **/init.*, manage.py
