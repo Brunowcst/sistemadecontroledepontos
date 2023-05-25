@@ -38,20 +38,21 @@ function Form({btnText, handleSubmit}) {
         // console.log(usuario)
         // console.log(password)
 
-        fetch("http://localhost:5000/api/login/", {
+        fetch("http://localhost:8000/api/login/", {
             method: 'POST',
             headers: {
                 'Content-type' : 'application/json',
             },
-            body:  JSON.stringify(data),
+            body: JSON.stringify(data),
         }).then((response) => response.json())
-            .then((data) => {
-                if(data.sucess) {
+            .then((dataa) => {
+                console.log(dataa)
+                if(dataa.success) {
                     window.alert("usuário validado")
                 } else {
                     window.alert("usuário não encontrado")
                 }
-            }).catch(err => console.log(err));
+            }).catch((error) => console.log(error));
     }
 
     return (
