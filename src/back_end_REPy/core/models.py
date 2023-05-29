@@ -1,8 +1,49 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 # Create your models here.
+
+class UsuarioManager(BaseUserManager):
+    use_in_migrations = True
+
+    def _create_user(self, username, password, ** extra_fields):
+        if not username:
+            raise ValueError('o nome de usuário é obrigatório')
+        user = self.model(username=username, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_user(self, username, password=None, **extra_fields):
+        extra_fields.setdefault('is_superuser', False)
+        return self._create_user(username, password, **extra_fields)
+
+    def create_superuser(self, username, password=None, **extra_fields):
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_staff', True)
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('O superuser necessita de is_superuser=true.')
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('O superuser necessita de is_staffr=true.')
+        return self._create_user(username, password, **extra_fields)
+
+class Usuario(AbstractUser):
+    username = models.CharField(max_length = 20, null = False, verbose_name="Nome de usuário", unique= True)
+    # email = models.EmailField('E-mail', unique=True)
+    telefone = models.CharField('Telefone', max_length=12)
+    is_staff = models.BooleanField('Funcionário', default=True)
+    is_active = models.BooleanField(default=True)
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['telefone']
+
+    def __str__(self):
+        return self.username
+    objects = UsuarioManager()
+
+
 class Funcionario(models.Model):
-    nome = models.CharField(max_length = 100, null = False, default='nome')
+    nome = models.CharField(max_length = 100, null = False, verbose_name="Nome")
     cpf = models.CharField(max_length = 11, unique = True, null = False,  default='00000000000')
     sexo = models.CharField(max_length = 1)
     data_nasc = models.DateField(null = False,  default= 'YYYY-DD-MM')
@@ -11,19 +52,11 @@ class Funcionario(models.Model):
     cod_cargo = models.ForeignKey(to='Cargo', on_delete = models.PROTECT)
     cod_turno = models.ManyToManyField(to='Turno')
     cod_horario = models.ManyToManyField(to='Horario')
+    cod_func = models.ForeignKey(to = Usuario, on_delete = models.PROTECT, null= True, blank= True)
 
     def __str__(self):
         return self.nome
 
-class Usuario(models.Model):
-    usuario = models.CharField(max_length = 20, unique = True, null = False,  default='user')
-    email = models.CharField(max_length = 30, null = False, unique = True,  default='email')
-    senha = models.CharField( max_length = 12, null = False,  default='password' )
-    token = models.CharField( max_length = 64, null = False, unique = True,  default='0000' )
-    cod_func = models.ForeignKey(to = Funcionario, on_delete = models.PROTECT, null= True, blank= True)
-
-    def __str__(self):
-        return self.usuario
 
 class Departamento(models.Model):
     nome = models.CharField(max_length = 50, null = False, default='Depto_nome')
