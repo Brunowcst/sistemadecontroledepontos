@@ -32,7 +32,12 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'core.back.autent.CustomAuthBackend',
+    #     'rest_framework.authentication.BasicAuthentication',
+    #     'rest_framework.authentication.SessionAuthentication',
+    # ]
 }
 
 # Application definition
@@ -134,6 +139,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'core.Usuario'
+
+# AUTHENTICATION_BACKENDS = [
+#     'core.back.autent.CustomAuthBackend',  # Substitua 'myapp' pelo nome do seu aplicativo
+#     'django.contrib.auth.backends.ModelBackend',
+# ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
