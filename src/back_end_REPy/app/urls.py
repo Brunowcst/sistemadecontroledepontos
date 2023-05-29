@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-urlspatterns = [
+urlpatterns = [
     path('', views.ApiOverView, name="home"),
     path('get_user/<str:cpfId>/', views.get_user, name="get-user"),
     path('create/', views.add_user, name="add-user"),

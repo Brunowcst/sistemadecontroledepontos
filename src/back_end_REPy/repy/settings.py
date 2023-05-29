@@ -72,22 +72,22 @@ WSGI_APPLICATION = 'repy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# config = config('.env')
-# NAME = config('NAME')
-# USER = config('USER')
-# PASSWORD = config('PASSWORD')
-# HOST = config('HOST')
-# PORT = config('PORT')
+config = config('.env')
+NAME = config('NAME')
+USER = config('USER')
+PASSWORD = config('PASSWORD')
+HOST = config('HOST')
+PORT = config('PORT')
 DEBUG = config('DEBUG', cast=bool, default=False)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('NAME'),
-        'USER':config('USER'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT'),
+        'NAME': NAME,
+        'USER':USER,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
     }
 }
 
