@@ -81,3 +81,60 @@ def delete_user(request, cpfId):
     func.delete()
 
     return Response(status=status.HTTP_202_ACCEPTED)
+
+
+# DEPARTAMENTO
+
+## GET ALL DEPTO
+@api_view(['GET'])
+def get_all_depto(request):
+    depto = Departamento.objects.all()
+    if depto:
+        serializer = DepartamentoSerializer( depto, many = True )
+        return Response( serializer.data )
+    return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+## CREATE DEPTO
+@api_view(['POST'])
+def create_depto(request):
+    depto = DepartamentoSerializer(data = request.data)
+    
+    if Departamento.objects.filter(**request.data).exists():
+        raise serializers.ValidationError('This departamento already exists')
+    
+    if depto.is_valid():
+        depto.save()
+        return Response(depto.data)
+    return Response(status=status.HTTP_404_NOT_FOUND)
+
+## GET DEPTO
+@api_view(['GET'])
+def get_depto(request, name):
+    #Verificando o parâmetro da url.
+    if request.query_params:
+        depto = Departamento.objects.get(name = name)
+    
+    if depto:
+        serializer = FuncionarioSerializer(depto, many = True )
+        return Response( serializer.data )
+    return Response(status=status.HTTP_404_NOT_FOUND)
+
+## DELETE DEPTO
+@api_view(['POST'])
+def delete_depto(request, name):
+    depto = Departamento.objects.get(name = name)
+    depto.delete()
+
+    return Response(status=status.HTTP_202_ACCEPTED)
+
+## UPDATE DEPTO
+@api_view(['POST'])
+def update_depto(request, name):
+    depto = Departamento.objects.get(name = name)
+    depto = DepartamentoSerializer(instance = depto, data = request.data)
+
+    if depto.is_valid():
+        depto.save()
+        return Response(depto.data)
+    return Response(status=status.HTTP_404_NOT_FOUND)
