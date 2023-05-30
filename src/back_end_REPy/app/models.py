@@ -17,7 +17,7 @@ class Funcionario(models.Model):
 
 class Usuario(models.Model):
     usuario = models.CharField(max_length = 20, unique = True, null = False,  default='user')
-    email = models.CharField(max_length = 30, null = False, unique = True,  default='email')
+    email = models.CharField(max_length = 30, null = False, unique = True,  default='your_email')
     senha = models.CharField( max_length = 12, null = False,  default='password' )
     token = models.CharField( max_length = 64, null = False, unique = True,  default='0000' )
     cod_func = models.ForeignKey(to = Funcionario, on_delete = models.PROTECT, null= True, blank= True)

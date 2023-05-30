@@ -12,12 +12,12 @@ from .serializers import FuncionarioSerializer, UsuarioSerializer, CargoSerializ
 def ApiOverView(request):
     api_urls = {
         #funcionarios
-        'all_user' : 'user/',
-        'search by cpf': 'user/?cpf=cpf_input',
-        'Add' : 'user/create',
-        'Update' : 'user/cpf/update',
-        'Delete' : 'user/cpf/delete',
-        'Get' : 'user/cpf'
+        'all_user' : '/',
+        'search by cpf': '/?cpf=cpf_input',
+        'Add' : '/create',
+        'Update' : '/cpf/update',
+        'Delete' : '/cpf/delete',
+        'Get' : '/cpf'
         #departamentos
         ###content here
         #turnos
@@ -65,9 +65,9 @@ def add_user( request ):
 
 ## UPDATE
 @api_view(['POST'])
-def update_user(request, cpfId):
-    func = Funcionario.objects.get(cpf = cpfId)
-    data = FuncionarioSerializer(instance=func, data = request.data)
+def update_user(request, cpf):
+    func = Funcionario.objects.get(cpf = cpf)
+    data = FuncionarioSerializer(instance = func, data = request.data)
 
     if data.is_valid():
         data.save()
