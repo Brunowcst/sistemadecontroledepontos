@@ -13,3 +13,21 @@ O REPy é um Sistema de Registro Eletrônico de Pontos, baseado nos sistemas REP
     [Django REST](https://www.django-rest-framework.org/) é um Framework utilizado para a construção de [APIs](https://aws.amazon.com/pt/what-is/api/) e para manipulação do banco de dados;
 
     [Link para tutorial](https://www.youtube.com/playlist?list=PLsTx8TSx2fHY01FnuxBdwiBiOdZdPGik7)
+
+    ```console
+    docker run --rm -e SONAR_HOST_URL="http://labens.dct.ufrn.br/sonarqube" -e SONAR_LOGIN="TOKEN" -v "DIR_PROJETO/sistemadecontroledepontos/src/back_end_REPy:/usr/src" sonarsource/sonar-scanner-cli
+    ```
+
+## Remover diretório client
+
+```console
+git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch src/back_end_REPy/client' --prune-empty --tag-name-filter cat -- --all
+```
+
+```console
+git push origin --force --all
+```
+
+Também apaguei o ditetório via github.
+
+Apaguei das branchs: **main**, **feat/sonar** e **back_crud**.
