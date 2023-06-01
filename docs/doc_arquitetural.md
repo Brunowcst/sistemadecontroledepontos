@@ -64,6 +64,11 @@ A arquitetura do projeto seguirá o padrão Model-View-Controller(MVC). Essa arq
 <div id='componentes'/>
 
 ### **Componentes**
+| Componente | Descrição |
+| :--------- | :-------- |
+| Client | Componente que diz respeito ao usuário que terá acessos de acordo com seu cargo de serviço, alguns podem criar departamentos e novos usuários, o de mais baixo nível (Funcionario) poderá registrar pontos e consultar seu hitórico de registros|
+| Controller | Componente que fará toda a validação, como exemplo os frameworks e API's, as quais podem receber lixo digital, ma não podem passar isso a diante, pois ele quem transfere os dados do client para o banco de dados|
+|  Backend | Componente que fica responsável para armazenar dados, mais especificamente onde estará o SGBD. Como também, algumas regras lógicas para retornar parametros, seja ele lógico ou dado, como exemplo consulta de existencia de departamento.  |
 
 <div id='referencias'/>
 
