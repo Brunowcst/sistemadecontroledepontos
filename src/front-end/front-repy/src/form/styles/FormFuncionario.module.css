@@ -1,0 +1,33 @@
+.formCadastro {
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    border: 1px solid rgb(122, 121, 121);
+    height: 80vh;
+    width: 90%;
+}
+
+.userImage {
+    min-height: 18vw;
+    min-width: 18vw;
+    border-radius: 50%;
+    background-color: rgb(122, 121, 121);
+}
+
+.dadosPessoais {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.inputsDadosPessoais {
+    width: 100%;
+}
+
+.buttom {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.3rem;
+}
