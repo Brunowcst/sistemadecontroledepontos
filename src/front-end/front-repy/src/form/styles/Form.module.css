@@ -1,0 +1,30 @@
+.container_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forget {
+    font-size: .8rem;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+    color: #7b7b7b;
+}
+
+.input_container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 20px;
+    color: #587D4A;
+    position: absolute;
+    top: 59%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
