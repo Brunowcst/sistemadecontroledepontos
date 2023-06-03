@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import json
 from django.contrib.auth import authenticate, login
+from django.middleware.csrf import get_token
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -54,6 +56,11 @@ def login_view(request):
         else:
             return JsonResponse({'success': False})
     return JsonResponse({'success': False})
+
+
+def get_csrf_token(request):
+    csrf_token = get_token(request)
+    return JsonResponse({'csrfToken': csrf_token})
 
 
 # acesso = Usuario.objects.filter(usuario=username).values('usuario').first()
