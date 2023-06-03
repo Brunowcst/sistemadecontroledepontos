@@ -65,7 +65,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 # CORS_ORIGIN_WHITELIST = [
@@ -84,6 +83,8 @@ CORS_ALLOW_METHODS = [
     'OPTIONS',
 ]
 
+CSRF_COOKIE_NAME = 'csrftoken'  # Nome do cookie CSRF
+CSRF_HEADER_NAME = 'X-Csrftoken'  # Nome do cabeçalho CSRF
 
 ROOT_URLCONF = 'app.urls'
 
