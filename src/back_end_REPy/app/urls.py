@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
-from core.views import FuncionarioViewSet, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
+from core.views import FuncionarioViewSet, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view, get_csrf_token
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 
@@ -40,6 +40,7 @@ urlpatterns = [
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('get_csrf_token/', get_csrf_token, name='csrf')
 ]
     # path('password-reset/', PasswordResetView.as_view(), name='passwordReset'),
     # path('password-reset/done/', PasswordResetDoneView.as_view(), name='passwordReset'),
