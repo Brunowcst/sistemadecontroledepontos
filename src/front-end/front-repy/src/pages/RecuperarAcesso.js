@@ -2,11 +2,13 @@ import Input from '../form/Input';
 import {useState, useEffect} from 'react';
 import SubmitButton from '../form/SubmitButton';
 import styles from './RecuperarAcesso.module.css';
+// import CSRFToken from '../form/Csrf';
 
-function RecuperarAcesso(props) {
-const [email, setEmail] = useState('');
-const [mensagem, setMensagem] = useState('');
-const [csrfToken, setCsrfToken] = useState('');
+
+function RecuperarAcesso() {
+    const [email, setEmail] = useState('');
+    const [mensagem, setMensagem] = useState('');
+    const [csrfToken, setCsrfToken] = useState('');
 
     function HandleChange (e) {
         setEmail(e.target.value)
@@ -24,10 +26,11 @@ const [csrfToken, setCsrfToken] = useState('');
         });
     }, []);
 
+    console.log(csrfToken)
+
     const submit = (e) => {
         e.preventDefault();
         const emailData = email;
-
         const csrftoken = csrfToken; // Obter o valor do token CSRF
 
         fetch('http://localhost:8000/password_reset/', {
@@ -47,28 +50,11 @@ const [csrfToken, setCsrfToken] = useState('');
         });
     }
 
-    function getCookie(name) {
-        const cookieName = `${name}=`;
-        const decodedCookie = decodeURIComponent(document.cookie);
-        const cookieArray = decodedCookie.split(';');
-      
-        for (let i = 0; i < cookieArray.length; i++) {
-          let cookie = cookieArray[i];
-          while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
-          }
-          if (cookie.indexOf(cookieName) === 0) {
-            return cookie.substring(cookieName.length, cookie.length);
-          }
-        }
-      
-        return '';
-    }
-
     return (
         <section className={styles.container}>
                 <form className={styles.form} onSubmit={submit}>
                     <p>Esqueceu suas credenciais de acesso? Solicite uma recuperação por email.</p>
+                    {/* <CSRFToken/> */}
                     <Input
                         type='email'
                         name='email'
