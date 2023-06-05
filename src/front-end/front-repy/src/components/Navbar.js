@@ -4,6 +4,7 @@ import iconCadastro from '../material/icons/Cadastro.svg';
 import iconHistorico from '../material/icons/Historico.svg';
 import iconLogout from '../material/icons/Logout.svg';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 
 function Navbar() {
@@ -20,21 +21,25 @@ function Navbar() {
                 </div>
                 <p className={styles.nameUser}>Robertinho delas</p>
             </div>
+
             <div className={styles.navItens}>
-                <div className={`${styles.navItem} ${isSelected('home') ? styles.selected : ''}`} onClick={() => setSelectedItem('home')}>
+                <Link to="/home" className={`${styles.navItem} ${isSelected('home') ? styles.selected : ''}`} onClick={() => setSelectedItem('home')}>
                     <img className={styles.icon} src={iconHome} alt="Logo Home"/>
                     <p>Home</p>
-                </div>
-                <div className={`${styles.navItem} ${isSelected('historico') ? styles.selected : ''}`} onClick={() => setSelectedItem('historico')}>
+                </Link>
+
+                <Link className={`${styles.navItem} ${isSelected('historico') ? styles.selected : ''}`} onClick={() => setSelectedItem('historico')}>
                     <img className={styles.icon} src={iconHistorico} alt="Logo Home"/>
                     <p>Histórico de marcações</p>
-                </div>
-                <div className={`${styles.navItem} ${isSelected('cadastro') ? styles.selected : ''}`} onClick={() => setSelectedItem('cadastro')}>
+                </Link>
+
+                <Link to="/cadastro" className={`${styles.navItem} ${isSelected('cadastro') ? styles.selected : ''}`} onClick={() => setSelectedItem('cadastro')}>
                     <img className={styles.icon} src={iconCadastro} alt="Logo Home"/>
                     <p>Cadastrar usuário</p>
-                </div>
+                </Link>
+
                 <div className={styles.logout}>
-                    <img className={styles.icon} src={iconLogout} alt="Logo Home"/>
+                    <img className={styles.icon} src={iconLogout} alt="Logout Home"/>
                     <p>Logout</p>
                 </div>
             </div>
