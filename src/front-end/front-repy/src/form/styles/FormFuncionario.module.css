@@ -1,9 +1,8 @@
 .formCadastro {
-    padding: 2rem;
+    padding: 1rem 2rem;
     border-radius: 10px;
-    margin-top: 2rem;
+    margin-top: .6rem;
     border: 1px solid rgb(122, 121, 121);
-    height: 80vh;
     width: 90%;
 }
 
