@@ -1,7 +1,7 @@
 import Input from '../form/Input';
 import {useState, useEffect} from 'react';
 import SubmitButton from '../form/SubmitButton';
-import styles from './RecuperarAcesso.module.css';
+import styles from './styles/RecuperarAcesso.module.css';
 // import CSRFToken from '../form/Csrf';
 
 

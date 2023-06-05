@@ -1,4 +1,4 @@
-import styles from './Login.module.css';
+import styles from './styles/Login.module.css';
 import Form from '../form/Form';
 import {BsFacebook} from 'react-icons/bs';
 import {FcGoogle} from 'react-icons/fc';
