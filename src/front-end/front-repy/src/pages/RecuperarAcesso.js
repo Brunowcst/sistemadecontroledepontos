@@ -58,7 +58,7 @@ function RecuperarAcesso() {
                     <Input
                         type='email'
                         name='email'
-                        text='Email'
+                        text='Email:'
                         placeholder='Digite um email válido'
                         handleOnChange={HandleChange}
                         value={email}
