@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
-from core.views import FuncionarioViewSet, FuncionarioList, FuncionarioDetail, DepartamentoViewSet, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
+from core.views import FuncionarioViewSet, FuncionarioList, FuncionarioDetail, DepartamentoViewSet, DepartamentoList, DeptoDetail, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 
@@ -23,5 +23,7 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('funcionarios/', FuncionarioList.as_view()),
-    path('funcionarios/<str:cpf>/', FuncionarioDetail.as_view()),
+    path('funcionarios/cpf=<str:cpf>/', FuncionarioDetail.as_view()),
+    path('deptos/', DepartamentoList.as_view()),
+    path('depto/nome=<str:nome>/',DeptoDetail.as_view()),
 ]
