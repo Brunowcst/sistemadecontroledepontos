@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 from rest_framework import status
 
 from rest_framework import mixins
@@ -161,22 +162,30 @@ class CargoList(APIView):
     """
     Liste todos os cargos ou crie um novo.
     """
-    def get(self, request, format=None):
+    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    queryset = Cargo.objects.all()
+    serializer_class = CargoSerializer
+
+    def get(self, request, format = None):
         cargo = Cargo.objects.all()
-        serializer = CargoSerializer(cargo, many=True)
+        serializer = CargoSerializer(cargo, many = True)
         return Response(serializer.data)
 
-    def post(self, request, format=None):
-        serializer = CargoSerializer(data=request.data)
+    def post(self, request, format = None):
+        serializer = CargoSerializer(data = request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.data, status = status.HTTP_201_CREATED)
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 class CargoDetail(APIView):
     """
     Recupere, atualize ou delete cargos
     """
+    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    queryset = Cargo.objects.all()
+    serializer_class = CargoSerializer
+    
     def get_object(self, id):
         try:
             return Cargo.objects.get(id=id)
