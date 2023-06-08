@@ -3,6 +3,13 @@ from django.http import JsonResponse
 import json
 from django.contrib.auth import authenticate, login
 
+
+from django.http import Http404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
+
 # Create your views here.
 
 from rest_framework import viewsets
@@ -55,25 +62,46 @@ def login_view(request):
             return JsonResponse({'success': False})
     return JsonResponse({'success': False})
 
+class FuncionarioList(APIView):
+    """
+    List all Funcionarios, or create a new Funcionarios.
+    """
+    def get(self, request, format=None):
+        func = Funcionario.objects.all()
+        serializer = FuncionarioSerializer(func, many=True)
+        return Response(serializer.data)
 
-# acesso = Usuario.objects.filter(usuario=username).values('usuario').first()
-# senhaAcesso = Usuario.objects.filter(senha=password).values('senha').first()
-# print('Acesso.usuario:', acesso)
-# print('Acesso.Senha:', senhaAcesso)
-# print('Username:', username)
-# print('Password:', password)
+    def post(self, request, format=None):
+        serializer = FuncionarioSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# def login_view(request): 
-#     if request.method == 'POST':
-#         data = json.loads(request.body)
-#         username = data.get('username')
-#         password = data.get('password')
+class FuncionarioDetail(APIView):
+    
+    def get_object(self, cpf):
+        try:
+            return Funcionario.objects.get(cpf=cpf)
+        except Funcionario.DoesNotExist:
+            raise Http404
 
-#         try:
-#             if Usuario.objects.filter(usuario=username, senha=password).exists():
-#                 return JsonResponse({'success': True})
-#             else:
-#                 return JsonResponse({'success': False}) 
-#         except Usuario.DoesNotExist:
-#             return JsonResponse({'success': False, 'error': 'Usuário não encontrado'})
-#     return JsonResponse({'success': False})
+    def get(self, request, cpf, format=None):
+        func = self.get_object(cpf)
+        serializer = FuncionarioSerializer(func)
+        return Response(serializer.data)
+
+    def put(self, request, cpf, format=None):
+        func = self.get_object(cpf)
+        serializer = FuncionarioSerializer(func, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, cpf, format=None):
+        func = self.get_object(cpf)
+        func.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+## https://www.django-rest-framework.org/tutorial/3-class-based-views/#tutorial-3-class-based-views
