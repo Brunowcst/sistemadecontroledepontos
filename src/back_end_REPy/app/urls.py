@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
-from core.views import FuncionarioViewSet, FuncionarioList, FuncionarioDetail, DepartamentoViewSet, DepartamentoList, DeptoDetail, UsuarioViewSet, CargoViewSet, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
+from core.views import FuncionarioViewSet, FuncionarioList, FuncionarioDetail,DepartamentoViewSet, DepartamentoList, DeptoDetail, UsuarioViewSet, CargoViewSet, CargoDetail, CargoList, PontoViewSet, TurnoViewSet, HorarioViewSet, login_view
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 
@@ -22,8 +22,17 @@ urlpatterns = [
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('funcionarios/', FuncionarioList.as_view()),
-    path('funcionarios/cpf=<str:cpf>/', FuncionarioDetail.as_view()),
-    path('deptos/', DepartamentoList.as_view()),
-    path('depto/nome=<str:nome>/',DeptoDetail.as_view()),
+    
+    ## Funcionarios
+    path('listar_funcionarios/', FuncionarioList.as_view()),
+    path('get_funcionario/<str:cpf>/', FuncionarioDetail.as_view()),
+    
+    ## Deptos
+    path('listar_deptos/', DepartamentoList.as_view()),
+    path('get_depto/<str:nome>/',DeptoDetail.as_view()),
+
+    ## Cargos
+    path('listar_cargos/', CargoList.as_view()),
+    path('get_cargo/<int:id>/',CargoDetail.as_view()),
+
 ]
