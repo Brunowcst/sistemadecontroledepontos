@@ -104,4 +104,46 @@ class FuncionarioDetail(APIView):
         func.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-## https://www.django-rest-framework.org/tutorial/3-class-based-views/#tutorial-3-class-based-views
+
+
+class DepartamentoList(APIView):
+    """
+    List all Funcionarios, or create a new Funcionarios.
+    """
+    def get(self, request, format=None):
+        depto = Departamento.objects.all()
+        serializer = DepartamentoSerializer(depto, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = DepartamentoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class DeptoDetail(APIView):
+    
+    def get_object(self, nome):
+        try:
+            return Departamento.objects.get(nome=nome)
+        except Departamento.DoesNotExist:
+            raise Http404
+
+    def get(self, request, nome, format=None):
+        depto = self.get_object(nome)
+        serializer = DepartamentoSerializer(depto)
+        return Response(serializer.data)
+
+    def put(self, request, nome, format=None):
+        depto = self.get_object(nome)
+        serializer = DepartamentoSerializer(depto, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, nome, format=None):
+        func = self.get_object(nome)
+        func.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
