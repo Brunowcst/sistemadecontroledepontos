@@ -35,4 +35,7 @@ urlpatterns = [
     path('listar_cargos/', CargoList.as_view()),
     path('get_cargo/<int:id>/',CargoDetail.as_view()),
 
+    ## Horario
+    
+
 ]
