@@ -1,9 +1,12 @@
 from django.shortcuts import render
 import json
 from django.contrib.auth import authenticate, login
-from django.middleware.csrf import get_token
-from django.middleware import csrf
 from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+
 
 # Create your views here.
 
@@ -56,29 +59,17 @@ def login_view(request):
     return JsonResponse({'success': False})
 
 
-def get_csrf_token(request):
-    csrf_token = csrf.get_token(request)
-    return JsonResponse({'csrfToken': csrf_token})
+class RoutesToken(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        routes = [
+            'api/token',
+            'api/refresh/token',
+        ]
 
-# acesso = Usuario.objects.filter(usuario=username).values('usuario').first()
-# senhaAcesso = Usuario.objects.filter(senha=password).values('senha').first()
-# print('Acesso.usuario:', acesso)
-# print('Acesso.Senha:', senhaAcesso)
-# print('Username:', username)
-# print('Password:', password)
+        return Response(routes)
 
-# def login_view(request): 
-#     if request.method == 'POST':
-#         data = json.loads(request.body)
-#         username = data.get('username')
-#         password = data.get('password')
-
-#         try:
-#             if Usuario.objects.filter(usuario=username, senha=password).exists():
-#                 return JsonResponse({'success': True})
-#             else:
-#                 return JsonResponse({'success': False}) 
-#         except Usuario.DoesNotExist:
-#             return JsonResponse({'success': False, 'error': 'Usuário não encontrado'})
-#     return JsonResponse({'success': False})
+# def get_csrf_token(request):
+#     csrf_token = csrf.get_token(request)
+#     return JsonResponse({'csrfToken': csrf_token})
