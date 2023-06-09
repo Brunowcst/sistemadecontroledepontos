@@ -3,7 +3,7 @@
 .navBar {
     position: relative;
     background-color: #587D4A;
-    height: 80vh;
+    height: 100vh;
     border-radius: 0px 0px 30px 0px;
     display: flex;
     flex-direction: column;
