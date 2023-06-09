@@ -4,12 +4,15 @@ import styles from './styles/Form.module.css';
 import {AiOutlineEye} from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
 import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 function Form({btnText, handleSubmit}) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [vibilityIcon, setVisibilityIcon] = useState(<AiOutlineEye />);
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate()
 
     const togglePasswordVisibility = () => {
         //console.log(passwordVisible);
@@ -34,9 +37,6 @@ function Form({btnText, handleSubmit}) {
             password: password,
         };
         console.log(data)
-        // console.log("foi")
-        // console.log(usuario)
-        // console.log(password)
 
         fetch("http://localhost:8000/api/login/", {
             method: 'POST',
@@ -48,7 +48,7 @@ function Form({btnText, handleSubmit}) {
             .then((dataa) => {
                 console.log(dataa)
                 if(dataa.success) {
-                    window.alert("usuário validado")
+                    navigate("/home")
                 } else {
                     window.alert("usuário não encontrado")
                 }
