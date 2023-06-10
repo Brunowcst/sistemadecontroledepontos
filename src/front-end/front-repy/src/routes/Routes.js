@@ -10,11 +10,11 @@ function routes(props) {
         <Router>
             <Outlet/>
             <Routes>
-                <Route path='/' element={<Login/>} />
+                <Route path="/" element={<Login/>} />
                 <Route path='/recuperar-acesso' element={<RecuperarAcesso/>}/>
                 <Route element={<MainLayout/>}>
+                    <Route path='/Home' element={<Home/>} />
                     <Route path="/cadastro" element={<Cadastro />} />
-                    <Route path="/home" element={<Home/>} />
                 </Route>
             </Routes>
         </Router>

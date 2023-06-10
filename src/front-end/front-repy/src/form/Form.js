@@ -45,9 +45,9 @@ function Form({btnText, handleSubmit}) {
             },
             body: JSON.stringify(data),
         }).then((response) => response.json())
-            .then((dataa) => {
-                console.log(dataa)
-                if(dataa.success) {
+            .then((data) => {
+                console.log(data)
+                if(data.success) {
                     navigate("/home")
                 } else {
                     window.alert("usuário não encontrado")
