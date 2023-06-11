@@ -6,12 +6,13 @@ import MainLayout from '../layout/MainLayout';
 import RecuperarAcesso from '../pages/RecuperarAcesso';
 import PrivateRoute from '../utils/PrivateRoute';
 import React, {Fragment} from 'react';
+import { AuthProvider } from '../context/AuthContext';
 
 function routes() {
     return (
         <div>
             <Router>
-                <Fragment>
+                <AuthProvider>
                     <Routes>
                         <Route path="/" element={<Login />} />
                         <Route path="/recuperar-acesso" element={<RecuperarAcesso />} />
@@ -22,7 +23,7 @@ function routes() {
                             </Route>
                         </Route>
                     </Routes>
-                </Fragment>
+                </AuthProvider>
             </Router>
         </div>
     );

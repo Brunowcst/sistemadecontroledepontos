@@ -3,12 +3,14 @@ import iconHome from '../material/icons/Home.svg';
 import iconCadastro from '../material/icons/Cadastro.svg';
 import iconHistorico from '../material/icons/Historico.svg';
 import iconLogout from '../material/icons/Logout.svg';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
+import AuthContext from '../context/AuthContext';
 
 
 function Navbar() {
     const [selectedItem, setSelectedItem] = useState('home');
+    let {name} = useContext(AuthContext)
 
     const isSelected = (item) => {
       return selectedItem === item;
@@ -19,7 +21,7 @@ function Navbar() {
                 <div>
                     <p className={styles.imageProfile}></p>
                 </div>
-                <p className={styles.nameUser}>Robertinho delas</p>
+                <p className={styles.nameUser}>{name}</p>
             </div>
 
             <div className={styles.navItens}>
