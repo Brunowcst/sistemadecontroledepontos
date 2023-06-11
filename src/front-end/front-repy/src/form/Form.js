@@ -36,7 +36,6 @@ function Form({btnText, handleSubmit}) {
             username: usuario,
             password: password,
         };
-        console.log(data)
 
         fetch("http://localhost:8000/api/login/", {
             method: 'POST',
@@ -46,7 +45,6 @@ function Form({btnText, handleSubmit}) {
             body: JSON.stringify(data),
         }).then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 if(data.success) {
                     navigate("/home")
                 } else {
