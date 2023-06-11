@@ -3,8 +3,10 @@ import SubmitButton from './SubmitButton';
 import styles from './styles/Form.module.css';
 import {AiOutlineEye} from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {useNavigate} from 'react-router-dom'
+import AuthContext from '../context/AuthContext';
+import  {AuthProvider} from '../context/AuthContext';
 
 function Form({btnText, handleSubmit}) {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -13,6 +15,7 @@ function Form({btnText, handleSubmit}) {
     const [password, setPassword] = useState('');
 
     const navigate = useNavigate()
+    const { loginUser } = useContext(AuthContext);
 
     const togglePasswordVisibility = () => {
         //console.log(passwordVisible);
@@ -36,54 +39,56 @@ function Form({btnText, handleSubmit}) {
             username: usuario,
             password: password,
         };
-
-        fetch("http://localhost:8000/api/login/", {
-            method: 'POST',
-            headers: {
-                'Content-type' : 'application/json',
-            },
-            body: JSON.stringify(data),
-        }).then((response) => response.json())
-            .then((data) => {
-                if(data.success) {
-                    navigate("/home")
-                } else {
-                    window.alert("usuário não encontrado")
-                }
-            }).catch((error) => console.log(error));
+        console.log(data)
+        loginUser({ e, usuario, password });
     }
+    
 
     return (
-        <form className={styles.container_form} onSubmit={submit}>
-           <Input 
-            	type="text"
-                text="Email"
-                name="email"
-                placeholder="Digite seu email"
-                handleOnChange={handleUsuario}
-                value={usuario}
-                autoComplete='on'
-           /> 
-
-           <div className={styles.input_container}>
+        <AuthProvider>
+            <form className={styles.container_form} onSubmit={submit}>
                <Input
-               type={passwordVisible ? 'text' : 'password'}
-               text="Senha"
-               id="passwordInput"
-               name="password"
-               placeholder="Digite sua senha"
-               handleOnChange={handlePassword}
-               value={password}
+                    type="text"
+                    text="Email"
+                    name="email"
+                    placeholder="Digite seu email"
+                    handleOnChange={handleUsuario}
+                    value={usuario}
+                    autoComplete='on'
                />
-
-            <span className={styles.icon} onClick={togglePasswordVisibility}>{vibilityIcon}</span>
-           </div>
-
-           <p className={styles.forget}>Forget password?</p>
-
-            <SubmitButton text={btnText}/>
-        </form>
+               <div className={styles.input_container}>
+                   <Input
+                   type={passwordVisible ? 'text' : 'password'}
+                   text="Senha"
+                   id="passwordInput"
+                   name="password"
+                   placeholder="Digite sua senha"
+                   handleOnChange={handlePassword}
+                   value={password}
+                   />
+                <span className={styles.icon} onClick={togglePasswordVisibility}>{vibilityIcon}</span>
+               </div>
+               <p className={styles.forget}>Forget password?</p>
+                <SubmitButton text={btnText}/>
+            </form>
+        </AuthProvider>
     );
 }
 
 export default Form;
+
+// fetch("http://localhost:8000/api/login/", {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-type' : 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // }).then((response) => response.json())
+        //     .then((data) => {
+        //         if(data.success) {
+        //             navigate("/home")
+        //         } else {
+        //             window.alert("usuário não encontrado")
+        //         }
+        //     }).catch((error) => console.log(error));
+// }
