@@ -39,7 +39,6 @@ function Form({btnText, handleSubmit}) {
             username: usuario,
             password: password,
         };
-        console.log(data)
         loginUser({ e, usuario, password });
     }
     
