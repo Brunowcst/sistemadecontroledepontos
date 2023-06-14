@@ -10,7 +10,9 @@ import AuthContext from '../context/AuthContext';
 
 function Navbar() {
     const [selectedItem, setSelectedItem] = useState('home');
-    let {name} = useContext(AuthContext)
+    let {user, logoutUser} = useContext(AuthContext)
+
+    // console.log('cuderola:' + user)
 
     const isSelected = (item) => {
       return selectedItem === item;
@@ -21,7 +23,7 @@ function Navbar() {
                 <div>
                     <p className={styles.imageProfile}></p>
                 </div>
-                <p className={styles.nameUser}>{name}</p>
+                <p className={styles.nameUser}>{user ? user.username.charAt(0).toUpperCase() + user.username.slice(1) : 'Sem nome'}</p>
             </div>
 
             <div className={styles.navItens}>
@@ -40,9 +42,10 @@ function Navbar() {
                     <p>Cadastrar usuário</p>
                 </Link>
 
+                
                 <div className={styles.logout}>
                     <img className={styles.icon} src={iconLogout} alt="Logout Home"/>
-                    <p>Logout</p>
+                    <p onClick={logoutUser}>Logout</p>
                 </div>
             </div>
         </nav>
