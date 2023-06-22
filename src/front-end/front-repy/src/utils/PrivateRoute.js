@@ -7,7 +7,7 @@ import AuthContext from '../context/AuthContext';
 const PrivateRoute = ({children, ...rest}) => {
     let {user} = useContext(AuthContext)
     // console.log("Private router chamada")
-    return !user ? <Navigate to="/"/> : <Outlet/>
+    return !user ? <Navigate to="/error-page"/> : <Outlet/>
 }
 
 export default PrivateRoute;

@@ -7,6 +7,7 @@ import RecuperarAcesso from '../pages/RecuperarAcesso';
 import PrivateRoute from '../utils/PrivateRoute';
 import React, {Fragment} from 'react';
 import { AuthProvider } from '../context/AuthContext';
+import ErrorPage from '../pages/ErrorPage';
 
 function routes() {
     return (
@@ -16,6 +17,7 @@ function routes() {
                     <Routes>
                         <Route path="/" element={<Login />} />
                         <Route path="/recuperar-acesso" element={<RecuperarAcesso />} />
+                        <Route path='/error-page' element={<ErrorPage/>}/>
                         <Route element={<MainLayout />}>
                             <Route element={<PrivateRoute/>}>
                                 <Route path='/home' element={<Home/>}/>
