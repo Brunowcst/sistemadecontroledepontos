@@ -217,3 +217,4 @@ EMAIL_HOST_USER = 'onurb.clive@gmail.com'
 EMAIL_HOST_PASSWORD = 'fqftssxpfzpcaojq'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
