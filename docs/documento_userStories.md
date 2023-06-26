@@ -141,9 +141,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**          | Essencial                             | 
 | **Estimativa**          | 12 h                                  | 
 | **Tempo Gasto (real):** | --                                    | 
-| **Tamanho Funcional**   | x PF                                  | 
-| **Analista**            | David Emanoel                         | 
-| **Desenvolvedor**       | Bruno Costa                           | 
+| **Tamanho Funcional**   | 15 PF                                  | 
+| **Analista**            | Bruno Costa                         | 
+| **Desenvolvedor**       | David Emanoel                           | 
 | **Revisor**             | Marcelo Victor                        | 
 | **Testador**            | Renan Dantas                          | 
 
@@ -158,6 +158,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA04.05**              | Durante o ato de edição, os dados não serão alterados se: o atributo nome(Departamento.nome) já existir em outro departamento; código do gerente responsável (Departamento.fk_cod_depto) for nulo 'NULL'. |
 | **TA04.06**              | O gestor poderá desativar um departamento, na sessão de editar departamento. Ao clicar no ícone de desativação, será exibido um modal de confirmação, solicitando a credencial de acesso (senha) do gestor. Em caso da senha ser passada com sucesso, o departamento será excluído e todos os Funcionários com o atributo (Funcionario.fk_cod_depto) terão esse atributo alterado para 'NULL'. Após a exclusão, será exibido a seguinte mensagem: "Departamento inativado com sucesso".|
 | **TA04.07**              | Durante a inativação de um departamento, a ação falhará se: a credencial(senha) informada pelo gestor for incorreta e a seguinte mensagem será exibida: "A senha informada está incorreta".|
+| **TA04.08**              | O gerente poderá adicionar funcionarios ao seu departamento, na opção "Vincular funcionario a departamento"|
+| **TA04.08**              | O gerente poderá excluir funcionarios do seu departamento, na opção "Desvincular funcionario a departamento"|
 
 
 ### User Story US04 - Marcar ponto.
