@@ -19,6 +19,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 30/04/2023 | 0.0.6   | Detalhamento do User Story: US03   | David Emanoel |
 | 30/04/2023 | 0.0.7   | Detalhamento do User Story: US05   | David Emanoel |
 | 30/04/2023 | 0.0.8   | Detalhamento do User Story: US06   | David Emanoel |
+| 26/06/2023 | 0.0.9   | Detalhamento do User Story: US06   | Renan Dantas|
+| 27/06/2023 | 0.0.10   | Detalhamento do User Story: US06   | Renan Dantas|
 
 ### User Story US00 - Manter Funcionário
 
@@ -75,7 +77,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 24 h                                | 
-| **Tempo Gasto (real):**   | --                                  | 
+| **Tempo Gasto (real):**   | 10 h                                | 
 | **Tamanho Funcional**     | 3 PF                                | 
 | **Analista**              | David Emanoel                       | 
 | **Desenvolvedor**         | Bruno Costa                         | 
