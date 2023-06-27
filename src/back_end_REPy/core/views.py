@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from django.http import JsonResponse
 import json
 from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+
 
 
 from django.http import Http404
@@ -26,10 +32,8 @@ def login_view(request):
         data = json.loads(request.body)
         username = data.get('username')
         password = data.get('password')
-        print('Username:', username)
-        print('Password:', password)
+
         user = authenticate(request, username=username, password=password)
-        print(user)
 
         if user is not None:
             # login(request, user)
@@ -37,6 +41,38 @@ def login_view(request):
         else:
             return JsonResponse({'success': False})
     return JsonResponse({'success': False})
+
+
+
+class RoutesToken(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        routes = [
+            'api/token',
+            'api/refresh/token',
+        ]
+
+        return Response(routes)
+
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Add custom claims
+        token['username'] = user.username
+        # ...
+
+        return token
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class =  MyTokenObtainPairSerializer
+
+# def get_csrf_token(request):
+#     csrf_token = csrf.get_token(request)
+#     return JsonResponse({'csrfToken': csrf_token})
 
 
 class FuncionarioList(APIView):

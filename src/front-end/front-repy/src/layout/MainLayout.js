@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import styles from './MainLayout.module.css';
 
+
 function MainLayout() {
   return (
     <>

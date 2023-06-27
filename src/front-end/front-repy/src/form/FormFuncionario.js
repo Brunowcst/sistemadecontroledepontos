@@ -59,6 +59,7 @@ function FormFuncionario({btnText}) {
                     <Input
                     customClass='inputCadastro'
                     type="text"
+                    text="Nome:"
                     name="nome"
                     placeholder="Nome do funcionário:"
                     handleOnChange={handleChange}
@@ -68,6 +69,7 @@ function FormFuncionario({btnText}) {
                     <Input
                     customClass='inputCadastro'
                     type="text"
+                    text="Cargo:"
                     name="cargo"
                     placeholder="Informe o cargo:"
                     handleOnChange={handleChange}
@@ -76,6 +78,7 @@ function FormFuncionario({btnText}) {
                     <Input
                     customClass='inputCadastro'
                     type="text"
+                    text="Escala"
                     name="escala"
                     placeholder="Informe a escala:"
                     handleOnChange={handleChange}
@@ -84,6 +87,7 @@ function FormFuncionario({btnText}) {
                     <Input
                     customClass='inputCadastro'
                     type="text"
+                    text="Turno:"
                     name="turno"
                     placeholder="Informe o turno:"
                     handleOnChange={handleChange}
@@ -93,6 +97,7 @@ function FormFuncionario({btnText}) {
             <div>
                 <Input customClass="inputCadastro"
                 type="text"
+                text="Email:"
                 name="email"
                 placeholder="Digite o email do funcionário:"
                 handleOnChange={handleAcessChange}
@@ -100,6 +105,7 @@ function FormFuncionario({btnText}) {
 
                 <Input customClass="inputCadastro"
                 type="password"
+                text="Senha:"
                 name="password"
                 placeholder="Digite a senha do funcionário:"
                 handleOnChange={handleAcessChange}

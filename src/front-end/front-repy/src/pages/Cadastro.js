@@ -1,4 +1,4 @@
-import styles from './Cadastro.module.css';
+import styles from './styles/Cadastro.module.css';
 import FormFuncionario from '../form/FormFuncionario';
 
 function Cadastro() {
