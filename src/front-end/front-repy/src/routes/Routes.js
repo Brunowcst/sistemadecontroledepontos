@@ -15,6 +15,7 @@ function routes() {
             <Router>
                 <AuthProvider>
                     <Routes>
+                        <Route path='*' element={<ErrorPage/>}/>
                         <Route path="/" element={<Login />} />
                         <Route path="/recuperar-acesso" element={<RecuperarAcesso />} />
                         <Route path='/error-page' element={<ErrorPage/>}/>
