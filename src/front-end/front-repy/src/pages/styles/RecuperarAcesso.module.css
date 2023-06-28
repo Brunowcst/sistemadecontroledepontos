@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25rem; /* Ajuste o valor conforme necessário */
+    height: 40%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid gray;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.erroMessage {
+    padding-bottom: 2rem;
+    color: rgb(202, 37, 37);
+    font-weight: 500;
+    word-wrap: break-word;
+    width: 20rem;
+}

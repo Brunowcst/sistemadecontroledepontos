@@ -176,13 +176,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 12 h                                 | 
+| **Estimativa**            | 12 h                                | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 8 PF                                | 
-| **Analista**              | Bruno Costa (responsável por especificar/detalhar o US). | 
-| **Desenvolvedor**         | -                                  | 
-| **Revisor**               | -                               | 
-| **Testador**              | -                                | 
+| **Analista**              | David Emanoel                         | 
+| **Desenvolvedor**         | Bruno Costa                           | 
+| **Revisor**               | Marcelo Victor                        | 
+| **Testador**              | Renan Dantas                          | 
 | Testes de Aceitação (TA) |  |
 | ----------------|---------------------------|
 | **Código**      | **Descrição**             |
@@ -191,6 +191,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA04.03**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no inicio de sua jornada de trabalho se ele marcou após o horário fixo de entrada, será exibida a seguinte mensagem: ponto registrado com atraso. |
 | **TA04.04**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho se ele marcou após o horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado após o horário de saída. |
 | **TA04.05**     | O Funcionário na tela de Marcar ponto, após está logado, deverá marcar seu ponto no final de sua jornada de trabalho. Se ele marcou antes do horário fixo de saída, será exibida a seguinte mensagem: Ponto marcado antes do horário de saída. |
+| **TA04.05**     | O Funcionário na tela de Marcar ponto, deverá lembrar de registrar saída em no horário de almoço, e registrar novamente a entrada apó s retornar a empresa. |
 
 
 ### User Story US05 - Gerenciar Ponto.
