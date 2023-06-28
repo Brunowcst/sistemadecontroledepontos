@@ -54,26 +54,3 @@ def login_view(request):
         else:
             return JsonResponse({'success': False})
     return JsonResponse({'success': False})
-
-
-# acesso = Usuario.objects.filter(usuario=username).values('usuario').first()
-# senhaAcesso = Usuario.objects.filter(senha=password).values('senha').first()
-# print('Acesso.usuario:', acesso)
-# print('Acesso.Senha:', senhaAcesso)
-# print('Username:', username)
-# print('Password:', password)
-
-# def login_view(request): 
-#     if request.method == 'POST':
-#         data = json.loads(request.body)
-#         username = data.get('username')
-#         password = data.get('password')
-
-#         try:
-#             if Usuario.objects.filter(usuario=username, senha=password).exists():
-#                 return JsonResponse({'success': True})
-#             else:
-#                 return JsonResponse({'success': False}) 
-#         except Usuario.DoesNotExist:
-#             return JsonResponse({'success': False, 'error': 'Usuário não encontrado'})
-#     return JsonResponse({'success': False})
