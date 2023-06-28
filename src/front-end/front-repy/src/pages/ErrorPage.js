@@ -5,7 +5,7 @@ import ErrorPageSvg from '../material/icons/page_not_found.svg'
 function ErrorPage() {
     return (
         <div className={styles.container}>
-            <img className={styles.imageError} src={ErrorPageSvg}/>
+            <img alt="Imagem erro page" className={styles.imageError} src={ErrorPageSvg}/>
         </div>
     );
 }
