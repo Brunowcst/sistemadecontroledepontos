@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import styles from './styles/ErrorPage.module.css'
+import ErrorPageSvg from '../material/icons/page_not_found.svg'
 
-function ErrorPage(props) {
+function ErrorPage() {
     return (
-        <div>
-            Página de redirecionamento!
-            <Link to="/">Voltar para Login</Link>
+        <div className={styles.container}>
+            <img className={styles.imageError} src={ErrorPageSvg}/>
         </div>
     );
 }
