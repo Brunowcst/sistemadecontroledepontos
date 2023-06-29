@@ -22,33 +22,36 @@ erDiagram
     Funcionario }|--|| Departamento : trabalha
     Funcionario }|--|| Cargo : possui
     Funcionario ||--|{ Ponto: marca
-    Ponto }|--|| Turno : pertence
-    Cargo ||--|{ Cargo-turno: possui
-    Turno ||--|{ Cargo-turno: possui
-
+    Funcionario ||--|{ Funcionario_horario: tem
+    Horario ||--|{ Funcionario_horario: tem
+    Funcionario ||--|{ Funcionario_turno: tem
+    Funcionario ||--|| Usuario: possui
+    Turno ||--|| Horario: tem
+    Turno ||--|{ Funcionario_turno: tem
+    Ponto }|--|| Horario : pertence
+    
     Funcionario {
         int cod
-        string cpf
         string nome
+        string cpf
         string sexo
-        string email
-        string senha
         date data_nasc
-        int cod_gerente
-        int cod_depto 
         int cod_cargo     
+        int cod_depto 
+        int cod_func
+        int cod_gerente
     }
     Departamento {
         int cod
-        string sigla
         string nome
+        string sigla
         date data_criacao
         int cod_gerente
     }
     Ponto {
         int codigo
-        date data_marcacao
         string descricao
+        date data_marcacao
         int cod_func
         int cod_turno
     }
@@ -56,6 +59,7 @@ erDiagram
         int cod
         string nome
         float salario
+        int carga_horaria
     }
     Turno {
         int cod
@@ -63,9 +67,26 @@ erDiagram
         string hora_inicio
         string hora_fim
     }
-    Cargo_turno {
-        int cod_cargo
+    Funcionario_turno {
+        int cod_funcionario
         int cod_turno
+    }
+    Horario{
+        int cod
+        string dia
+        string hora_entrada
+        string hora_saida
+    }
+    Funcionario_horario {
+        int cod_funcionario
+        int cod_horario
+    }
+    Usuario{
+        int id
+        string username
+        string telefone
+        bool is_staff
+        bool is_active
     }
 ```
 
