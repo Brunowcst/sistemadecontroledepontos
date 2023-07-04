@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import MainLayout from '../layout/MainLayout';
 import RecuperarAcesso from '../pages/RecuperarAcesso';
 import AlterarDados from '../pages/AlterarDados';
+import Historico from '../pages/Historico'
 import PrivateRoute from '../utils/PrivateRoute';
 import React from 'react';
 import { AuthProvider } from '../context/AuthContext';
@@ -24,6 +25,8 @@ function routes() {
                                 <Route path='/home' element={<Home/>}/>
                                 <Route path='/cadastro' element={<Cadastro/>}/>
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
+                                <Route path='/hitorico-marcacoes' element={<Historico/>}/>
+
                             </Route>
                         </Route>
                     </Routes>
