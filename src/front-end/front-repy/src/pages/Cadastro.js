@@ -5,7 +5,7 @@ function Cadastro() {
     return (
         <div className={styles.grid}>
             <section className={styles.section}>
-                <h1>Cadastrar usuário</h1>
+                <h1>Cadastrar funcionário</h1>
                 <FormFuncionario btnText="Cadastrar funcionário"/>
             </section>
         </div>
