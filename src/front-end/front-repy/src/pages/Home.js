@@ -4,7 +4,7 @@ import AuthContext from '../context/AuthContext';
 
 function Home() {
     let {name} = useContext(AuthContext)
-    const [itemSelecionado, setItemSelecionado] = useState(null)
+    const [itemSelecionado, setItemSelecionado] = useState("todos")
     
     return (
         <div className={styles.grid}>
