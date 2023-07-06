@@ -43,6 +43,7 @@
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
     margin-top: .6rem;
+    margin-bottom: 2rem;
 }
 
 .sectionInformations h2 {
@@ -54,10 +55,17 @@
 }
 
 .navInformations {
+    font-size: 1.2rem;
+    font-weight: bold;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.navInformations p {
+    cursor: pointer;
 }
 
 table {
@@ -70,7 +78,43 @@ table tr {
     padding: 1rem;
 }
 
+table tr:first-child {
+    border-top: none;
+}
+
 th, td {
     padding: 0.6rem;
     text-align: center;
+}
+
+.itemSelecionado {
+    color: #587D4A;
+}
+
+.containerButton {
+    margin: auto;
+    width: 40%;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.containerButton p {
+    font-weight: bold;
+}
+
+.button {
+    background-color: #587D4A;
+    color: #F8F7F7;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    opacity: 1;
+    cursor: pointer;
+    width: 10rem;
+}
+
+.button:hover {
+    background-color: #60924e;
 }
