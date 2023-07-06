@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styles from './styles/Home.module.css'
 import AuthContext from '../context/AuthContext';
 
 function Home() {
     let {name} = useContext(AuthContext)
+    const [itemSelecionado, setItemSelecionado] = useState(null)
     
     return (
         <div className={styles.grid}>
@@ -27,9 +28,24 @@ function Home() {
             <section className={styles.sectionInformations}>
                 <h2>Dias apurados</h2>
                 <div className={styles.navInformations}>
-                    <p>Todos(-)</p>
-                    <p>Pendentes</p>
-                    <p>Banco de horas</p>
+                <p
+                    className={itemSelecionado === 'todos' ? styles.itemSelecionado : ''}
+                    onClick={() => setItemSelecionado('todos')}
+                >
+                    Todos(-)
+                </p>
+                <p
+                    className={itemSelecionado === 'pendentes' ? styles.itemSelecionado : ''}
+                    onClick={() => setItemSelecionado('pendentes')}
+                >
+                    Pendentes
+                </p>
+                <p
+                    className={itemSelecionado === 'bancoHoras' ? styles.itemSelecionado : ''}
+                    onClick={() => setItemSelecionado('bancoHoras')}
+                >
+                    Banco de horas
+                </p>
                 </div>
                 
                 <table>
@@ -46,6 +62,10 @@ function Home() {
                 </table>
 
             </section>
+            <div className={styles.containerButton}>
+                <p>Qui, 14 - 8:00-13:00</p>
+                <button className={styles.button}>Registrar ponto</button>
+            </div>
         </div>
     );
 }
