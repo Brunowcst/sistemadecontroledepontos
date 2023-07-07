@@ -14,8 +14,13 @@ export const AuthProvider = ({children}) => {
     let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null)
 
     let [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
-
+      
+    const [bearer, setBearer] = useState(null)
     const [loading, setLoading] = useState(true)
+    
+    useEffect(() => {
+        console.log(bearer)
+    }, [bearer]);
 
     const loginUser = async ({e, usuario, password}) => {
         e.preventDefault();
@@ -37,6 +42,7 @@ export const AuthProvider = ({children}) => {
                 setUser(jwt_decode(data.access));
                 setAuthTokens(data);
                 localStorage.setItem('authTokens', JSON.stringify(data))
+                setBearer(data.access)
                 navigate('/home')
             } else {
                 window.alert('Usuário não encontrado ou credenciais inválidas');
@@ -77,13 +83,15 @@ export const AuthProvider = ({children}) => {
                 }
             }, minutes)
             return () => clearInterval(interval)
-          }, [authTokens, loading]);
+        }, [authTokens, loading]);
 
-          
-        // useEffect(() => {
-        //     console.log('user:', user);
-        //     console.log('auth:', authTokens);
-        //   }, [user, authTokens]);
+        useEffect(() => {
+            const authTokens = localStorage.getItem('authTokens');
+            if (authTokens) {
+                const { access } = JSON.parse(authTokens);
+                setBearer(access);
+            }
+        }, [updateToken]);
 
         const logoutUser = () => {
             setAuthTokens(null)
@@ -95,7 +103,8 @@ export const AuthProvider = ({children}) => {
         let contextData = {
             loginUser:loginUser,
             user:user,
-            logoutUser:logoutUser
+            logoutUser:logoutUser,
+            bearer:bearer,
         }
 
     return (

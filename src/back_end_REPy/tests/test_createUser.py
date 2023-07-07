@@ -1,17 +1,17 @@
-import pytest
+from django.test import TestCase
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-@pytest.mark.django_db
-def test_create_custom_user():
-    # Cria um usuário personalizado
-    user = User.objects.create_user(username='testuser', password='testpassword', telefone="99999999")
+class UserCreationTest(TestCase):
+    def test_create_super_user(self):
+        # Cria um usuário do tipo superuser
+        user = User.objects.create_user(username='user', password='teste123', telefone='9999999')
 
-    # Verifica se o usuário foi criado corretamente
-    assert user.username == 'testuser'
-    assert user.check_password('testpassword')
-    assert user.telefone == "99999999"
-    assert user.is_active
-    assert user.is_staff
-    assert not user.is_superuser
+        # Verifica se os dados estão sendo cadastrados corretamente
+        self.assertEqual(user.username, 'user')
+        self.assertTrue(user.check_password('teste123'))
+        self.assertEqual(user.telefone, '9999999')
+        self.assertTrue(user.is_active)
+        self.assertTrue(user.is_staff)
+        self.assertFalse(user.is_superuser)

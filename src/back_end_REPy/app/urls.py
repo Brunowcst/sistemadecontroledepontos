@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
+
 from core.views import FuncionarioList,FuncionarioDetail, DeptoList, DeptoDetail, CargoList, CargoDetail, PontoList, PontoDetail, login_view, RoutesToken, MyTokenObtainPairView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views

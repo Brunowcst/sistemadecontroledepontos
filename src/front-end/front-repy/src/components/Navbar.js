@@ -3,6 +3,7 @@ import iconHome from '../material/icons/Home.svg';
 import iconCadastro from '../material/icons/Cadastro.svg';
 import iconHistorico from '../material/icons/Historico.svg';
 import iconLogout from '../material/icons/Logout.svg';
+import iconFunc from '../material/icons/funcIcon.svg';
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
@@ -11,8 +12,6 @@ import AuthContext from '../context/AuthContext';
 function Navbar() {
     const [selectedItem, setSelectedItem] = useState('home');
     let {user, logoutUser} = useContext(AuthContext)
-
-    // console.log('cuderola:' + user)
 
     const isSelected = (item) => {
       return selectedItem === item;
@@ -32,14 +31,19 @@ function Navbar() {
                     <p>Home</p>
                 </Link>
 
-                <Link className={`${styles.navItem} ${isSelected('historico') ? styles.selected : ''}`} onClick={() => setSelectedItem('historico')}>
+                <Link to="/historico-marcacoes" className={`${styles.navItem} ${isSelected('historico') ? styles.selected : ''}`} onClick={() => setSelectedItem('historico')}>
                     <img className={styles.icon} src={iconHistorico} alt="Logo Home"/>
                     <p>Histórico de marcações</p>
                 </Link>
 
-                <Link to="/cadastro" className={`${styles.navItem} ${isSelected('cadastro') ? styles.selected : ''}`} onClick={() => setSelectedItem('cadastro')}>
+                <Link to="/alterar-dados" className={`${styles.navItem} ${isSelected('alterar') ? styles.selected : ''}`} onClick={() => setSelectedItem('alterar')}>
                     <img className={styles.icon} src={iconCadastro} alt="Logo Home"/>
-                    <p>Cadastrar usuário</p>
+                    <p>Alterar dados</p>
+                </Link>
+
+                <Link to="/funcionario" className={`${styles.navItem} ${isSelected('funcionario') ? styles.selected : ''}`} onClick={() => setSelectedItem('funcionario')}>
+                    <img className={styles.icon} src={iconFunc} alt="Logo Home"/>
+                    <p>Funcionários</p>
                 </Link>
 
                 
