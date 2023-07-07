@@ -1,21 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
-from core.views import FuncionarioList, DeptoList, FuncionarioDetail, DeptoDetail, CargoList, CargoDetail, PontoList, PontoDetail, login_view, RoutesToken, MyTokenObtainPairView
+
+from core.views import FuncionarioList,FuncionarioDetail, DeptoList, DeptoDetail, CargoList, CargoDetail, PontoList, PontoDetail, login_view, RoutesToken, MyTokenObtainPairView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-# router = routers.DefaultRouter()
-# router.register(r'funcionario', FuncionarioViewSet)
-# router.register(r'departamento', DepartamentoViewSet)
-# router.register(r'usuario', UsuarioViewSet)
-# router.register(r'cargo', CargoViewSet)
-# router.register(r'ponto', PontoViewSet)
-# router.register(r'turno', TurnoViewSet)
-# router.register(r'horario', HorarioViewSet)
 
 urlpatterns = [
     # path('', include(router.urls)),
@@ -42,7 +35,6 @@ urlpatterns = [
     ## Cargos
     path('cargo/', CargoList.as_view()),
     path('cargo/<int:id>/', CargoDetail.as_view()),
-    # path('delete_cargo/<int:id>/', CargoDetail.delete()),
 
     ## Horario
     
@@ -50,4 +42,5 @@ urlpatterns = [
     path('ponto/', PontoList.as_view()),
     path('ponto/<int:id>/', PontoDetail.as_view()),
 
+    # Turno
 ]

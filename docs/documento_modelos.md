@@ -44,18 +44,19 @@ erDiagram
     
     Funcionario {
         int cod
-        string cpf
         string nome
+        string cpf
         string sexo
         date data_nasc
-        int cod_gerente
-        int cod_depto 
         int cod_cargo     
+        int cod_depto 
+        int cod_func
+        int cod_gerente
     }
     Departamento {
         int cod
-        string sigla
         string nome
+        string sigla
         date data_criacao
         int cod_gerente
     }
@@ -93,12 +94,11 @@ erDiagram
         int cod_horario
     }
     Usuario{
-        int cod
-        string usuario
-        string email
-        string senha
-        string token
-        int cod_func
+        int id
+        string username
+        string telefone
+        bool is_staff
+        bool is_active
     }
 ```
 
