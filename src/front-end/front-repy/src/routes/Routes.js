@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from '../pages/Login';
-import Cadastro from '../pages/Cadastro';
+import Funcionario from '../pages/Funcionario';
 import Home from '../pages/Home';
 import MainLayout from '../layout/MainLayout';
 import RecuperarAcesso from '../pages/RecuperarAcesso';
@@ -23,7 +23,7 @@ function routes() {
                         <Route element={<MainLayout />}>
                             <Route element={<PrivateRoute/>}>
                                 <Route path='/home' element={<Home/>}/>
-                                <Route path='/cadastro' element={<Cadastro/>}/>
+                                <Route path='/funcionario' element={<Funcionario/>}/>
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
                                 <Route path='/historico-marcacoes' element={<Historico/>}/>
                             </Route>
