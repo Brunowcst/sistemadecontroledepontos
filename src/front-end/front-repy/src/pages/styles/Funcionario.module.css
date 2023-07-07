@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.grid {
+    gap: 3rem;
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.section h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.sectionInformations {
+    border: 1px solid grey;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: .6rem;
+    margin-bottom: 2rem;
+}
+
+.sectionHeader {
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid grey;
+    justify-content: space-between;
+}
+
+.sectionInformations h2 {
+    font-family: 'Roboto', sans-serif;
+    padding: 1rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.navInformations {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.navInformations p {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr {
+    border-top: 1px solid grey;
+    padding: 1rem;
+}
+
+table tr:first-child {
+    border-top: none;
+}
+
+th, td {
+    padding: 0.6rem;
+    text-align: center;
+}
+
+.button {
+    background-color: #587D4A;
+    color: #F8F7F7;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    opacity: 1;
+    cursor: pointer;
+    width: 10rem;
+}
+
+.button:hover {
+    background-color: #60924e;
+}
