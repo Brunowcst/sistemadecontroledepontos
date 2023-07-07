@@ -17,14 +17,6 @@ export const AuthProvider = ({children}) => {
       
     const [bearer, setBearer] = useState(null)
     const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const authTokens = localStorage.getItem('authTokens');
-        if (authTokens) {
-            const { access } = JSON.parse(authTokens);
-            setBearer(access);
-        }
-    }, [authTokens]);
     
     useEffect(() => {
         console.log(bearer)
@@ -91,7 +83,15 @@ export const AuthProvider = ({children}) => {
                 }
             }, minutes)
             return () => clearInterval(interval)
-          }, [authTokens, loading]);
+        }, [authTokens, loading]);
+
+        useEffect(() => {
+            const authTokens = localStorage.getItem('authTokens');
+            if (authTokens) {
+                const { access } = JSON.parse(authTokens);
+                setBearer(access);
+            }
+        }, [updateToken]);
 
         const logoutUser = () => {
             setAuthTokens(null)
