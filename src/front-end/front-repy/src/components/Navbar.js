@@ -41,7 +41,7 @@ function Navbar() {
                     <p>Alterar dados</p>
                 </Link>
 
-                <Link to="/cadastro" className={`${styles.navItem} ${isSelected('cadastro') ? styles.selected : ''}`} onClick={() => setSelectedItem('cadastro')}>
+                <Link to="/funcionario" className={`${styles.navItem} ${isSelected('funcionario') ? styles.selected : ''}`} onClick={() => setSelectedItem('funcionario')}>
                     <img className={styles.icon} src={iconFunc} alt="Logo Home"/>
                     <p>Funcionários</p>
                 </Link>
