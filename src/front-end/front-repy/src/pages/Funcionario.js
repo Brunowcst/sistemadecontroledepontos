@@ -1,9 +1,9 @@
-import styles from './styles/Cadastro.module.css';
+import styles from './styles/Funcionario.module.css';
 import FormFuncionario from '../form/FormFuncionario';
 import { getFuncionarios } from '../api/funcionarios';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
-
+import {Link} from 'react-router-dom';
 
 function Funcionario() {
     const [funcionario, setFuncionarios] = useState([])
@@ -31,7 +31,7 @@ function Funcionario() {
             <section className={styles.sectionInformations}>
                 <div className={styles.sectionHeader}>
                     <h2>Funcionários</h2>
-                    <button className={styles.button}>Cadastrar funcionário</button>
+                    <Link to="/funcionario/cadastro"><button className={styles.button}>Cadastrar funcionário</button></Link>
                 </div>
                 <div className={styles.navInformations}>
                     <p>Todos</p>
