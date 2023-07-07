@@ -25,8 +25,7 @@ function routes() {
                                 <Route path='/home' element={<Home/>}/>
                                 <Route path='/cadastro' element={<Cadastro/>}/>
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
-                                <Route path='/hitorico-marcacoes' element={<Historico/>}/>
-
+                                <Route path='/historico-marcacoes' element={<Historico/>}/>
                             </Route>
                         </Route>
                     </Routes>
