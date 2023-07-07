@@ -1,34 +1,23 @@
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
 import styles from './styles/Historico.module.css'
+import { getFuncionarios } from '../api/funcionarios';
 
 function Historico() {
     const [funcionario, setFuncionarios] = useState([])
     const {bearer} = useContext(AuthContext)
 
     useEffect(() => {
-        const getFuncionarios = async () => {
-    
+        const dataFuncionarios = async () => {
             try {
-                let response = await fetch("http://localhost:8000/funcionario/", {
-                  method: 'GET',
-                  headers: {
-                    'Content-type' : 'application/json',
-                    'Authorization' : 'Bearer ' + bearer
-                  },
-                }).then((resp) => resp.json()
-                    .then((data) => {
-                        setFuncionarios(data)
-                        console.log('func '+ funcionario)
-                    })
-                );
-
+                const data = await getFuncionarios({bearer});
+                setFuncionarios(data)
             } catch (error) {
-                console.log(error);
+                console.log(error)
             }
-        }    
+        };
 
-        getFuncionarios()
+        dataFuncionarios();
     }, []);
 
     
