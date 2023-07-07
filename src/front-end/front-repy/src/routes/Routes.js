@@ -1,4 +1,9 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React from 'react';
+import { AuthProvider } from '../context/AuthContext';
+import ErrorPage from '../pages/ErrorPage';
+
+//PAGES
 import Login from '../pages/Login';
 import Funcionario from '../pages/Funcionario';
 import Home from '../pages/Home';
@@ -7,9 +12,7 @@ import RecuperarAcesso from '../pages/RecuperarAcesso';
 import AlterarDados from '../pages/AlterarDados';
 import Historico from '../pages/Historico'
 import PrivateRoute from '../utils/PrivateRoute';
-import React from 'react';
-import { AuthProvider } from '../context/AuthContext';
-import ErrorPage from '../pages/ErrorPage';
+import Cadastro from '../pages/Cadastro';
 
 function routes() {
     return (
@@ -26,6 +29,7 @@ function routes() {
                                 <Route path='/funcionario' element={<Funcionario/>}/>
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
                                 <Route path='/historico-marcacoes' element={<Historico/>}/>
+                                <Route path='/funcionario/cadastro' element={<Cadastro/>}/>
                             </Route>
                         </Route>
                     </Routes>
