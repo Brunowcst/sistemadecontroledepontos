@@ -31,7 +31,7 @@ function Navbar() {
                     <p>Home</p>
                 </Link>
 
-                <Link to="/hitorico-marcacoes" className={`${styles.navItem} ${isSelected('historico') ? styles.selected : ''}`} onClick={() => setSelectedItem('historico')}>
+                <Link to="/historico-marcacoes" className={`${styles.navItem} ${isSelected('historico') ? styles.selected : ''}`} onClick={() => setSelectedItem('historico')}>
                     <img className={styles.icon} src={iconHistorico} alt="Logo Home"/>
                     <p>Histórico de marcações</p>
                 </Link>
