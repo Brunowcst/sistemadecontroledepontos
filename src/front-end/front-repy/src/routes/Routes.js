@@ -12,6 +12,7 @@ import RecuperarAcesso from '../pages/RecuperarAcesso';
 import AlterarDados from '../pages/AlterarDados';
 import Historico from '../pages/Historico'
 import PrivateRoute from '../utils/PrivateRoute';
+import FuncionarioDetalhes from '../pages/FuncionarioDetalhes'
 import Cadastro from '../pages/Cadastro';
 
 function routes() {
@@ -30,6 +31,7 @@ function routes() {
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
                                 <Route path='/historico-marcacoes' element={<Historico/>}/>
                                 <Route path='/funcionario/cadastro' element={<Cadastro/>}/>
+                                <Route path='/funcionario/detalhes/:id' element={<FuncionarioDetalhes/>}/>
                             </Route>
                         </Route>
                     </Routes>
