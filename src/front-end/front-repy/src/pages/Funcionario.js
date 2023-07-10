@@ -48,9 +48,11 @@ function Funcionario() {
                         <td>A</td>
                         <td>A</td>
                         <td>A</td>
-                        <td className={styles.buttonUser}>
-                          <img src={Seta} className={styles.iconSeta}/>  
-                        </td>
+                        <Link to={`/funcionario/detalhes/${1}`}>
+                            <td className={styles.buttonUser}>
+                              <img alt='icon-seta' src={Seta} className={styles.iconSeta}/>
+                            </td>
+                        </Link>
                     </tr>
                     {funcionario.length > 0 && (
                     <>
