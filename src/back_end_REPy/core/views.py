@@ -325,3 +325,10 @@ class PontoDetail(APIView):
         pt = self.get_object(id)
         pt.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class BaterPonto:
+    
+    def marcar_ponto(self):
+        horario_atual = datetime.now().strftime("%H:%M")
+        self.registros_ponto.append(horario_atual)
+        print("Ponto registrado."
