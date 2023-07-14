@@ -1,6 +1,6 @@
 # Documento de Visão
 
-Documento construído a partido do **Modelo BSI - Doc 001 - Documento de Visão** que pode ser encontrado no
+Documento construído a partir do **Modelo BSI - Doc 001 - Documento de Visão** que pode ser encontrado no
 link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
 
 ## Equipe e Definição de Papéis
@@ -58,7 +58,7 @@ RF19 - Gerenciar Benefício de hora. | O Gerente poderá aceitar ou não a solic
 
 ### Modelo Conceitual
 
-Abaixo apresentamos o modelo conceitual, veja melhor em [documento de modelos]().
+Abaixo apresentamos o modelo conceitual. Veja melhor em: [documento de modelos]().
 
 ```mermaid
 erDiagram
@@ -155,6 +155,7 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 01/12/2022 | Probabilidade de queda do sistema | Média | Gerente | Resolvido | Reiniciar o sistema, contatar a equipe para verificar a origem do problema e corrigi-lo. |
 07/05/2023 | Atraso no conograma de entrega | Baixa | Gerente | Vigente | Reorganizar a equipe com o intuito de entregar as funcionalidades no prazo definido. |
 07/05/2023 | Não implementação do benefício de horas | Alta | Desenvolvedores | Vigente | Fazer esforço pra tentar entregar as funcionalidades. |
+07/05/2023 | Não conclusão do projeto. | Alta | Desenvolvedores | Vigente | Fazer esforço pra tentar entregar as funcionalidades. |
 
 ### Referências
 Características e definição
