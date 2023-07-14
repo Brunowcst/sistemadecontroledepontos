@@ -327,7 +327,9 @@ class PontoDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class BaterPonto:
-    
+    def __init__(self):
+        self.registros_ponto = []
+
     def marcar_ponto(self):
         horario_atual = datetime.now().strftime("%H:%M")
         self.registros_ponto.append(horario_atual)
