@@ -333,4 +333,14 @@ class BaterPonto:
     def marcar_ponto(self):
         horario_atual = datetime.now().strftime("%H:%M")
         self.registros_ponto.append(horario_atual)
-        print("Ponto registrado."
+        print("Ponto registrado.")
+
+    def emitir_comprovante(self):
+        if len(self.registros_ponto) > 0:
+            print("Comprovante de ponto:")
+            for i, ponto in enumerate(self.registros_ponto, start=1):
+                print(f"Ponto {i}: {ponto}")
+        else:
+            print("Nenhum ponto registrado.")
+
+    
