@@ -1,6 +1,6 @@
 import styles from './styles/FormFuncionario.module.css';
-import Input from '../form/Input';
-import SubmitButtom from '../form/SubmitButton';
+import Input from './Input';
+import SubmitButtom from './SubmitButton';
 import {useState} from 'react';
 
 function FormFuncionario({btnText}) {
