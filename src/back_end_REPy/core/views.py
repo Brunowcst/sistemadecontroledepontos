@@ -326,21 +326,22 @@ class PontoDetail(APIView):
         pt.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class BaterPonto:
-    def __init__(self):
-        self.registros_ponto = []
-
-    def marcar_ponto(self):
-        horario_atual = datetime.now().strftime("%H:%M")
-        self.registros_ponto.append(horario_atual)
-        print("Ponto registrado.")
-
-    def emitir_comprovante(self):
-        if len(self.registros_ponto) > 0:
-            print("Comprovante de ponto:")
-            for i, ponto in enumerate(self.registros_ponto, start=1):
-                print(f"Ponto {i}: {ponto}")
-        else:
-            print("Nenhum ponto registrado.")
+def bater_ponto(request):
+    if request.method == 'POST':
+        funcionario_id = request.POST.get('funcionario_id')
+        try:
+            funcionario = Funcionario.objects.get(id=funcionario_id)
+        except Funcionario.DoesNotExist:
+            return JsonResponse({'error': 'Funcionário não encontrado.'}, status=404)
+    
+        data_hora_atual = datetime.now()
+        
+        novo_ponto = RegistroPonto(funcionario=funcionario, data_hora=data_hora_atual)
+        novo_ponto.save()
+        
+        
+        return JsonResponse({'success': 'Ponto batido com sucesso.'})
+    
+    return render(request, 'bater_ponto.html')
 
     
