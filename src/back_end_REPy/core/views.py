@@ -326,22 +326,19 @@ class PontoDetail(APIView):
         pt.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-def bater_ponto(request):
-    if request.method == 'POST':
+class BaterPontoView:
+    
+    def post(request):
         funcionario_id = request.POST.get('funcionario_id')
+
         try:
             funcionario = Funcionario.objects.get(id=funcionario_id)
         except Funcionario.DoesNotExist:
             return JsonResponse({'error': 'Funcionário não encontrado.'}, status=404)
-    
+
         data_hora_atual = datetime.now()
-        
+
         novo_ponto = RegistroPonto(funcionario=funcionario, data_hora=data_hora_atual)
         novo_ponto.save()
-        
-        
-        return JsonResponse({'success': 'Ponto batido com sucesso.'})
-    
-    return render(request, 'bater_ponto.html')
 
-    
+        return JsonResponse({'success': 'Ponto batido com sucesso.'})
