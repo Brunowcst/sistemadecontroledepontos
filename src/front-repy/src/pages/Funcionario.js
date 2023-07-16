@@ -1,9 +1,9 @@
 import styles from './styles/Funcionario.module.css';
-import FormFuncionario from '../form/FormFuncionario';
 import { getFuncionarios } from '../api/funcionarios';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
 import {Link} from 'react-router-dom';
+import Seta from '../material/icons/seta.svg'
 
 function Funcionario() {
     const [funcionario, setFuncionarios] = useState([])
@@ -42,6 +42,17 @@ function Funcionario() {
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Status</th>
+                        <th> </th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>A</td>
+                        <td>A</td>
+                        <Link to={`/funcionario/detalhes/${1}`}>
+                            <td className={styles.buttonUser}>
+                              <img alt='icon-seta' src={Seta} className={styles.iconSeta}/>
+                            </td>
+                        </Link>
                     </tr>
                     {funcionario.length > 0 && (
                     <>
