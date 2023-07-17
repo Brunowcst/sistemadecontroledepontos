@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-
+from datetime import datetime
 
 from django.http import Http404
 from rest_framework.views import APIView
@@ -325,3 +325,20 @@ class PontoDetail(APIView):
         pt = self.get_object(id)
         pt.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class BaterPontoView:
+    
+    def post(request):
+        funcionario_id = request.POST.get('funcionario_id')
+
+        try:
+            funcionario = Funcionario.objects.get(id=funcionario_id)
+        except Funcionario.DoesNotExist:
+            return JsonResponse({'error': 'Funcionário não encontrado.'}, status=404)
+
+        data_hora_atual = datetime.now()
+
+        novo_ponto = RegistroPonto(funcionario=funcionario, data_hora=data_hora_atual)
+        novo_ponto.save()
+
+        return JsonResponse({'success': 'Ponto batido com sucesso.'})
