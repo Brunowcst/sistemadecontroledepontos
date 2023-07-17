@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import styles from './styles/Home.module.css'
 import AuthContext from '../context/AuthContext';
+import { Link } from 'react-router-dom'
 
 function Home() {
     let {name} = useContext(AuthContext)
@@ -62,9 +63,9 @@ function Home() {
                 </table>
 
             </section>
-            <div className={styles.containerButton}>
+            <div to='/marcar-ponto' className={styles.containerButton}>
                 <p>Qui, 14 - 8:00-13:00</p>
-                <button className={styles.button}>Registrar ponto</button>
+                <Link to='/marcar-ponto'><button className={styles.button}>Registrar ponto</button></Link>
             </div>
         </div>
     );
