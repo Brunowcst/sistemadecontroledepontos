@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.grid {
+    gap: 3rem;
+    width: 100%;
+}
+
+.grid h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.section {
+    border-radius: 15px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.containerCalendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar {
+    min-width: 100%;
+    border-radius: 10px;
+}
+
+.sectionUser {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.sectionUser > div > label {
+    font-weight: bold;
+    margin-left: .7rem;
+}
+
+.textArea{ 
+    border-radius: 10px;
+    width: 100%;
+}
+
+.textArea::placeholder {
+    font-size: .9rem;
+    padding: 0.3rem 0 0 0.5rem;
+}
+
+.input_container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 20px;
+    color: #587D4A;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    align-self: flex-end;
+}
