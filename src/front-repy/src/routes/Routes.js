@@ -10,9 +10,10 @@ import Home from '../pages/Home';
 import MainLayout from '../layout/MainLayout';
 import RecuperarAcesso from '../pages/RecuperarAcesso';
 import AlterarDados from '../pages/AlterarDados';
-import Historico from '../pages/Historico'
+import Historico from '../pages/Historico';
+import MarcarPonto from '../pages/MarcarPonto';
 import PrivateRoute from '../utils/PrivateRoute';
-import FuncionarioDetalhes from '../pages/FuncionarioDetalhes'
+import FuncionarioDetalhes from '../pages/FuncionarioDetalhes';
 import Cadastro from '../pages/Cadastro';
 
 function routes() {
@@ -25,14 +26,15 @@ function routes() {
                         <Route path="/" element={<Login />} />
                         <Route path="/recuperar-acesso" element={<RecuperarAcesso />} />
                         <Route element={<MainLayout />}>
-                            <Route element={<PrivateRoute/>}>
+                            {/* <Route element={<PrivateRoute/>}> */}
                                 <Route path='/home' element={<Home/>}/>
                                 <Route path='/funcionario' element={<Funcionario/>}/>
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
                                 <Route path='/historico-marcacoes' element={<Historico/>}/>
                                 <Route path='/funcionario/cadastro' element={<Cadastro/>}/>
                                 <Route path='/funcionario/detalhes/:id' element={<FuncionarioDetalhes/>}/>
-                            </Route>
+                                <Route path='/marcar-ponto' element={<MarcarPonto/>}/>
+                            {/* </Route> */}
                         </Route>
                     </Routes>
                 </AuthProvider>
