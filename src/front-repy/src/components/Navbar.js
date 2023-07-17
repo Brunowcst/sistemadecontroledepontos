@@ -1,9 +1,13 @@
 import styles from './Navbar.module.css';
+
 import iconHome from '../material/icons/Home.svg';
 import iconCadastro from '../material/icons/Cadastro.svg';
 import iconHistorico from '../material/icons/Historico.svg';
 import iconLogout from '../material/icons/Logout.svg';
+import iconPonto from '../material/icons/MarcarPonto.svg';
 import iconFunc from '../material/icons/funcIcon.svg';
+import iconMarcar from '../material/icons/MarcarPonto.svg';
+
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
@@ -46,7 +50,11 @@ function Navbar() {
                     <p>Funcionários</p>
                 </Link>
 
-                
+                <Link to="/marcar-ponto" className={`${styles.navItem} ${isSelected('marcar') ? styles.selected : ''}`} onClick={() => setSelectedItem('marcar')}>
+                    <img className={styles.icon} src={iconMarcar} alt=""/>
+                    <p>Marcar ponto</p>
+                </Link>
+
                 <div className={styles.logout}>
                     <img className={styles.icon} src={iconLogout} alt="Logout Home"/>
                     <p onClick={logoutUser}>Logout</p>
