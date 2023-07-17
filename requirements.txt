@@ -1,7 +1,7 @@
-﻿asgiref==3.7.2
+asgiref==3.7.2
 colorama==0.4.6
 coverage==7.2.7
-Django==3.2.19
+Django==3.2.20
 django-cors-headers==4.0.0
 django-restframework==0.0.1
 djangorestframework==3.14.0
