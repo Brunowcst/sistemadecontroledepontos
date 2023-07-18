@@ -4,7 +4,7 @@ import AuthContext from '../context/AuthContext';
 import { Link } from 'react-router-dom'
 
 function Home() {
-    let {name} = useContext(AuthContext)
+    let {user} = useContext(AuthContext)
     const [itemSelecionado, setItemSelecionado] = useState("todos")
     
     return (
@@ -12,7 +12,7 @@ function Home() {
             <h1>Inicio</h1>
             <section className={styles.sectionUser}>
                 <div className={styles.sectionContainers}>
-                    <p>Nome: {name}</p>
+                    <p>Nome: {user ? user.username.charAt(0).toUpperCase() + user.username.slice(1) : 'Sem nome'}</p>
                     <p>Cargo: -</p>
                 </div>
 
