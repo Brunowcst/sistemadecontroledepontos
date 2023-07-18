@@ -17,7 +17,7 @@ function Home() {
                 </div>
 
                 <div className={styles.sectionContainers}>
-                    <p>Cadastro: -</p>
+                    <p>Cadastro: {user.user_id}</p>
                 </div>
 
                 <div className={styles.sectionContainers}>
