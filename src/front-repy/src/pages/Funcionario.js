@@ -25,7 +25,6 @@ function Funcionario() {
     return (
         <div className={styles.grid}>
             <section className={styles.section}>
-                {/* <FormFuncionario btnText="Cadastrar funcionário"/> */}
             </section>
 
             <section className={styles.sectionInformations}>
@@ -44,25 +43,20 @@ function Funcionario() {
                         <th>Status</th>
                         <th> </th>
                     </tr>
-                    <tr>
-                        <td>A</td>
-                        <td>A</td>
-                        <td>A</td>
-                        <Link to={`/funcionario/detalhes/${1}`}>
+                    
+                    {funcionario.length > 0 && (
+                    <>
+                        {funcionario.map((func) => {
+                        return <tr>
+                        <td>{func.id}</td>
+                        <td>{func.nome}</td>
+                        <td>-</td>
+                        <Link to={`/funcionario/detalhes/${func.id}`}>
                             <td className={styles.buttonUser}>
                               <img alt='icon-seta' src={Seta} className={styles.iconSeta}/>
                             </td>
                         </Link>
                     </tr>
-                    {funcionario.length > 0 && (
-                    <>
-                        {funcionario.map((func) => {
-                        return <tr>
-                                <td>{func.id}</td>
-                                <td>{func.nome}</td>
-                                <td>--</td>
-                                <td>Button</td>
-                            </tr>
                         })}
                     </>
             )}

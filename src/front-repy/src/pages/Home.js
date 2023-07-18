@@ -12,7 +12,7 @@ function Home() {
             <h1>Inicio</h1>
             <section className={styles.sectionUser}>
                 <div className={styles.sectionContainers}>
-                    <p>Nome: -</p>
+                    <p>Nome: {name}</p>
                     <p>Cargo: -</p>
                 </div>
 
