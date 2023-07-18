@@ -26,7 +26,7 @@ function routes() {
                         <Route path="/" element={<Login />} />
                         <Route path="/recuperar-acesso" element={<RecuperarAcesso />} />
                         <Route element={<MainLayout />}>
-                            {/* <Route element={<PrivateRoute/>}> */}
+                            <Route element={<PrivateRoute/>}>
                                 <Route path='/home' element={<Home/>}/>
                                 <Route path='/funcionario' element={<Funcionario/>}/>
                                 <Route path='/alterar-dados' element={<AlterarDados/>}/>
@@ -34,7 +34,7 @@ function routes() {
                                 <Route path='/funcionario/cadastro' element={<Cadastro/>}/>
                                 <Route path='/funcionario/detalhes/:id' element={<FuncionarioDetalhes/>}/>
                                 <Route path='/marcar-ponto' element={<MarcarPonto/>}/>
-                            {/* </Route> */}
+                            </Route>
                         </Route>
                     </Routes>
                 </AuthProvider>

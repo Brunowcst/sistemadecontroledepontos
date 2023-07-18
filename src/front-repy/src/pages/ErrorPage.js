@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styles from './styles/ErrorPage.module.css'
 import ErrorPageSvg from '../material/icons/page_not_found.svg'
 
