@@ -16,9 +16,6 @@ from rest_framework.response import Response
 from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 from rest_framework import status
 
-from rest_framework import mixins
-from rest_framework import generics
-
 
 # Create your views here.
 
@@ -39,7 +36,7 @@ def login_view(request):
             # login(request, user)
             return JsonResponse({'success': True})
         else:
-            return JsonResponse({'success': False})
+            return JsonResponse({'unsuccessfull': False})
     return JsonResponse({'success': False})
 
 
@@ -80,7 +77,7 @@ class FuncionarioList(APIView):
     Liste todos os Funcionarios, ou crie um novo.
     """
 
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Funcionario.objects.all()
     serializer_class = FuncionarioSerializer
 
@@ -100,7 +97,7 @@ class FuncionarioDetail(APIView):
     """
     Recupere, atualize e delete um funcionario
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Funcionario.objects.all()
     serializer_class = FuncionarioSerializer
 
@@ -140,12 +137,76 @@ class FuncionarioDetail(APIView):
         func.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+class UsuarioList(APIView):
+    """
+    Liste todos os Usuarios, ou crie um novo.
+    """
+
+    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+    def get(self, request, format=None):
+        user = Usuario.objects.all()
+        serializer = UsuarioSerializer(user, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = FuncionarioSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class UsuarioDetail(APIView):
+    """
+    Recupere, atualize e delete um usuario
+    """
+    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+    def get_object(self, username):
+        try:
+            return Usuario.objects.get(username=username)
+        except Usuario.DoesNotExist:
+            raise Http404
+
+    # Resgata pelo cpf
+    def get(self, request, username, format=None):
+        func = self.get_object(username)
+        serializer = UsuarioSerializer(func)
+        return Response(serializer.data)
+
+    # Atualiza todos os dados da tabela
+    def put(self, request, username, format=None):
+        func = self.get_object(username)
+        serializer = UsuarioSerializer(func, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    # Atualiza apenas uma parte(dado) da tabela
+    def patch(self, request, username, format=None):
+        user = self.get_object(username)
+        serializer = UsuarioSerializer(user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # Exclui um elemento do db
+    def delete(self, request, username, format=None):
+        user = self.get_object(username)
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class DeptoList(APIView):
     """
     Liste todos os departamentos ou crie um novo.
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Departamento.objects.all()
     serializer_class = DepartamentoSerializer
 
@@ -166,7 +227,7 @@ class DeptoDetail(APIView):
     """
     REcupere, atualize ou delete departamentos
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Departamento.objects.all()
     serializer_class = DepartamentoSerializer
     def get_object(self, nome):
@@ -206,7 +267,7 @@ class CargoList(APIView):
     """
     Liste todos os cargos ou crie um novo.
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Cargo.objects.all()
     serializer_class = CargoSerializer
 
@@ -227,7 +288,7 @@ class CargoDetail(APIView):
     """
     Recupere, atualize ou delete cargos
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Cargo.objects.all()
     serializer_class = CargoSerializer
     
@@ -268,7 +329,7 @@ class PontoList(APIView):
     """
     Liste todos os cargos ou crie um novo.
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Ponto.objects.all()
     serializer_class = PontoSerializer
 
@@ -289,7 +350,7 @@ class PontoDetail(APIView):
     """
     Recupere, atualize ou delete cargos
     """
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Ponto.objects.all()
     serializer_class = PontoSerializer
     
@@ -324,21 +385,35 @@ class PontoDetail(APIView):
     def delete(self, request, id, format=None):
         pt = self.get_object(id)
         pt.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-class BaterPontoView:
     
-    def post(request):
-        funcionario_id = request.POST.get('funcionario_id')
+class ListarPontosFuncionario(APIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Ponto.objects.all()
+    serializer_class = PontoSerializer
 
+    def get_object(self, request, cpf, format=None):
         try:
-            funcionario = Funcionario.objects.get(id=funcionario_id)
+            return Funcionario.objects.get(cpf=cpf).cod_func
         except Funcionario.DoesNotExist:
-            return JsonResponse({'error': 'Funcionário não encontrado.'}, status=404)
+            raise Http404
 
-        data_hora_atual = datetime.now()
+    def get(self, request, cpf ,format=None):
+        pt = self.get_object(cpf)
+        queryPontos= Ponto.objects.filter(pt)
+        serializer = PontoSerializer(queryPontos)
+        if serializer.is_valid():
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        novo_ponto = RegistroPonto(funcionario=funcionario, data_hora=data_hora_atual)
-        novo_ponto.save()
+class RegistrarPonto(APIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Ponto.objects.all()
+    serializer_class = PontoSerializer
 
-        return JsonResponse({'success': 'Ponto batido com sucesso.'})
+    def post(self, request, format=None):
+        serializer = PontoSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status = status.HTTP_201_CREATED)
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    

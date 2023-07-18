@@ -1,3 +1,4 @@
+from datetime import timezone
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 
@@ -69,7 +70,7 @@ class Departamento(models.Model):
 
 class Cargo(models.Model):
     nome = models.CharField(max_length = 30, null = False,  default='Cargo_nome')
-    salario = models.FloatField()
+    salario = models.FloatField(null= False)
     class turno_horario(models.IntegerChoices):
         meio_turno = 20,('20h')
         turno = 40, ('40h')
@@ -81,12 +82,17 @@ class Cargo(models.Model):
 
 class Ponto(models.Model):
     descricao = models.CharField(max_length = 255,  default='')
-    data_marcacao = models.DateField( null = False,  default='2000-01-01')
+    data_marcacao = models.DateTimeField(editable = False, auto_now_add= True)
     cod_func = models.ForeignKey( to = Funcionario, on_delete = models.PROTECT)
     cor_turno = models.ForeignKey(to = 'Turno', on_delete = models.PROTECT)
 
     def __str__(self):
         return 'Ponto'
+
+    def save(self, *args, **kwargs):
+        '''Salvar marcacao'''
+        self.data_marcacao = timezone
+        return super(Ponto, self).save(*args, **kwargs)
 
 class Turno(models.Model):
     sigla = models.CharField(max_length = 10, null = False, unique = True,  default='Turno')
