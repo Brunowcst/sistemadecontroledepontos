@@ -11,8 +11,6 @@ import SubmitButton from '../form/SubmitButton';
 function MarcarPonto() {
     const [justificativa, setJustificativa] = useState("")
     const [value, onChange] = useState(new Date());
-    const [vibilityIcon, setVisibilityIcon] = useState(<AiOutlineEye />);
-    const [passwordVisible, setPasswordVisible] = useState(false);
     const [password, setPassword] = useState('');
 
     function handleJustificativa(e) {
@@ -23,11 +21,6 @@ function MarcarPonto() {
     function handlePassword(e) {
         setPassword(e.target.value);
     }
-
-    const togglePasswordVisibility = () => {
-        setPasswordVisible((prevState) => !prevState);
-        setVisibilityIcon(passwordVisible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />);
-    };
 
     return (
         <div className={styles.grid}>
@@ -55,18 +48,16 @@ function MarcarPonto() {
                     />
                     <div className={styles.input_container}>
                        <Input
-                       customClass='inputCadastro'
-                       type={passwordVisible ? 'text' : 'password'}
+                       className='inputMarcar'
+                       type='password'
                        id="passwordInput"
                        name="password"
                        placeholder="Digite sua senha"
                        handleOnChange={handlePassword}
                        value={password}
                        />
-                        <span className={styles.icon} onClick=  {togglePasswordVisibility}>{vibilityIcon} </span>
-                    </div>
-                    <div className={styles.button}>
-                        <SubmitButton text='Confirmar'/>
+
+                        <button className={styles.button}>Confirmar</button>
                     </div>
                 </form>
             </section>
