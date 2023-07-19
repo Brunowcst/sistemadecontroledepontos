@@ -9,7 +9,7 @@ class FuncionarioSerializer(serializers.ModelSerializer):
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = '__all__'
+        fields = ('first_name', 'last_name', 'email', 'username', 'password', 'telefone', 'is_superuser', 'is_active', 'is_staff')
 
 class CargoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,7 +29,7 @@ class DepartamentoSerializer(serializers.ModelSerializer):
 class PontoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ponto
-        fields = '__all__'
+        fields = ('descricao', 'cod_func', 'cor_turno')
 
 class HorarioSerializer(serializers.ModelSerializer):
     class Meta:

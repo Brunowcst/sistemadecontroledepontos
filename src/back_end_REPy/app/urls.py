@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
+from core.views import FuncionarioList,FuncionarioDetail, DeptoList, DeptoDetail, CargoList, CargoDetail, PontoList, PontoDetail, RegistrarPonto, UsuarioDetail, UsuarioList, login_view, RoutesToken, MyTokenObtainPairView, ListarPontosFuncionario
 
-from core.views import FuncionarioList,FuncionarioDetail, DeptoList, DeptoDetail, CargoList, CargoDetail, PontoList, PontoDetail, login_view, RoutesToken, MyTokenObtainPairView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 from rest_framework_simplejwt.views import (
@@ -37,10 +37,14 @@ urlpatterns = [
     path('cargo/<int:id>/', CargoDetail.as_view()),
 
     ## Horario
+    path('usuario/', UsuarioList.as_view()),
+    path('usuario/<str:username>/', UsuarioDetail.as_view()),
     
     ## Ponto
-    path('ponto/', PontoList.as_view()),
+    path('pontos/', PontoList.as_view()),
     path('ponto/<int:id>/', PontoDetail.as_view()),
+    
+    path('registrarPonto/', RegistrarPonto.as_view()),
 
     # Turno
 ]
