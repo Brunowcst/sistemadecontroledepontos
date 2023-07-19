@@ -43,7 +43,7 @@ urlpatterns = [
     ## Ponto
     path('pontos/', PontoList.as_view()),
     path('ponto/<int:id>/', PontoDetail.as_view()),
-
+    
     path('registrarPonto/', RegistrarPonto.as_view()),
 
     # Turno
