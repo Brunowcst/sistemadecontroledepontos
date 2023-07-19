@@ -26,7 +26,7 @@ urlpatterns = [
     
     ## Funcionarios
     path('funcionario/', FuncionarioList.as_view()),
-    path('funcionario/<str:cpf>/', FuncionarioDetail.as_view()),
+    path('funcionario/<int:id>/', FuncionarioDetail.as_view()),
     
     ## Deptos
     path('departamento/', DeptoList.as_view()),
