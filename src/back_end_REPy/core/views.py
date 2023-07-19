@@ -101,21 +101,21 @@ class FuncionarioDetail(APIView):
     queryset = Funcionario.objects.all()
     serializer_class = FuncionarioSerializer
 
-    def get_object(self, cpf):
+    def get_object(self, id):
         try:
-            return Funcionario.objects.get(cpf=cpf)
+            return Funcionario.objects.get(pk=id)
         except Funcionario.DoesNotExist:
             raise Http404
 
     # Resgata pelo cpf
-    def get(self, request, cpf, format=None):
-        func = self.get_object(cpf)
+    def get(self, request, id, format=None):
+        func = self.get_object(id)
         serializer = FuncionarioSerializer(func)
         return Response(serializer.data)
 
     # Atualiza todos os dados da tabela
-    def put(self, request, cpf, format=None):
-        func = self.get_object(cpf)
+    def put(self, request, id, format=None):
+        func = self.get_object(id)
         serializer = FuncionarioSerializer(func, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -123,8 +123,8 @@ class FuncionarioDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     # Atualiza apenas uma parte(dado) da tabela
-    def patch(self, request, cpf, format=None):
-        func = self.get_object(cpf)
+    def patch(self, request, id, format=None):
+        func = self.get_object(id)
         serializer = FuncionarioSerializer(func, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
@@ -132,8 +132,8 @@ class FuncionarioDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # Exclui um elemento do db
-    def delete(self, request, cpf, format=None):
-        func = self.get_object(cpf)
+    def delete(self, request, id, format=None):
+        func = self.get_object(id)
         func.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
