@@ -1,6 +1,7 @@
 from datetime import timezone
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+import pytz
 
 # Create your models here.
 
@@ -91,7 +92,7 @@ class Ponto(models.Model):
 
     def save(self, *args, **kwargs):
         '''Salvar marcacao'''
-        self.data_marcacao = timezone
+        self.data_marcacao = timezone.now()
         return super(Ponto, self).save(*args, **kwargs)
 
 class Turno(models.Model):
