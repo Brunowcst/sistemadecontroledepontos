@@ -1,25 +1,24 @@
 import styles from './styles/FormFuncionario.module.css';
 import Input from './Input';
 import SubmitButtom from './SubmitButton';
-import {useState, useContext} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import { base } from '../api/base';
 import AuthContext from '../context/AuthContext';
 import {useNavigate} from 'react-router-dom'
 
 function FormFuncionario({btnText}) {
-
     const navigate = useNavigate()
     const {bearer} = useContext(AuthContext);
     const [personalData, setPersonalData] = useState({
         nome: '',
         cod_cargo: 1,
-        cod_horario: [1],
-        cod_turno: [1],
+        cod_horario: [],
+        cod_turno: [],
         cpf: '',
         cod_depto:  1,
         cod_gerente: 2,
         sexo: 'M',
-        data_nasc:  "2002-09-02",  
+        data_nasc:  "",  
         cod_func: 1,
     });
 
@@ -57,13 +56,20 @@ function FormFuncionario({btnText}) {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        // Verifica se o campo é cpf ou nome, se sim, mantém o valor como string
-        const intValue = ['cpf', 'nome'].includes(name) ? value : parseInt(value, 10);
-        setPersonalData((prevData) => ({
-            ...prevData,
-            [name]: intValue,
-        }));
+    
+        if (['cod_horario', 'cod_turno'].includes(name)) {
+            setPersonalData((prevData) => ({
+                ...prevData,
+                [name]: [parseInt(value, 10)],
+            }));
+        } else {
+            setPersonalData((prevData) => ({
+                ...prevData,
+                [name]: value,
+            }));
+        }
     }
+
 
     function handleAcessChange(e) {
         const {name, value} = e.target;
@@ -153,9 +159,9 @@ function FormFuncionario({btnText}) {
 
                 <Input customClass="inputCadastro"
                 type="text"
-                text="Código do gerente"
+                text="Data de nascimento:"
                 name="data_nasc"
-                placeholder="Data Nasc:"
+                placeholder="Data de nascimento(YYYY-MM-DD):"
                 handleOnChange={handleChange}
                 value={personalData.data_nasc}/>
             </div>
