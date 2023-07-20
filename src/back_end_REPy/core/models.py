@@ -88,12 +88,12 @@ class Ponto(models.Model):
     cor_turno = models.ForeignKey(to = 'Turno', on_delete = models.PROTECT)
 
     def __str__(self):
-        return 'Ponto'
+        return f'{self.descricao} - {self.data_marcacao.strftime("%d-%m-%Y %H:%M:%S")}'
 
-    def save(self, *args, **kwargs):
-        '''Salvar marcacao'''
-        self.data_marcacao = timezone.now()
-        return super(Ponto, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     '''Salvar marcacao'''
+    #     self.data_marcacao = timezone.now()
+    #     return super(Ponto, self).save(*args, **kwargs)
 
 class Turno(models.Model):
     sigla = models.CharField(max_length = 10, null = False, unique = True,  default='Turno')

@@ -13,7 +13,7 @@ function Home() {
             <section className={styles.sectionUser}>
                 <div className={styles.sectionContainers}>
                     <p>Nome: {user ? user.username.charAt(0).toUpperCase() + user.username.slice(1) : 'Sem nome'}</p>
-                    <p>Cargo: -</p>
+                    <p>Cargo: Desenvolvedor</p>
                 </div>
 
                 <div className={styles.sectionContainers}>
@@ -21,8 +21,8 @@ function Home() {
                 </div>
 
                 <div className={styles.sectionContainers}>
-                    <p>Escala: -</p>
-                    <p>Turno: -</p>
+                    <p>Escala: 7-11</p>
+                    <p>Turno: M</p>
                 </div>
             </section>
 
