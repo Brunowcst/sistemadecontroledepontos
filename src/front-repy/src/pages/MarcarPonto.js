@@ -5,22 +5,84 @@ import Input from '../form/Input';
 import {AiOutlineEye} from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
 
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import SubmitButton from '../form/SubmitButton';
+import AuthContext from '../context/AuthContext';
+import { base } from '../api/base';
+import {navigate, useNavigate} from 'react-router-dom'
 
 function MarcarPonto() {
-    const [justificativa, setJustificativa] = useState("")
+    const navigate = useNavigate()
+    const {bearer} = useContext(AuthContext)
     const [value, onChange] = useState(new Date());
-    const [password, setPassword] = useState('');
+    const [ponto, setPonto] = useState({
+        descricao: '',
+        cor_turno: 1,
+        cod_func: 2,
+        // date: "",
+    });
 
-    function handleJustificativa(e) {
-        setJustificativa(e.target.value);
-        console.log(justificativa)
+    const postPonto = async (e) => {
+        e.preventDefault();
+        try {
+            getDate();
+            let response = await fetch(`${base}/registrarPonto/`, {
+              method: 'POST',
+              headers: {
+                'Content-type' : 'application/json',
+                'Authorization' : `Bearer ${bearer}`
+              },
+              body: JSON.stringify(ponto)
+            });
+            const data = await response.json();
+            console.log( data);
+            if(response.status === 201) {
+                navigate('/home')
+                console.log("Ponto cadastrado")
+            } else {
+                throw new Error('Error: requisição de dados.')
+            }
+        } catch (error) {
+            console.log(error)
+            throw error;
+        }
+    }   
+
+
+    function handleChange(e) {
+        const { name, value } = e.target;
+    
+        if (['cod_turno'].includes(name)) {
+            setPonto((prevData) => ({
+                ...prevData,
+                [name]: [parseInt(value, 10)],
+            }));
+        } else {
+            setPonto((prevData) => ({
+                ...prevData,
+                [name]: value,
+            }));
+        }
     }
 
-    function handlePassword(e) {
-        setPassword(e.target.value);
-    }
+    console.log(ponto)
+
+    const getDate = ((e) => {
+        const data = new Date();
+        const year = data.getFullYear();
+        const month = String(data.getMonth() + 1).padStart(2, '0');
+        const day = String(data.getDate()).padStart(2, '0');
+        const hours = String(data.getHours()).padStart(2, '0');
+        const minutes = String(data.getMinutes()).padStart(2, '0');
+        const seconds = String(data.getSeconds()).padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+        setPonto((prevData) => ({
+            ...prevData,
+            date: formattedDate,
+        })); 
+    })
 
     return (
         <div className={styles.grid}>
@@ -42,22 +104,23 @@ function MarcarPonto() {
                     <textarea
                         className={styles.textArea}
                         placeholder='Descrição'
+                        name='descricao'
                         rows={6}
-                        onChange={handleJustificativa}
-                        value={justificativa}
+                        onChange={handleChange}
+                        value={ponto.descricao}
                     />
                     <div className={styles.input_container}>
-                       <Input
+                       {/* <Input
                        className='inputMarcar'
                        type='password'
                        id="passwordInput"
                        name="password"
                        placeholder="Digite sua senha"
-                       handleOnChange={handlePassword}
-                       value={password}
-                       />
+                       handleOnChange={handleChange}
+                       value={ponto.password}
+                       /> */}
 
-                        <button className={styles.button}>Confirmar</button>
+                        <button onClick={postPonto} className={styles.button}>Confirmar</button>
                     </div>
                 </form>
             </section>
