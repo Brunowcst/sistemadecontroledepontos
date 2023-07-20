@@ -4,7 +4,7 @@ import styles from './styles/Form.module.css';
 import {AiOutlineEye} from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
 import { useState, useContext } from 'react';
-import {useNavigate} from 'react-router-dom'
+// import {useNavigate} from 'react-router-dom'
 import AuthContext from '../context/AuthContext';
 import  {AuthProvider} from '../context/AuthContext';
 
@@ -14,7 +14,7 @@ function Form({btnText, handleSubmit}) {
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const { loginUser } = useContext(AuthContext);
 
     const togglePasswordVisibility = () => {
@@ -35,10 +35,10 @@ function Form({btnText, handleSubmit}) {
 
     const submit = (e) => {
         e.preventDefault();
-        const data = {
-            username: usuario,
-            password: password,
-        };
+        // const data = {
+        //     username: usuario,
+        //     password: password,
+        // };
         loginUser({ e, usuario, password });
     }
     

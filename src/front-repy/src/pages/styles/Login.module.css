@@ -1,29 +1,32 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 
 .container {
-    height: 100vh;
-    display: flex;
-    background-color: gray;
-    position: relative;
-    font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(#587D4A, #24331e);  
+  position: relative;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container_login {
-    position: relative;
-    height: 30rem;
-    width: 25rem;
-    background-color: aquamarine;
-    border-radius: 20px;
-    background-color: #F8F7F7;
-    z-index: 9999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fallingAnimation 2s ease-in-out;
+  position: relative;
+  height: 30rem;
+  width: 25rem;
+  border-radius: 20px;
+  background-color: #F8F7F7;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fallingAnimation 2s ease-in-out;
+}
+
+.logo {
+  margin-top: 1rem;
 }
 
 .container_login h1 {

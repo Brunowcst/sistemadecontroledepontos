@@ -26,3 +26,8 @@
 .inputCadastro input {
     width: 100%;
 }
+
+.inputMarcar input {
+    max-width: 50%;
+    
+}

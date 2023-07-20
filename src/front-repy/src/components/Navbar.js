@@ -4,7 +4,6 @@ import iconHome from '../material/icons/Home.svg';
 import iconCadastro from '../material/icons/Cadastro.svg';
 import iconHistorico from '../material/icons/Historico.svg';
 import iconLogout from '../material/icons/Logout.svg';
-import iconPonto from '../material/icons/MarcarPonto.svg';
 import iconFunc from '../material/icons/funcIcon.svg';
 import iconMarcar from '../material/icons/MarcarPonto.svg';
 
