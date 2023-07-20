@@ -1,14 +1,26 @@
 import styles from './styles/FormFuncionario.module.css';
 import Input from './Input';
 import SubmitButtom from './SubmitButton';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
+import { base } from '../api/base';
+import AuthContext from '../context/AuthContext';
+import {useNavigate} from 'react-router-dom'
 
 function FormFuncionario({btnText}) {
+
+    const navigate = useNavigate()
+    const {bearer} = useContext(AuthContext);
     const [personalData, setPersonalData] = useState({
         nome: '',
-        cargo: '',
-        escala: '',
-        turno: ''
+        cod_cargo: 1,
+        cod_horario: [1],
+        cod_turno: [1],
+        cpf: '',
+        cod_depto:  1,
+        cod_gerente: 2,
+        sexo: 'M',
+        data_nasc:  "2002-09-02",  
+        cod_func: 1,
     });
 
     const [acessData, setAcessData] = useState({
@@ -16,12 +28,41 @@ function FormFuncionario({btnText}) {
         password: ''
     });
 
+    const postFuncionario = async () => {
+        try {
+            let response = await fetch(`${base}/funcionario/`, {
+              method: 'POST',
+              headers: {
+                'Content-type' : 'application/json',
+                'Authorization' : `Bearer ${bearer}`
+              },
+              body: JSON.stringify(personalData)
+            });
+            const data = await response.json();
+            console.log( data);
+            if(response.status === 201) {
+                navigate('/funcionario')
+                console.log("Funcionário cadastrado")
+            } else {
+                throw new Error('Error: requisição de dados.')
+            }
+        } catch (error) {
+            console.log(error)
+            throw error;
+        }
+    }   
+
     console.log(personalData);
-    console.log(acessData);
+    // console.log(acessData);
 
     function handleChange(e) {
-        const {name, value} = e.target;
-        setPersonalData({...personalData, [name]: value})
+        const { name, value } = e.target;
+        // Verifica se o campo é cpf ou nome, se sim, mantém o valor como string
+        const intValue = ['cpf', 'nome'].includes(name) ? value : parseInt(value, 10);
+        setPersonalData((prevData) => ({
+            ...prevData,
+            [name]: intValue,
+        }));
     }
 
     function handleAcessChange(e) {
@@ -37,8 +78,7 @@ function FormFuncionario({btnText}) {
                 "Content-type" : "application/json"
             },
             body: JSON.stringify({
-                dadosPessoais : personalData,
-                dadosAcesso : acessData
+                personalDatas : personalData,
             })
         }).then((response) => response.json())
             .then(data => {
@@ -70,48 +110,56 @@ function FormFuncionario({btnText}) {
                     customClass='inputCadastro'
                     type="text"
                     text="Cargo:"
-                    name="cargo"
+                    name="cod_cargo"
                     placeholder="Informe o cargo:"
                     handleOnChange={handleChange}
-                    value={personalData.cargo}/>
+                    value={personalData.cod_cargo}/>
 
                     <Input
                     customClass='inputCadastro'
                     type="text"
                     text="Escala"
-                    name="escala"
+                    name="cod_horario"
                     placeholder="Informe a escala:"
                     handleOnChange={handleChange}
-                    value={personalData.escala}/>
+                    value={personalData.cod_horario}/>
 
                     <Input
                     customClass='inputCadastro'
                     type="text"
                     text="Turno:"
-                    name="turno"
+                    name="cod_turno"
                     placeholder="Informe o turno:"
                     handleOnChange={handleChange}
-                    value={personalData.turno}/>
+                    value={personalData.cod_turno}/>
                 </div>
             </div>
             <div>
                 <Input customClass="inputCadastro"
                 type="text"
-                text="Email:"
-                name="email"
-                placeholder="Digite o email do funcionário:"
-                handleOnChange={handleAcessChange}
-                value={acessData.email}/>
+                text="CPF:"
+                name="cpf"
+                placeholder="Digite o cpf do funcionário:"
+                handleOnChange={handleChange}
+                value={personalData.cpf}/>
 
                 <Input customClass="inputCadastro"
-                type="password"
-                text="Senha:"
-                name="password"
-                placeholder="Digite a senha do funcionário:"
-                handleOnChange={handleAcessChange}
-                value={acessData.password}/>
+                type="text"
+                text="Código do Depto:"
+                name="cod_depto"
+                placeholder="Digite o depto do funcionário:"
+                handleOnChange={handleChange}
+                value={personalData.cod_depto}/>
+
+                <Input customClass="inputCadastro"
+                type="text"
+                text="Código do gerente"
+                name="data_nasc"
+                placeholder="Data Nasc:"
+                handleOnChange={handleChange}
+                value={personalData.data_nasc}/>
             </div>
-            <div className={styles.buttom}>
+            <div onClick={postFuncionario} className={styles.buttom}>
                 <SubmitButtom text={btnText}/>
             </div>
         </form>
